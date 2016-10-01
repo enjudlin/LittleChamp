@@ -14,6 +14,8 @@
 		0A3890041D98D620007E126A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3890021D98D620007E126A /* LaunchScreen.storyboard */; };
 		0A38900F1D98D621007E126A /* ChildWellnessApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A38900E1D98D621007E126A /* ChildWellnessApplicationTests.swift */; };
 		0A38901A1D98D621007E126A /* ChildWellnessApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3890191D98D621007E126A /* ChildWellnessApplicationUITests.swift */; };
+		0AA9484B1D9B6B01007E0799 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA9484A1D9B6B01007E0799 /* SignUpViewController.swift */; };
+		0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3058C1DA07A96008A4625 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		0A3890151D98D621007E126A /* ChildWellnessApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChildWellnessApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3890191D98D621007E126A /* ChildWellnessApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildWellnessApplicationUITests.swift; sourceTree = "<group>"; };
 		0A38901B1D98D621007E126A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AA9484A1D9B6B01007E0799 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0AF3058C1DA07A96008A4625 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +103,12 @@
 			children = (
 				0A388FF91D98D620007E126A /* AppDelegate.swift */,
 				0A388FFB1D98D620007E126A /* ViewController.swift */,
+				0AA9484A1D9B6B01007E0799 /* SignUpViewController.swift */,
 				0A388FFD1D98D620007E126A /* Main.storyboard */,
 				0A3890001D98D620007E126A /* Assets.xcassets */,
 				0A3890021D98D620007E126A /* LaunchScreen.storyboard */,
 				0A3890051D98D620007E126A /* Info.plist */,
+				0AF3058C1DA07A96008A4625 /* LoginViewController.swift */,
 			);
 			path = ChildWellnessApplication;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */,
+				0AA9484B1D9B6B01007E0799 /* SignUpViewController.swift in Sources */,
 				0A388FFC1D98D620007E126A /* ViewController.swift in Sources */,
 				0A388FFA1D98D620007E126A /* AppDelegate.swift in Sources */,
 			);
@@ -503,6 +511,7 @@
 				0A3890201D98D621007E126A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A3890211D98D621007E126A /* Build configuration list for PBXNativeTarget "ChildWellnessApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +520,7 @@
 				0A3890231D98D621007E126A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A3890241D98D621007E126A /* Build configuration list for PBXNativeTarget "ChildWellnessApplicationUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +529,7 @@
 				0A3890261D98D621007E126A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
