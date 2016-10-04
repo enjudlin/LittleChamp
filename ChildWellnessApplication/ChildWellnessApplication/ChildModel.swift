@@ -28,7 +28,7 @@ class Child {
     //
     //Ensures: The object returned is a Child object
     init?(name: String, gender: String, birthDate: String){
-        if name.isEmpty || !name is String{
+        if name.isEmpty {
             return nil
         }else{
             self.name = name
@@ -41,21 +41,18 @@ class Child {
             return nil
         }
         self.birthDate = birthDate
-        let currentDate = NSDate()
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let currentDateStringified = dateFormatter.stringFromDate(currentDate)
-        var newCurrentDate = dateFormatter.dateFromString(currentDateStringified)
-        let birthdayDateObj = dateFormatter.dateFromString(birthDate)
-        let dateComponentsFormatter = NSDateComponentsFormatter()
-        dateComponentsFormatter.unitsStyle = NSDateComponentsFormatterUnitsStyle.Full
-        let interval = newCurrentDate!.timeIntervalSinceDate(birthdayDateObj!)
-        var ageString = dateComponentsFormatter.stringFromTimeInterval(interval)
-        self.fullAgeString = ageString
-        var delimiter = " "
-        var token = ageString!.componentsSeparatedByString(delimiter)
-        var ageScale = token[1]
-        self.age = token[0].toInt()
+        let birthdayDateObj = dateFormatter.date(from: birthDate)
+        let dateComponentsFormatter = DateComponentsFormatter()
+        dateComponentsFormatter.unitsStyle = DateComponentsFormatter.UnitsStyle.full
+        let interval = NSDate().timeIntervalSince(birthdayDateObj!)
+        let ageString = dateComponentsFormatter.string(from: interval)
+        self.fullAgeString = ageString!
+        let delimiter = " "
+        var token = ageString!.components(separatedBy: delimiter)
+        let ageScale = token[1]
+        self.age = Int(token[0])!
         if(ageScale != "years,"){
             self.age = 0
         }

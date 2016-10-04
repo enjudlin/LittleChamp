@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E0j-3N-8yl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5zt-ez-cwM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -112,6 +112,46 @@
             </objects>
             <point key="canvasLocation" x="1577" y="139"/>
         </scene>
+        <!--Child Profile Table View Controller-->
+        <scene sceneID="p40-MZ-hKB">
+            <objects>
+                <tableViewController id="5zt-ez-cwM" customClass="ChildProfileTableViewController" customModule="ChildWellnessApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zea-Jd-WJ5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChildProfileTableViewCell" rowHeight="90" id="dRb-u7-MxY" customClass="ChildProfileTableViewCell" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dRb-u7-MxY" id="ekj-at-bgc">
+                                    <frame key="frameInset" width="375" height="89"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtM-80-UX1">
+                                            <frame key="frameInset" minX="8" minY="34" width="359" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="gtM-80-UX1" id="fMA-qx-MP6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5zt-ez-cwM" id="2iv-dm-0eu"/>
+                            <outlet property="delegate" destination="5zt-ez-cwM" id="kLA-Zu-ZuI"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Sd-p7-gDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2469.5999999999999" y="157.87106446776613"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="qw2-ky-xsi">
             <objects>
@@ -153,9 +193,9 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDn-eT-1ad">
-                                <frame key="frameInset" minX="161" minY="431" width="52" height="30"/>
+                                <frame key="frameInset" minX="159" minY="431" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Regiser"/>
+                                <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="registerButtonTapped:" destination="XTP-5m-doO" eventType="touchUpInside" id="y4u-hY-DXU"/>
                                 </connections>
@@ -222,6 +262,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="j6P-Vq-CHD"/>
+        <segue reference="4pc-kX-Nfw"/>
     </inferredMetricsTieBreakers>
 </document>

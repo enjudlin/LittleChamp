@@ -16,6 +16,10 @@
 		0A38901A1D98D621007E126A /* ChildWellnessApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3890191D98D621007E126A /* ChildWellnessApplicationUITests.swift */; };
 		0AA9484B1D9B6B01007E0799 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA9484A1D9B6B01007E0799 /* SignUpViewController.swift */; };
 		0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3058C1DA07A96008A4625 /* LoginViewController.swift */; };
+		F686CA2B1DA2DF940060B57D /* ChildProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */; };
+		F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */; };
+		F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2E1DA2F6880060B57D /* ChildModel.swift */; };
+		F686CA311DA35BE50060B57D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F686CA301DA35BE50060B57D /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		0A38901B1D98D621007E126A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AA9484A1D9B6B01007E0799 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0AF3058C1DA07A96008A4625 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewCell.swift; sourceTree = "<group>"; };
+		F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewController.swift; sourceTree = "<group>"; };
+		F686CA2E1DA2F6880060B57D /* ChildModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildModel.swift; path = ChildWellnessApplication/ChildModel.swift; sourceTree = "<group>"; };
+		F686CA301DA35BE50060B57D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 		0A388FED1D98D620007E126A = {
 			isa = PBXGroup;
 			children = (
+				F686CA2E1DA2F6880060B57D /* ChildModel.swift */,
 				0A388FF81D98D620007E126A /* ChildWellnessApplication */,
 				0A38900D1D98D620007E126A /* ChildWellnessApplicationTests */,
 				0A3890181D98D621007E126A /* ChildWellnessApplicationUITests */,
@@ -105,6 +114,9 @@
 				0A388FFB1D98D620007E126A /* ViewController.swift */,
 				0AA9484A1D9B6B01007E0799 /* SignUpViewController.swift */,
 				0A388FFD1D98D620007E126A /* Main.storyboard */,
+				F686CA301DA35BE50060B57D /* .gitignore */,
+				F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */,
+				F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */,
 				0A3890001D98D620007E126A /* Assets.xcassets */,
 				0A3890021D98D620007E126A /* LaunchScreen.storyboard */,
 				0A3890051D98D620007E126A /* Info.plist */,
@@ -238,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F686CA311DA35BE50060B57D /* .gitignore in Resources */,
 				0A3890041D98D620007E126A /* LaunchScreen.storyboard in Resources */,
 				0A3890011D98D620007E126A /* Assets.xcassets in Resources */,
 				0A388FFF1D98D620007E126A /* Main.storyboard in Resources */,
@@ -265,10 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */,
+				F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */,
 				0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */,
 				0AA9484B1D9B6B01007E0799 /* SignUpViewController.swift in Sources */,
 				0A388FFC1D98D620007E126A /* ViewController.swift in Sources */,
 				0A388FFA1D98D620007E126A /* AppDelegate.swift in Sources */,
+				F686CA2B1DA2DF940060B57D /* ChildProfileTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
