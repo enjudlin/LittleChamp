@@ -26,6 +26,35 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLayoutSubviews() {
+        // make only textfields' bottom side visible
+        let emailBorder = CALayer()
+        let passwordBorder = CALayer()
+        let repeatpwdBorder = CALayer()
+        let width = CGFloat(1.5)
+        
+        emailBorder.borderColor = UIColor.white.cgColor
+        emailBorder.frame = CGRect(x: 0, y: userEmailTextField.frame.size.height - width, width:  userEmailTextField.frame.size.width, height: userEmailTextField.frame.size.height)
+        emailBorder.borderWidth = width
+        
+        passwordBorder.borderColor = UIColor.white.cgColor
+        passwordBorder.frame = CGRect(x: 0, y: userPasswordTextField.frame.size.height - width, width: userPasswordTextField.frame.size.width, height: userPasswordTextField.frame.size.height)
+        passwordBorder.borderWidth = width
+        
+        repeatpwdBorder.borderColor = UIColor.white.cgColor
+        repeatpwdBorder.frame = CGRect(x: 0, y: repeatPasswordTextField.frame.size.height - width, width: repeatPasswordTextField.frame.size.width, height: repeatPasswordTextField.frame.size.height)
+        repeatpwdBorder.borderWidth = width
+        
+        userEmailTextField.layer.addSublayer(emailBorder)
+        userEmailTextField.layer.masksToBounds = true
+        
+        userPasswordTextField.layer.addSublayer(passwordBorder)
+        userPasswordTextField.layer.masksToBounds = true
+        
+        repeatPasswordTextField.layer.addSublayer(repeatpwdBorder)
+        repeatPasswordTextField.layer.masksToBounds = true
+    }
+    
 
     @IBAction func registerButtonTapped(_ sender: AnyObject) {
 
