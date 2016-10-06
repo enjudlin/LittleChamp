@@ -15,7 +15,7 @@ class UserModel: NSObject {
     var email: String
     var password: String
     var name: String
-    var childrenList = [ChildModel]()
+    var childrenList = [Child]()
     
     // MARK: initialization
     init?(email:String, password:String, name:String) {
