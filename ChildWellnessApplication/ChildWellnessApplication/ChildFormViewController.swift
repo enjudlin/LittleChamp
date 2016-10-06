@@ -1,0 +1,74 @@
+//
+//  ChildFormViewController.swift
+//  ChildWellnessApplication
+//
+//  Created by Katie Jackson on 10/4/16.
+//  Copyright © 2016 group6. All rights reserved.
+//
+
+import UIKit
+
+class ChildFormViewController: UIViewController {
+    
+    //MARK: Properties
+    
+    @IBOutlet weak var childNameLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var genderFieldLabel: UILabel!
+    @IBOutlet weak var genderSelectField: UISegmentedControl!
+    @IBOutlet weak var birthDateFieldLabel: UILabel!
+    @IBOutlet weak var birthDatePicker: UIDatePicker!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    
+    /*
+     This value is either passed by `ChildProfileTableViewController` in `prepareForSegue(_:sender:)`
+     or constructed as part of adding a new child.
+     */
+    var child: Child?
+    
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
+    //MARK: Navigation
+    
+    
+    // This method lets you configure a view controller before it's presented.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let barButton = sender as? UIBarButtonItem{
+            if saveButton === barButton {
+                let name = nameTextField.text ?? ""
+                let gender = genderSelectField.titleForSegment(at: genderSelectField.selectedSegmentIndex)?.lowercased()
+                let birthDate = birthDatePicker.date
+                // Set the child to be passed to ChildProfileTableViewController after the unwind segue.
+                child = Child(name: name, gender: gender!, birthDate: birthDate)
+            }
+        }
+        
+    }
+    
+
+
+}

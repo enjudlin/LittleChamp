@@ -23,11 +23,10 @@ class Child {
     //
     //Requires: name is a String containing the childs name
     //          gender is the string "male" or "female"
-    //          birthDate is a String containing the childs birthdate of the form
-    //          yyyy-MM-dd Example: 1989-11-23
+    //          birthDate is a Date object
     //
     //Ensures: The object returned is a Child object
-    init?(name: String, gender: String, birthDate: String){
+    init?(name: String, gender: String, birthDate: Date){
         if name.isEmpty {
             return nil
         }else{
@@ -40,13 +39,12 @@ class Child {
         else{
             return nil
         }
-        self.birthDate = birthDate
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let birthdayDateObj = dateFormatter.date(from: birthDate)
+        self.birthDate = dateFormatter.string(from: birthDate)
         let dateComponentsFormatter = DateComponentsFormatter()
         dateComponentsFormatter.unitsStyle = DateComponentsFormatter.UnitsStyle.full
-        let interval = NSDate().timeIntervalSince(birthdayDateObj!)
+        let interval = NSDate().timeIntervalSince(birthDate)
         let ageString = dateComponentsFormatter.string(from: interval)
         self.fullAgeString = ageString!
         let delimiter = " "

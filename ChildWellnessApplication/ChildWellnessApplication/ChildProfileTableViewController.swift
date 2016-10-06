@@ -28,8 +28,8 @@ class ChildProfileTableViewController: UITableViewController {
     }
 
     func loadSampleChildren(){
-        let child1 = Child(name: "Jane", gender: "female", birthDate: "2015-1-2")!
-        let child2 = Child(name: "Jon", gender: "male", birthDate: "2013-2-3")!
+        let child1 = Child(name: "Jane", gender: "female", birthDate: Date())!
+        let child2 = Child(name: "Jon", gender: "male", birthDate: Date())!
      
         children += [child1, child2]
     }
@@ -115,4 +115,22 @@ class ChildProfileTableViewController: UITableViewController {
     }
     */
 
+    
+    
+    @IBAction func unwindToChildList(sender: UIStoryboardSegue) {
+        
+        
+        if let sourceViewController = sender.source as? ChildFormViewController, let child = sourceViewController.child {
+            
+            
+            // Add a new child.
+            let newIndexPath = IndexPath(row: children.count, section: 0)
+            children.append(child)
+            tableView.insertRows(at: [newIndexPath], with: .bottom)
+
+        }
+        
+ 
+    }
+    
 }

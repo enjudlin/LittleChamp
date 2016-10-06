@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5zt-ez-cwM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fCE-H4-Brs">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -112,7 +113,7 @@
             </objects>
             <point key="canvasLocation" x="1577" y="139"/>
         </scene>
-        <!--Child Profile Table View Controller-->
+        <!--Children-->
         <scene sceneID="p40-MZ-hKB">
             <objects>
                 <tableViewController id="5zt-ez-cwM" customClass="ChildProfileTableViewController" customModule="ChildWellnessApplication" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,10 +123,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChildProfileTableViewCell" rowHeight="90" id="dRb-u7-MxY" customClass="ChildProfileTableViewCell" customModule="ChildWellnessApplication" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dRb-u7-MxY" id="ekj-at-bgc">
-                                    <frame key="frameInset" width="375" height="89"/>
+                                    <frame key="frameInset" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtM-80-UX1">
@@ -147,10 +148,104 @@
                             <outlet property="delegate" destination="5zt-ez-cwM" id="kLA-Zu-ZuI"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Children" id="3Ec-no-HJ6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eRs-Dk-rZa">
+                            <connections>
+                                <segue destination="iCt-V0-8ht" kind="presentation" identifier="AddChild" id="WGM-he-uGx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Sd-p7-gDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2469.5999999999999" y="157.87106446776613"/>
+            <point key="canvasLocation" x="3408.8000000000002" y="157.87106446776613"/>
+        </scene>
+        <!--Child Form-->
+        <scene sceneID="Z4j-2t-HF0">
+            <objects>
+                <viewController title="Child Form" id="uYj-mI-G50" customClass="ChildFormViewController" customModule="ChildWellnessApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bos-Ei-y7q"/>
+                        <viewControllerLayoutGuide type="bottom" id="Una-gZ-KMe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6za-vt-do6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YEv-eR-dlh">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taw-4o-tCI">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter child's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="79e-5a-M93">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9s-MI-EwA">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="LcK-bn-itQ">
+                                        <segments>
+                                            <segment title="Male"/>
+                                            <segment title="Female"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruO-jO-eFH">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bQC-mU-f7s">
+                                        <date key="date" timeIntervalSinceReferenceDate="497327376.78617901">
+                                            <!--2016-10-05 02:29:36 +0000-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                            <!--2037-12-31 11:00:00 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="LcK-bn-itQ" secondAttribute="trailing" id="9Ir-uk-zYn"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="79e-5a-M93" secondAttribute="trailing" id="Ca3-YM-hWq"/>
+                                    <constraint firstItem="79e-5a-M93" firstAttribute="leading" secondItem="YEv-eR-dlh" secondAttribute="leadingMargin" id="Rbh-vc-glW"/>
+                                    <constraint firstItem="LcK-bn-itQ" firstAttribute="leading" secondItem="YEv-eR-dlh" secondAttribute="leadingMargin" id="Smb-0Q-vqY"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YEv-eR-dlh" firstAttribute="top" secondItem="Bos-Ei-y7q" secondAttribute="bottom" constant="60" id="IIf-av-nTe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YEv-eR-dlh" secondAttribute="trailing" id="pFH-AN-9QQ"/>
+                            <constraint firstItem="YEv-eR-dlh" firstAttribute="leading" secondItem="6za-vt-do6" secondAttribute="leadingMargin" id="xZV-xK-7zk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Child" id="vQw-8v-FLk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jrt-95-ybG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VUt-XP-aEE">
+                            <connections>
+                                <segue destination="hOD-Pp-vhz" kind="unwind" unwindAction="unwindToChildListWithSender:" id="Z1V-HP-wp3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="birthDateFieldLabel" destination="ruO-jO-eFH" id="aAl-W5-tHa"/>
+                        <outlet property="birthDatePicker" destination="bQC-mU-f7s" id="ThG-kT-Jb2"/>
+                        <outlet property="childNameLabel" destination="taw-4o-tCI" id="mXx-Kr-mYm"/>
+                        <outlet property="genderFieldLabel" destination="J9s-MI-EwA" id="3HF-SR-o4a"/>
+                        <outlet property="genderSelectField" destination="LcK-bn-itQ" id="T7i-ZK-i7H"/>
+                        <outlet property="nameTextField" destination="79e-5a-M93" id="2Wo-wV-bqz"/>
+                        <outlet property="saveButton" destination="VUt-XP-aEE" id="nXZ-c4-Qmv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2f2-JY-hFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hOD-Pp-vhz" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="5391.1999999999998" y="166.8665667166417"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="qw2-ky-xsi">
@@ -259,6 +354,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgm-IN-ZiI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="56.799999999999997" y="138.98050974512745"/>
+        </scene>
+        <!--ChildrenSelection-->
+        <scene sceneID="gtD-f7-yjc">
+            <objects>
+                <navigationController title="ChildrenSelection" automaticallyAdjustsScrollViewInsets="NO" id="fCE-H4-Brs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MY4-Rz-YQN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5zt-ez-cwM" kind="relationship" relationship="rootViewController" id="aBF-HQ-M5v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gab-A6-MnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2469.5999999999999" y="157.87106446776613"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jFu-lK-LWW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iCt-V0-8ht" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wge-Rz-xDF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uYj-mI-G50" kind="relationship" relationship="rootViewController" id="2pb-NK-sJN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="km6-Ok-0Ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4452" y="166.8665667166417"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
