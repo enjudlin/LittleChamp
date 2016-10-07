@@ -216,6 +216,9 @@
                                         <date key="date" timeIntervalSinceReferenceDate="497327376.78617901">
                                             <!--2016-10-05 02:29:36 +0000-->
                                         </date>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                            <!--1970-01-01 11:00:00 +0000-->
+                                        </date>
                                         <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
                                             <!--2037-12-31 11:00:00 +0000-->
                                         </date>
