@@ -112,6 +112,18 @@ class ChildProfileTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowChild" {
             
+            let childProfileViewController = segue.destination as! ChildProfileViewController
+            
+            // Get the cell that generated this segue.
+            if let selectedChildCell = sender as? ChildProfileTableViewCell {
+                
+                let indexPath = tableView.indexPath(for: selectedChildCell)!
+                let selectedChild = children[indexPath.row]
+                childProfileViewController.child = selectedChild
+                
+            }
+            
+
         }
         else if segue.identifier == "AddChild"{
         }

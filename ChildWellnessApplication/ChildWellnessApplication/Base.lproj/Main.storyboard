@@ -429,7 +429,45 @@
                     <view key="view" contentMode="scaleToFill" id="bn2-qb-5kD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Y2J-cN-KJ7">
+                                <frame key="frameInset" minX="16" minY="92" width="343" height="138"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ss0-Ni-qXX">
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="birthdate" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O3C-XW-3Pg">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eez-KH-35R">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="age" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2l7-7F-Ywa">
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2l7-7F-Ywa" secondAttribute="trailing" id="2fK-qm-w4K"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="O3C-XW-3Pg" secondAttribute="trailing" id="I3N-3P-vX8"/>
+                                    <constraint firstItem="2l7-7F-Ywa" firstAttribute="leading" secondItem="Y2J-cN-KJ7" secondAttribute="leading" id="J49-DV-Hxf"/>
+                                    <constraint firstItem="O3C-XW-3Pg" firstAttribute="leading" secondItem="Y2J-cN-KJ7" secondAttribute="leadingMargin" id="t0S-yx-e7W"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y2J-cN-KJ7" firstAttribute="top" secondItem="yes-df-jj8" secondAttribute="bottom" constant="28" id="2IF-08-UM1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y2J-cN-KJ7" secondAttribute="trailing" id="hQh-6X-ClO"/>
+                            <constraint firstItem="Y2J-cN-KJ7" firstAttribute="leading" secondItem="bn2-qb-5kD" secondAttribute="leadingMargin" id="jRp-5m-uoz"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Child Profile" id="xMB-Ip-xVD">
@@ -440,11 +478,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="age" destination="2l7-7F-Ywa" id="9lh-Pa-wJ1"/>
+                        <outlet property="birthdate" destination="O3C-XW-3Pg" id="Ttl-Pb-7a0"/>
+                        <outlet property="navigationItem" destination="xMB-Ip-xVD" id="obm-fJ-P4T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6k-Sj-1dv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="DL4-gM-QMN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4450" y="882"/>
+            <point key="canvasLocation" x="4448.8000000000002" y="881.10944527736137"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

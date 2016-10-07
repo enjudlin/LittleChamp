@@ -9,11 +9,21 @@
 import UIKit
 
 class ChildProfileViewController: UIViewController {
+    
+    //MARK: -Properties
+    var child: Child?
+    
+    @IBOutlet weak var birthdate: UITextField!
+    @IBOutlet weak var age: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let child = child{
+            navigationItem.title = child.name
+            birthdate.text = child.birthDate
+            age.text = String(child.age)
+        }
     }
 
     override func didReceiveMemoryWarning() {
