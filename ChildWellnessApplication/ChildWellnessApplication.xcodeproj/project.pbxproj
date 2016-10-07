@@ -9,19 +9,20 @@
 /* Begin PBXBuildFile section */
 		0A388FFA1D98D620007E126A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A388FF91D98D620007E126A /* AppDelegate.swift */; };
 		0A388FFC1D98D620007E126A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A388FFB1D98D620007E126A /* ViewController.swift */; };
-		0A388FFF1D98D620007E126A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A388FFD1D98D620007E126A /* Main.storyboard */; };
 		0A3890011D98D620007E126A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A3890001D98D620007E126A /* Assets.xcassets */; };
 		0A3890041D98D620007E126A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3890021D98D620007E126A /* LaunchScreen.storyboard */; };
 		0A38900F1D98D621007E126A /* ChildWellnessApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A38900E1D98D621007E126A /* ChildWellnessApplicationTests.swift */; };
 		0A38901A1D98D621007E126A /* ChildWellnessApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3890191D98D621007E126A /* ChildWellnessApplicationUITests.swift */; };
 		0A69D4091DA3518200979C8A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A69D4081DA3518200979C8A /* UserModel.swift */; };
-		0A794CB41DA35D6D0038311C /* ChildModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A794CB31DA35D6D0038311C /* ChildModel.swift */; };
 		0AA9484B1D9B6B01007E0799 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA9484A1D9B6B01007E0799 /* SignUpViewController.swift */; };
 		0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3058C1DA07A96008A4625 /* LoginViewController.swift */; };
 		F686CA2B1DA2DF940060B57D /* ChildProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */; };
 		F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */; };
 		F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2E1DA2F6880060B57D /* ChildModel.swift */; };
 		F686CA311DA35BE50060B57D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F686CA301DA35BE50060B57D /* .gitignore */; };
+		F6FABCDD1DA701B200E0ABEB /* ChildFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FABCDC1DA701B200E0ABEB /* ChildFormViewController.swift */; };
+		F6FABCE01DA7167700E0ABEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FABCDE1DA7167700E0ABEB /* Main.storyboard */; };
+		F6FABCE21DA73F7400E0ABEB /* ChildProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FABCE11DA73F7400E0ABEB /* ChildProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,6 @@
 		0A388FF61D98D620007E126A /* ChildWellnessApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChildWellnessApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A388FF91D98D620007E126A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A388FFB1D98D620007E126A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0A388FFE1D98D620007E126A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A3890001D98D620007E126A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A3890031D98D620007E126A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A3890051D98D620007E126A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +63,9 @@
 		F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewController.swift; sourceTree = "<group>"; };
 		F686CA2E1DA2F6880060B57D /* ChildModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildModel.swift; path = ChildWellnessApplication/ChildModel.swift; sourceTree = "<group>"; };
 		F686CA301DA35BE50060B57D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F6FABCDC1DA701B200E0ABEB /* ChildFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildFormViewController.swift; sourceTree = "<group>"; };
+		F6FABCDF1DA7167700E0ABEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F6FABCE11DA73F7400E0ABEB /* ChildProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,13 +117,15 @@
 		0A388FF81D98D620007E126A /* ChildWellnessApplication */ = {
 			isa = PBXGroup;
 			children = (
+				F6FABCDC1DA701B200E0ABEB /* ChildFormViewController.swift */,
 				0A388FF91D98D620007E126A /* AppDelegate.swift */,
 				0A388FFB1D98D620007E126A /* ViewController.swift */,
 				0AA9484A1D9B6B01007E0799 /* SignUpViewController.swift */,
-				0A388FFD1D98D620007E126A /* Main.storyboard */,
 				F686CA301DA35BE50060B57D /* .gitignore */,
 				F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */,
 				F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */,
+				F6FABCDE1DA7167700E0ABEB /* Main.storyboard */,
+				F6FABCE11DA73F7400E0ABEB /* ChildProfileViewController.swift */,
 				0A3890001D98D620007E126A /* Assets.xcassets */,
 				0A3890021D98D620007E126A /* LaunchScreen.storyboard */,
 				0A3890051D98D620007E126A /* Info.plist */,
@@ -259,7 +264,7 @@
 				F686CA311DA35BE50060B57D /* .gitignore in Resources */,
 				0A3890041D98D620007E126A /* LaunchScreen.storyboard in Resources */,
 				0A3890011D98D620007E126A /* Assets.xcassets in Resources */,
-				0A388FFF1D98D620007E126A /* Main.storyboard in Resources */,
+				F6FABCE01DA7167700E0ABEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,10 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			
 				F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */,
+				F6FABCDD1DA701B200E0ABEB /* ChildFormViewController.swift in Sources */,
+				F6FABCE21DA73F7400E0ABEB /* ChildProfileViewController.swift in Sources */,
 				F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */,
-
 				0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */,
 				0AA9484B1D9B6B01007E0799 /* SignUpViewController.swift in Sources */,
 				0A388FFC1D98D620007E126A /* ViewController.swift in Sources */,
@@ -329,20 +334,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0A388FFD1D98D620007E126A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A388FFE1D98D620007E126A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0A3890021D98D620007E126A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0A3890031D98D620007E126A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F6FABCDE1DA7167700E0ABEB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6FABCDF1DA7167700E0ABEB /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fCE-H4-Brs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E0j-3N-8yl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -100,6 +100,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtionTapped:" destination="Jn4-0H-J45" eventType="touchUpInside" id="i3r-CN-UaK"/>
+                                    <segue destination="fCE-H4-Brs" kind="show" id="Afp-Zp-Sp4"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AMh-hb-y4g">
@@ -150,6 +151,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="gtM-80-UX1" id="fMA-qx-MP6"/>
+                                    <segue destination="3xk-oe-86D" kind="show" identifier="ShowChild" id="W8C-KG-VoY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -235,7 +237,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Child" id="vQw-8v-FLk">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jrt-95-ybG"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jrt-95-ybG">
+                            <connections>
+                                <segue destination="hOD-Pp-vhz" kind="unwind" unwindAction="unwindToChildListWithSender:" id="q9J-b4-V3Y"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="VUt-XP-aEE">
                             <connections>
                                 <segue destination="hOD-Pp-vhz" kind="unwind" unwindAction="unwindToChildListWithSender:" id="Z1V-HP-wp3"/>
@@ -300,13 +306,11 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDn-eT-1ad">
-
                                 <frame key="frameInset" minX="160" minY="459" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Regiser">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                
                                 <connections>
                                     <action selector="registerButtonTapped:" destination="XTP-5m-doO" eventType="touchUpInside" id="y4u-hY-DXU"/>
                                 </connections>
@@ -413,6 +417,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="km6-Ok-0Ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4452" y="166.8665667166417"/>
+        </scene>
+        <!--Child Profile-->
+        <scene sceneID="d3M-Jv-Jkr">
+            <objects>
+                <viewController title="Child Profile" id="3xk-oe-86D" customClass="ChildProfileViewController" customModule="ChildWellnessApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yes-df-jj8"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZUW-jh-pjA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bn2-qb-5kD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Child Profile" id="xMB-Ip-xVD">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="i2P-WE-FyN">
+                            <connections>
+                                <segue destination="DL4-gM-QMN" kind="unwind" unwindAction="unwindToChildListWithSender:" id="WEy-Lp-iW7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T6k-Sj-1dv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="DL4-gM-QMN" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4450" y="882"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

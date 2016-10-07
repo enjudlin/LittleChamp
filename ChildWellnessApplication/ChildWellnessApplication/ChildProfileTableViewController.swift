@@ -18,7 +18,7 @@ class ChildProfileTableViewController: UITableViewController {
         super.viewDidLoad()
         
         //Load sample data
-        loadSampleChildren()
+        //loadSampleChildren()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -105,15 +105,19 @@ class ChildProfileTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowChild" {
+            
+        }
+        else if segue.identifier == "AddChild"{
+        }
+        
     }
-    */
+ 
 
     
     
@@ -132,5 +136,14 @@ class ChildProfileTableViewController: UITableViewController {
         
  
     }
+    
+    
+    
+    @IBAction func loginToChildList(sender: UIStoryboardSegue) {
+    
+    
+    }
+    
+
     
 }
