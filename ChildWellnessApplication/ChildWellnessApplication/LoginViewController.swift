@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LoginViewController: UIViewController {
 
@@ -52,22 +53,61 @@ class LoginViewController: UIViewController {
         let userEmail = userEmailTextField.text
         let password = passwordTextField.text
         
-        // expected to have server side login
+        // check for empty fields, invalid email form
+        if userEmail!.isEmpty || password!.isEmpty {
+            displayAlertMessage(userMessage: "All fields are required")
+            return;
+        }
         
-        // local user login
-        let userEmailStored = UserDefaults.standard.string(forKey: "userEmail")
-        let userPassowrdStored = UserDefaults.standard.string(forKey: "password")
+        if isValidEmail(testStr: userEmail!) == false {
+            displayAlertMessage(userMessage: "This is not a valid email form")
+            return;
+        }
+
         
-        if userEmailStored == userEmail {
-            if userPassowrdStored == password {
-                // login is successful
-                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-                UserDefaults.standard.synchronize()
-                self.dismiss(animated: true, completion: nil)
+        // login check
+        let tempUser = AppUser()
+        tempUser.email = userEmail
+        tempUser.password = password
+        let realm = try! Realm()
+
+        let predicate = NSPredicate(format: "email = %@", userEmail!)
+        let target = realm.objects(AppUser.self).filter(predicate).first
+
+        if target == nil {
+            displayAlertMessage(userMessage: "This account doesn't exist")
+            return;
+        } else {
+            if target?.password != password {
+                displayAlertMessage(userMessage: "Wrong password")
+                return;
             }
+            // login successful;
         }
     }
 
+    /** 
+     * display alert message with confirmation
+     */
+    func displayAlertMessage(userMessage:String) {
+        let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        // need to change the alertActionStyle to match our UI later if time allows
+        let okAction = UIAlertAction(title: "ok", style:UIAlertActionStyle.default, handler:nil)
+        myAlert.addAction(okAction)
+        self.present(myAlert, animated: true, completion:nil)
+    }
+
+    /**
+     * check if a string is in valid email form
+     */
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SignUpViewController: UIViewController {
 
@@ -62,26 +63,47 @@ class SignUpViewController: UIViewController {
         let userPassword = userPasswordTextField.text;
         let userReaptPwd = repeatPasswordTextField.text;
         
-        // check for empty fields
+        // check for empty fields, invalid email form, password length and password inequality
         if userEmail!.isEmpty || userPassword!.isEmpty || userReaptPwd!.isEmpty {
-            // display alert message
-            displayAlertMessage(userMessage: "All fields are required.")
+            displayAlertMessage(userMessage: "All fields are required")
             return;
+        }
+        
+        if isValidEmail(testStr: userEmail!) == false {
+            displayAlertMessage(userMessage: "This is not a valid email")
+            return;
+        }
+        
+        if (userPassword?.characters.count)! < 8 {
+            displayAlertMessage(userMessage: "Password length must be longer than 8")
         }
         
         if userPassword != userReaptPwd {
-            // display alert message
-            displayAlertMessage(userMessage: "Passwords do not match.")
+            displayAlertMessage(userMessage: "Passwords do not match")
             return;
         }
         
-        // store data locally, no server side codes for now
-        UserDefaults.standard.set(userEmail, forKey:"userEmail")
-        UserDefaults.standard.set(userPassword, forKey: "userPassword")
-        UserDefaults.standard.synchronize()
+        // store data locally, if this is a new user, add it to database.
+        // Also encryption for password is needed. no server side codes now.
+        let tempUser = AppUser()
+        tempUser.email = userEmail
+        tempUser.password = userPassword
+
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "email = %@", userEmail!)
+        let target = realm.objects(AppUser.self).filter(predicate).first
+
+        if target == nil {
+            try! realm.write {
+                realm.add(tempUser)
+            }
+        } else {
+            displayAlertMessage(userMessage: "This account already exists")
+            return;
+        }
         
         // display confirmation successful alert
-        let myAlert = UIAlertController(title:"Alert", message: "Registration is successful.", preferredStyle: UIAlertControllerStyle.alert)
+        let myAlert = UIAlertController(title:"Alert", message: "Registration is successful", preferredStyle: UIAlertControllerStyle.alert)
         
         let okAction = UIAlertAction(title: "ok", style:UIAlertActionStyle.default) {
             action in self.dismiss(animated: true, completion: nil)
@@ -93,21 +115,29 @@ class SignUpViewController: UIViewController {
     
     
     
-    // display alert message with confirmation
+    /**
+     * display alert message with confirmation
+     */
     func displayAlertMessage(userMessage:String) {
         let myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
-            
+        // need to change the alertActionStyle to match our UI later if time allows
         let okAction = UIAlertAction(title: "ok", style:UIAlertActionStyle.default, handler:nil)
-        
         myAlert.addAction(okAction)
-            
         self.present(myAlert, animated: true, completion:nil)
+    }
+    
+    /**
+     * check if a string is in valid email form
+     */
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
     }
 
-    
-    
-    
+
     /*
     // MARK: - Navigation
 
