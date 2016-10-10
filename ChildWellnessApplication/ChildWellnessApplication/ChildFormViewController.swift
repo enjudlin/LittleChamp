@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChildFormViewController: UIViewController {
+class ChildFormViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Properties
     
@@ -32,7 +32,11 @@ class ChildFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Handle the text field’s user input through delegate callbacks.
+        nameTextField.delegate = self
+        
+        // Enable the Save button only if the text field has a valid name.
+        checkValidName()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,15 +45,33 @@ class ChildFormViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: UITextFieldDelegate
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        saveButton.isEnabled = false
     }
-    */
+    
+    func checkValidName() {
+        // Disable the Save button if the text field is empty.
+        let text = nameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        checkValidName()
+        navigationItem.title = textField.text
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        self.view.endEditing(true)
+        
+        return true
+        
+    }
+    
     
     //MARK: Navigation
     
