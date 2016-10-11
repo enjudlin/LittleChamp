@@ -26,6 +26,7 @@
 		F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */; };
 		F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2E1DA2F6880060B57D /* ChildModel.swift */; };
 		F686CA311DA35BE50060B57D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F686CA301DA35BE50060B57D /* .gitignore */; };
+		F6F103891DAB300200DBB605 /* AppChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F103881DAB300200DBB605 /* AppChild.swift */; };
 		F6FABCDD1DA701B200E0ABEB /* ChildFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FABCDC1DA701B200E0ABEB /* ChildFormViewController.swift */; };
 		F6FABCE01DA7167700E0ABEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FABCDE1DA7167700E0ABEB /* Main.storyboard */; };
 		F6FABCE21DA73F7400E0ABEB /* ChildProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FABCE11DA73F7400E0ABEB /* ChildProfileViewController.swift */; };
@@ -86,6 +87,7 @@
 		F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewController.swift; sourceTree = "<group>"; };
 		F686CA2E1DA2F6880060B57D /* ChildModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildModel.swift; path = ChildWellnessApplication/ChildModel.swift; sourceTree = "<group>"; };
 		F686CA301DA35BE50060B57D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F6F103881DAB300200DBB605 /* AppChild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppChild.swift; sourceTree = "<group>"; };
 		F6FABCDC1DA701B200E0ABEB /* ChildFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildFormViewController.swift; sourceTree = "<group>"; };
 		F6FABCDF1DA7167700E0ABEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6FABCE11DA73F7400E0ABEB /* ChildProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				A04212771DAA013700F7F0FB /* RealmObjects.swift */,
 				0A388FFB1D98D620007E126A /* ViewController.swift */,
 				0AA9484A1D9B6B01007E0799 /* SignUpViewController.swift */,
+				F6F103881DAB300200DBB605 /* AppChild.swift */,
 				F686CA301DA35BE50060B57D /* .gitignore */,
 				F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */,
 				F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */,
@@ -337,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */,
+				F6F103891DAB300200DBB605 /* AppChild.swift in Sources */,
 				F6FABCDD1DA701B200E0ABEB /* ChildFormViewController.swift in Sources */,
 				A04212781DAA013700F7F0FB /* RealmObjects.swift in Sources */,
 				F6FABCE21DA73F7400E0ABEB /* ChildProfileViewController.swift in Sources */,

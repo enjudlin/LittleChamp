@@ -20,6 +20,9 @@ class ChildFormViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var birthDatePicker: UIDatePicker!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    //Pass the parent from the table view
+    var user: AppUser?
+    
     
     /*
      This value is either passed by `ChildProfileTableViewController` in `prepareForSegue(_:sender:)`
@@ -86,6 +89,8 @@ class ChildFormViewController: UIViewController, UITextFieldDelegate {
                 let birthDate = birthDatePicker.date
                 // Set the child to be passed to ChildProfileTableViewController after the unwind segue.
                 child = Child(name: name, gender: gender!, birthDate: birthDate)
+                //Save child in Realm database
+                child!.createChild()
             }
         }
         

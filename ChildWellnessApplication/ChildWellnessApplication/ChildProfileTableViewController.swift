@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ChildProfileTableViewController: UITableViewController {
     
     //MARK: Properties
     
+    var user: AppUser?
     var children = [Child]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        children.append(contentsOf: Child.getChildren())
         
         //Load sample data
         //loadSampleChildren()
@@ -126,6 +130,9 @@ class ChildProfileTableViewController: UITableViewController {
 
         }
         else if segue.identifier == "AddChild"{
+            if let form = segue.destination as? ChildFormViewController{
+                form.user = self.user
+            }
         }
         
     }
@@ -152,8 +159,7 @@ class ChildProfileTableViewController: UITableViewController {
     
     
     @IBAction func loginToChildList(sender: UIStoryboardSegue) {
-    
-    
+        
     }
     
 

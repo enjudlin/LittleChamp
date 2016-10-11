@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    //This represents the user profile information to be sent onto other views
+    var user: AppUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +85,7 @@ class LoginViewController: UIViewController {
                 return;
             }
             // login successful;
+            self.user = target
         }
     }
 
@@ -108,14 +111,16 @@ class LoginViewController: UIViewController {
         return emailTest.evaluate(with: testStr)
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "FromLoginToChildren"){
+            let controller = segue.destination as? ChildProfileTableViewController
+            controller?.user = self.user
+        }
     }
-    */
+ 
 
 }

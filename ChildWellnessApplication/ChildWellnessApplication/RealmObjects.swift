@@ -20,6 +20,3 @@ class AppUser: Object {
     
 }
 
-class AppChild: Object {
-    
-}

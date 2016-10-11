@@ -21,7 +21,7 @@ class ChildProfileViewController: UIViewController {
 
         if let child = child{
             navigationItem.title = child.name
-            birthdate.text = child.birthDate
+            birthdate.text = child.birthDateString
             age.text = String(child.age)
         }
     }

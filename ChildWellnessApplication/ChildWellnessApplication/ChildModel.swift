@@ -8,14 +8,16 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class Child {
     // MARK: Properties
     var name: String
     var gender: String
     var age: Int
-    var birthDate: String
-    var fullAgeString: String
+    var birthDateString: String
+    var birthDate: Date
+    var parent: AppUser
     
     // Mark: Initialization
     
@@ -26,7 +28,10 @@ class Child {
     //          birthDate is a Date object
     //
     //Ensures: The object returned is a Child object
-    init?(name: String, gender: String, birthDate: Date){
+    required init?(name: String, gender: String, birthDate: Date){
+        self.age = 0 //This is a temporary initialization, it will be set properly by the calcAge method
+        //self.parent = parent
+        self.parent = AppUser()
         if name.isEmpty {
             return nil
         }else{
@@ -39,14 +44,20 @@ class Child {
         else{
             return nil
         }
+        self.birthDate = birthDate
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        self.birthDateString = dateFormatter.string(from: birthDate)
+        calcAge()
+    }
+    
+    func calcAge(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        self.birthDate = dateFormatter.string(from: birthDate)
         let dateComponentsFormatter = DateComponentsFormatter()
         dateComponentsFormatter.unitsStyle = DateComponentsFormatter.UnitsStyle.full
-        let interval = NSDate().timeIntervalSince(birthDate)
+        let interval = NSDate().timeIntervalSince(self.birthDate)
         let ageString = dateComponentsFormatter.string(from: interval)
-        self.fullAgeString = ageString!
         let delimiter = " "
         var token = ageString!.components(separatedBy: delimiter)
         let ageScale = token[1]
@@ -55,4 +66,27 @@ class Child {
             self.age = 0
         }
     }
+    
+    func createChild(){
+        let realm = try! Realm()
+        let appChild = AppChild()
+        appChild.name = self.name
+        appChild.birthdate = self.birthDate
+        appChild.gender = self.gender
+        appChild.parent = self.parent
+        try! realm.write{
+            realm.add(appChild)
+        }
+    }
+    
+    class func getChildren() -> [Child]{
+        let realm = try! Realm()
+        var children = [Child]()
+        let childObjects = realm.objects(AppChild.self)
+        for childObject in childObjects{
+            children.append(childObject.toChild())
+        }
+        return children
+    }
+    
 }
