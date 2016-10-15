@@ -8,14 +8,16 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class Child {
     // MARK: Properties
     var name: String
     var gender: String
     var age: Int
-    var birthDate: String
-    var fullAgeString: String
+    var birthDateString: String
+    var birthDate: Date
+    var parent: AppUser
     
     // Mark: Initialization
     
@@ -23,12 +25,14 @@ class Child {
     //
     //Requires: name is a String containing the childs name
     //          gender is the string "male" or "female"
-    //          birthDate is a String containing the childs birthdate of the form
-    //          yyyy-MM-dd Example: 1989-11-23
+    //          birthDate is a Date object
     //
     //Ensures: The object returned is a Child object
-    init?(name: String, gender: String, birthDate: String){
-        if name.isEmpty || !name is String{
+    required init?(name: String, gender: String, birthDate: Date){
+        self.age = 0 //This is a temporary initialization, it will be set properly by the calcAge method
+        //self.parent = parent
+        self.parent = AppUser()
+        if name.isEmpty {
             return nil
         }else{
             self.name = name
@@ -41,23 +45,48 @@ class Child {
             return nil
         }
         self.birthDate = birthDate
-        let currentDate = NSDate()
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        self.birthDateString = dateFormatter.string(from: birthDate)
+        calcAge()
+    }
+    
+    func calcAge(){
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let currentDateStringified = dateFormatter.stringFromDate(currentDate)
-        var newCurrentDate = dateFormatter.dateFromString(currentDateStringified)
-        let birthdayDateObj = dateFormatter.dateFromString(birthDate)
-        let dateComponentsFormatter = NSDateComponentsFormatter()
-        dateComponentsFormatter.unitsStyle = NSDateComponentsFormatterUnitsStyle.Full
-        let interval = newCurrentDate!.timeIntervalSinceDate(birthdayDateObj!)
-        var ageString = dateComponentsFormatter.stringFromTimeInterval(interval)
-        self.fullAgeString = ageString
-        var delimiter = " "
-        var token = ageString!.componentsSeparatedByString(delimiter)
-        var ageScale = token[1]
-        self.age = token[0].toInt()
+        let dateComponentsFormatter = DateComponentsFormatter()
+        dateComponentsFormatter.unitsStyle = DateComponentsFormatter.UnitsStyle.full
+        let interval = NSDate().timeIntervalSince(self.birthDate)
+        let ageString = dateComponentsFormatter.string(from: interval)
+        let delimiter = " "
+        var token = ageString!.components(separatedBy: delimiter)
+        let ageScale = token[1]
+        self.age = Int(token[0])!
         if(ageScale != "years,"){
             self.age = 0
         }
     }
+    
+    func createChild(){
+        let realm = try! Realm()
+        let appChild = AppChild()
+        appChild.name = self.name
+        appChild.birthdate = self.birthDate
+        appChild.gender = self.gender
+        appChild.parent = self.parent
+        try! realm.write{
+            realm.add(appChild)
+        }
+    }
+    
+    class func getChildren() -> [Child]{
+        let realm = try! Realm()
+        var children = [Child]()
+        let childObjects = realm.objects(AppChild.self)
+        for childObject in childObjects{
+            children.append(childObject.toChild())
+        }
+        return children
+    }
+    
 }
