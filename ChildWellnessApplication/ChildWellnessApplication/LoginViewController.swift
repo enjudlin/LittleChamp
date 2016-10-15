@@ -117,7 +117,8 @@ class LoginViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "FromLoginToChildren"){
-            let controller = segue.destination as? ChildProfileTableViewController
+            let navController = segue.destination as? UINavigationController
+            let controller = navController?.viewControllers.first as? ChildProfileTableViewController
             controller?.user = self.user
         }
     }

@@ -88,7 +88,7 @@ class ChildFormViewController: UIViewController, UITextFieldDelegate {
                 let gender = genderSelectField.titleForSegment(at: genderSelectField.selectedSegmentIndex)?.lowercased()
                 let birthDate = birthDatePicker.date
                 // Set the child to be passed to ChildProfileTableViewController after the unwind segue.
-                child = Child(name: name, gender: gender!, birthDate: birthDate)
+                child = Child(name: name, gender: gender!, birthDate: birthDate, parent: self.user!)
                 //Save child in Realm database
                 child!.createChild()
             }

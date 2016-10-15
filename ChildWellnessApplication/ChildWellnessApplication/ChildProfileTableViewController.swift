@@ -19,7 +19,7 @@ class ChildProfileTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        children.append(contentsOf: Child.getChildren())
+        children.append(contentsOf: self.user!.children())
         
         //Load sample data
         //loadSampleChildren()
@@ -32,8 +32,8 @@ class ChildProfileTableViewController: UITableViewController {
     }
 
     func loadSampleChildren(){
-        let child1 = Child(name: "Jane", gender: "female", birthDate: Date())!
-        let child2 = Child(name: "Jon", gender: "male", birthDate: Date())!
+        let child1 = Child(name: "Jane", gender: "female", birthDate: Date(), parent: AppUser())!
+        let child2 = Child(name: "Jon", gender: "male", birthDate: Date(), parent: AppUser())!
      
         children += [child1, child2]
     }
@@ -130,9 +130,9 @@ class ChildProfileTableViewController: UITableViewController {
 
         }
         else if segue.identifier == "AddChild"{
-            if let form = segue.destination as? ChildFormViewController{
-                form.user = self.user
-            }
+            let navController = segue.destination as? UINavigationController
+            let form = navController?.viewControllers.first as? ChildFormViewController
+            form?.user = self.user
         }
         
     }

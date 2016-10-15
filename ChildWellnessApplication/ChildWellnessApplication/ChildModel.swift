@@ -28,10 +28,9 @@ class Child {
     //          birthDate is a Date object
     //
     //Ensures: The object returned is a Child object
-    required init?(name: String, gender: String, birthDate: Date){
+    required init?(name: String, gender: String, birthDate: Date, parent: AppUser){
         self.age = 0 //This is a temporary initialization, it will be set properly by the calcAge method
-        //self.parent = parent
-        self.parent = AppUser()
+        self.parent = parent
         if name.isEmpty {
             return nil
         }else{

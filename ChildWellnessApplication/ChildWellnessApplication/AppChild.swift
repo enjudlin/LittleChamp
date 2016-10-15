@@ -23,6 +23,6 @@ class AppChild: Object {
 //  }
     
     func toChild()-> Child{
-        return Child(name: self.name, gender: self.gender, birthDate: self.birthdate)!
+        return Child(name: self.name, gender: self.gender, birthDate: self.birthdate, parent: self.parent!)!
     }
 }

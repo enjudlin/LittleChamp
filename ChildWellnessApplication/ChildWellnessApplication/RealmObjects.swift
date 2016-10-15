@@ -16,7 +16,17 @@ class AppUser: Object {
     dynamic var email: String? = nil
     dynamic var password: String? = nil
     dynamic var name: String? = nil
-    let childList = List<AppChild>()
+    let childList = LinkingObjects(fromType: AppChild.self, property: "parent")
     
+    /*
+    * Convert the childList relation to an array of Child objects
+    */
+    func children()->[Child]{
+        var children = [Child]()
+        for child in self.childList {
+            children.append(child.toChild())
+        }
+        return children
+    }
 }
 
