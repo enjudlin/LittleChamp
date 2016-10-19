@@ -116,17 +116,19 @@ class ChildProfileTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowChild" {
             
-            let childProfileViewController = segue.destination as! ChildProfileViewController
-            
-            // Get the cell that generated this segue.
-            if let selectedChildCell = sender as? ChildProfileTableViewCell {
+            //Because the menu is embedded in a navigation controller, the menu controller must be accessed through the segway
+            if let navController = segue.destination as? UINavigationController {
+                if let selectActionController = navController.viewControllers.first as? SelectActionViewController{
+                    // Get the cell that generated this segue.
+                    if let selectedChildCell = sender as? ChildProfileTableViewCell {
                 
-                let indexPath = tableView.indexPath(for: selectedChildCell)!
-                let selectedChild = children[indexPath.row]
-                childProfileViewController.child = selectedChild
+                        let indexPath = tableView.indexPath(for: selectedChildCell)!
+                        let selectedChild = children[indexPath.row]
+                        selectActionController.child = selectedChild
                 
+                    }
+                }
             }
-            
 
         }
         else if segue.identifier == "AddChild"{
