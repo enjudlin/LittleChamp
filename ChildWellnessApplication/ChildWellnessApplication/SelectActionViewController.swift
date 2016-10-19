@@ -20,6 +20,9 @@ class SelectActionViewController: UIViewController {
         
         //Custom styling for buttons
         viewInfoButton.layer.cornerRadius = 4
+        
+        //Make the top bar show the child's name
+        navigationItem.title = child?.name
     }
 
     override func didReceiveMemoryWarning() {

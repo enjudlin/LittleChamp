@@ -433,24 +433,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGJ-hl-Ij9">
-                                <frame key="frameInset" minX="16" minY="134" width="343" height="78"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="View Info">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="3xk-oe-86D" kind="show" identifier="viewInfo" id="S2l-TP-V7H"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ojk-Zt-BsJ">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGJ-hl-Ij9">
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="View Info">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="3xk-oe-86D" kind="show" identifier="viewInfo" id="S2l-TP-V7H"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zl8-Ue-VAY">
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Record Behavior">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="kGJ-hl-Ij9" secondAttribute="trailing" constant="16" id="0qc-OP-dk3"/>
-                            <constraint firstItem="kGJ-hl-Ij9" firstAttribute="leading" secondItem="Xc6-9j-dbl" secondAttribute="leading" constant="16" id="H6K-4P-fTa"/>
-                            <constraint firstItem="kGJ-hl-Ij9" firstAttribute="top" secondItem="hoz-8w-hgC" secondAttribute="bottom" constant="70" id="aaI-Lo-Ltd"/>
+                            <constraint firstItem="ojk-Zt-BsJ" firstAttribute="leading" secondItem="Xc6-9j-dbl" secondAttribute="leadingMargin" constant="16" id="63j-25-Tf5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ojk-Zt-BsJ" secondAttribute="trailing" constant="16" id="X48-TU-SSQ"/>
+                            <constraint firstItem="ojk-Zt-BsJ" firstAttribute="top" secondItem="hoz-8w-hgC" secondAttribute="bottom" constant="70" id="ykD-Zg-bse"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Child Name" id="eri-0S-m8z">
@@ -538,6 +549,44 @@
                 <exit id="DL4-gM-QMN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5530" y="879"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="CRR-Ej-DnQ">
+            <objects>
+                <viewController id="EgK-KH-cXV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CJk-Hi-7NB"/>
+                        <viewControllerLayoutGuide type="bottom" id="5YX-Fu-elJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nlL-65-X0X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="7sa-WQ-aYi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCJ-1U-yWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7113" y="1899"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="CUh-8e-U5n">
+            <objects>
+                <viewController id="j0W-MA-ure" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mec-nF-JVY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z7d-uy-A64"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HT8-zd-HOP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="JYP-de-wgR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yKD-IH-pFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7113" y="1165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iuy-Mu-gII">
