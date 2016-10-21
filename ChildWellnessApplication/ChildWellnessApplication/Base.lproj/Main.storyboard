@@ -454,7 +454,7 @@
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="nTD-vW-i05" kind="show" id="Hil-IN-vg7"/>
+                                            <segue destination="nTD-vW-i05" kind="show" identifier="newRecord" id="Hil-IN-vg7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -467,13 +467,17 @@
                             <constraint firstItem="ojk-Zt-BsJ" firstAttribute="top" secondItem="hoz-8w-hgC" secondAttribute="bottom" constant="70" id="ykD-Zg-bse"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="ehb-Z8-AMV"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Child Name" id="eri-0S-m8z">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="7YS-73-UQ4">
                             <connections>
-                                <segue destination="gRJ-2p-M38" kind="unwind" unwindAction="unwindToChildListWithSender:" id="voS-Nr-6tC"/>
+                                <segue destination="gRJ-2p-M38" kind="unwind" unwindAction="loginToChildListWithSender:" id="LkY-xl-yIA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="viewInfoButton" destination="kGJ-hl-Ij9" id="8yq-wJ-4e7"/>
                     </connections>
@@ -537,7 +541,7 @@
                     <navigationItem key="navigationItem" title="Child Profile" id="xMB-Ip-xVD">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="i2P-WE-FyN">
                             <connections>
-                                <segue destination="DL4-gM-QMN" kind="unwind" unwindAction="unwindToChildListWithSender:" id="WEy-Lp-iW7"/>
+                                <segue destination="DL4-gM-QMN" kind="unwind" unwindAction="unwindToActionListWithSender:" id="ENW-cm-v88"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -553,10 +557,10 @@
             </objects>
             <point key="canvasLocation" x="5530" y="879"/>
         </scene>
-        <!--View Controller-->
+        <!--Record Form View Controller-->
         <scene sceneID="O6v-KG-Gks">
             <objects>
-                <viewController id="cRf-lU-HDj" sceneMemberID="viewController">
+                <viewController id="cRf-lU-HDj" customClass="RecordFormViewController" customModule="ChildWellnessApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sl2-q2-fiB"/>
                         <viewControllerLayoutGuide type="bottom" id="685-CZ-3Cm"/>
@@ -575,7 +579,7 @@
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="ULo-Fh-w5X" kind="show" id="MTO-tF-Qhs"/>
+                                            <segue destination="ULo-Fh-w5X" kind="show" identifier="activityForm" id="MTO-tF-Qhs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRF-iv-AoX">
@@ -589,6 +593,10 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VzX-HP-i3Q">
+                                <frame key="frameInset" minX="16" minY="360" width="343" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -597,11 +605,26 @@
                             <constraint firstAttribute="trailing" secondItem="McW-6M-Na2" secondAttribute="trailing" constant="16" id="yAh-Rd-o8N"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QPJ-vt-8Rl"/>
+                    <navigationItem key="navigationItem" id="QPJ-vt-8Rl">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cgF-pe-qYW">
+                            <connections>
+                                <segue destination="Gnt-uD-SSL" kind="unwind" unwindAction="unwindToActionListWithSender:" id="D2L-c1-NLI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gAh-5C-C6p">
+                            <connections>
+                                <segue destination="Gnt-uD-SSL" kind="unwind" unwindAction="unwindToActionListWithSender:" id="JFj-Gq-eAR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="gAh-5C-C6p" id="Jqb-Ju-X2d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOM-PC-YyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Gnt-uD-SSL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6694" y="1646"/>
+            <point key="canvasLocation" x="6693.6000000000004" y="1645.7271364317842"/>
         </scene>
         <!--Activity View Controller-->
         <scene sceneID="KfV-e8-ClY">
@@ -676,6 +699,7 @@
                         <outlet property="excessivelyActive" destination="G5R-Qs-wlZ" id="7Rj-XS-k4r"/>
                         <outlet property="inactive" destination="ZKT-F9-IcB" id="lFU-yG-8vB"/>
                         <outlet property="scream" destination="sGH-aI-PAQ" id="PzD-ge-UJ5"/>
+                        <outlet property="scrollView" destination="68p-dS-6ZF" id="0rO-DU-bS2"/>
                         <outlet property="selfInjury" destination="Los-8c-Gfq" id="6ko-AS-n2L"/>
                     </connections>
                 </viewController>

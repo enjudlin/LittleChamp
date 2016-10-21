@@ -19,7 +19,7 @@ class ActivityObject: Object {
     
     /* Description strings for each of the activities */
     dynamic var excessivelyActiveDesc = ""
-    dynamic var abnormalRepMovDec = ""
+    dynamic var abnormalRepMovDesc = ""
     dynamic var selfInjuryDesc = ""
     dynamic var sluggishDesc = ""
     dynamic var screamsDesc = ""

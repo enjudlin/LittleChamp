@@ -116,7 +116,7 @@ class ChildProfileTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowChild" {
             
-            //Because the menu is embedded in a navigation controller, the menu controller must be accessed through the segway
+            //Because the menu is embedded in a navigation controller, the menu controller must be accessed through the segue
             if let navController = segue.destination as? UINavigationController {
                 if let selectActionController = navController.viewControllers.first as? SelectActionViewController{
                     // Get the cell that generated this segue.

@@ -17,12 +17,30 @@ class ActivityViewController: UIViewController {
     @IBOutlet weak var selfInjury: RecordEntryView!
     @IBOutlet weak var inactive: RecordEntryView!
     @IBOutlet weak var scream: RecordEntryView!
+    @IBOutlet weak var scrollView: UIScrollView!
 
+    //Helper method to create an activity object from the form values
+    func initActivityObject()-> ActivityObject{
+        let activity = ActivityObject()
+        activity.excessivelyActive = excessivelyActive.getSeverity()
+        activity.excessivelyActiveDesc = excessivelyActive.getExplanation()
+        activity.abnormalRepMov = abnormalMovements.getSeverity()
+        activity.abnormalRepMovDesc = abnormalMovements.getExplanation()
+        activity.selfInjury = selfInjury.getSeverity()
+        activity.selfInjuryDesc = selfInjury.getExplanation()
+        activity.sluggish = inactive.getSeverity()
+        activity.sluggishDesc = inactive.getExplanation()
+        activity.screams = scream.getSeverity()
+        activity.screamsDesc = scream.getExplanation()
+        return activity
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Allow selection in scroll view
 
-        // Change the name labels on records
+        // Change the name labels
         excessivelyActive.setItemName(name: "Excessively Active")
         abnormalMovements.setItemName(name: "Abnormal Repetitive Movements")
         selfInjury.setItemName(name: "Self-Injury")
@@ -36,14 +54,13 @@ class ActivityViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        //Set the record's activity data with the data currently in the form
+        if let recordForm = segue.destination as? RecordFormViewController{
+            recordForm.record.activity = initActivityObject()
+        }
     }
-    */
 
 }

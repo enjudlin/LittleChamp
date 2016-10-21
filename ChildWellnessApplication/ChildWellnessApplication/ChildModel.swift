@@ -18,6 +18,7 @@ class Child {
     var birthDateString: String
     var birthDate: Date
     var parent: AppUser
+    var appChild: AppChild?
     
     // Mark: Initialization
     
@@ -44,6 +45,20 @@ class Child {
             return nil
         }
         self.birthDate = birthDate
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        self.birthDateString = dateFormatter.string(from: birthDate)
+        calcAge()
+    }
+    
+    //Alternate implementation for when the child is already saved in the database
+    init(appChild: AppChild) {
+        self.appChild = appChild
+        self.age = 0
+        self.parent = appChild.parent!
+        self.name = appChild.name
+        self.gender = appChild.gender
+        self.birthDate = appChild.birthdate
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         self.birthDateString = dateFormatter.string(from: birthDate)

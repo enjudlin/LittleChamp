@@ -22,7 +22,7 @@
 		A04212731DA9F58F00F7F0FB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; };
 		A04212741DA9F58F00F7F0FB /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A04212781DAA013700F7F0FB /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04212771DAA013700F7F0FB /* RealmObjects.swift */; };
-		F639F3E01DB6DDAD005741AC /* AppRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3DF1DB6DDAD005741AC /* AppRecord.swift */; };
+		F639F3E01DB6DDAD005741AC /* RecordObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3DF1DB6DDAD005741AC /* RecordObject.swift */; };
 		F639F3E21DB6E05D005741AC /* ActivityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E11DB6E05D005741AC /* ActivityObject.swift */; };
 		F639F3E41DB71B9F005741AC /* SelectActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */; };
 		F686CA2B1DA2DF940060B57D /* ChildProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */; };
@@ -32,6 +32,7 @@
 		F6E9E3EC1DB99B9A00C67026 /* RecordEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E9E3EB1DB99B9A00C67026 /* RecordEntryView.swift */; };
 		F6E9E3EE1DB99BB200C67026 /* RecordEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E9E3ED1DB99BB200C67026 /* RecordEntryView.xib */; };
 		F6E9E3F01DB9B2C200C67026 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E9E3EF1DB9B2C200C67026 /* ActivityViewController.swift */; };
+		F6E9E3F21DB9C9B100C67026 /* RecordFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E9E3F11DB9C9B100C67026 /* RecordFormViewController.swift */; };
 		F6F103891DAB300200DBB605 /* AppChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F103881DAB300200DBB605 /* AppChild.swift */; };
 		F6FABCDD1DA701B200E0ABEB /* ChildFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FABCDC1DA701B200E0ABEB /* ChildFormViewController.swift */; };
 		F6FABCE01DA7167700E0ABEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FABCDE1DA7167700E0ABEB /* Main.storyboard */; };
@@ -89,7 +90,7 @@
 		A042126D1DA9F56E00F7F0FB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		A042126E1DA9F56E00F7F0FB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		A04212771DAA013700F7F0FB /* RealmObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
-		F639F3DF1DB6DDAD005741AC /* AppRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRecord.swift; sourceTree = "<group>"; };
+		F639F3DF1DB6DDAD005741AC /* RecordObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordObject.swift; sourceTree = "<group>"; };
 		F639F3E11DB6E05D005741AC /* ActivityObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityObject.swift; sourceTree = "<group>"; };
 		F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectActionViewController.swift; sourceTree = "<group>"; };
 		F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		F6E9E3EB1DB99B9A00C67026 /* RecordEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordEntryView.swift; sourceTree = "<group>"; };
 		F6E9E3ED1DB99BB200C67026 /* RecordEntryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordEntryView.xib; sourceTree = "<group>"; };
 		F6E9E3EF1DB9B2C200C67026 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		F6E9E3F11DB9C9B100C67026 /* RecordFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordFormViewController.swift; sourceTree = "<group>"; };
 		F6F103881DAB300200DBB605 /* AppChild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppChild.swift; sourceTree = "<group>"; };
 		F6FABCDC1DA701B200E0ABEB /* ChildFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildFormViewController.swift; sourceTree = "<group>"; };
 		F6FABCDF1DA7167700E0ABEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,10 +171,11 @@
 				F6F103881DAB300200DBB605 /* AppChild.swift */,
 				F686CA301DA35BE50060B57D /* .gitignore */,
 				F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */,
-				F639F3DF1DB6DDAD005741AC /* AppRecord.swift */,
+				F639F3DF1DB6DDAD005741AC /* RecordObject.swift */,
 				F639F3E11DB6E05D005741AC /* ActivityObject.swift */,
 				F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */,
 				F6FABCDE1DA7167700E0ABEB /* Main.storyboard */,
+				F6E9E3F11DB9C9B100C67026 /* RecordFormViewController.swift */,
 				F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */,
 				F6FABCE11DA73F7400E0ABEB /* ChildProfileViewController.swift */,
 				0A3890001D98D620007E126A /* Assets.xcassets */,
@@ -368,7 +371,8 @@
 			files = (
 				F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */,
 				F6F103891DAB300200DBB605 /* AppChild.swift in Sources */,
-				F639F3E01DB6DDAD005741AC /* AppRecord.swift in Sources */,
+				F639F3E01DB6DDAD005741AC /* RecordObject.swift in Sources */,
+				F6E9E3F21DB9C9B100C67026 /* RecordFormViewController.swift in Sources */,
 				F6E9E3F01DB9B2C200C67026 /* ActivityViewController.swift in Sources */,
 				F6FABCDD1DA701B200E0ABEB /* ChildFormViewController.swift in Sources */,
 				A04212781DAA013700F7F0FB /* RealmObjects.swift in Sources */,

@@ -39,8 +39,20 @@ class SelectActionViewController: UIViewController {
             if let childProfileViewController = segue.destination as? ChildProfileViewController{
                 childProfileViewController.child = child
             }
-            
+        }
+        else if segue.identifier == "newRecord"{
+            if let navController = segue.destination as? UINavigationController{
+                if let recordForm = navController.viewControllers.first as? RecordFormViewController{
+                    recordForm.record.child = child?.appChild
+                }
+            }
         }
     }
+    
+    //Landing point for returning to this view from a record
+    @IBAction func unwindToActionList(sender: UIStoryboardSegue) {
+        
+    }
+
 
 }
