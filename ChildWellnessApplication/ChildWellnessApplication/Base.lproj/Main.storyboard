@@ -453,6 +453,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="nTD-vW-i05" kind="show" id="Hil-IN-vg7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -478,7 +481,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="alq-Sa-0PD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gRJ-2p-M38" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4452" y="879.31034482758628"/>
+            <point key="canvasLocation" x="4529" y="1348"/>
         </scene>
         <!--Child Profile-->
         <scene sceneID="d3M-Jv-Jkr">
@@ -550,43 +553,135 @@
             </objects>
             <point key="canvasLocation" x="5530" y="879"/>
         </scene>
-        <!--Item 2-->
-        <scene sceneID="CRR-Ej-DnQ">
+        <!--View Controller-->
+        <scene sceneID="O6v-KG-Gks">
             <objects>
-                <viewController id="EgK-KH-cXV" sceneMemberID="viewController">
+                <viewController id="cRf-lU-HDj" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CJk-Hi-7NB"/>
-                        <viewControllerLayoutGuide type="bottom" id="5YX-Fu-elJ"/>
+                        <viewControllerLayoutGuide type="top" id="sl2-q2-fiB"/>
+                        <viewControllerLayoutGuide type="bottom" id="685-CZ-3Cm"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nlL-65-X0X">
+                    <view key="view" contentMode="scaleToFill" id="i0q-Cz-r5E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="McW-6M-Na2">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8x-7H-tN7">
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Activity">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="ULo-Fh-w5X" kind="show" id="MTO-tF-Qhs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRF-iv-AoX">
+                                        <state key="normal" title="Emotion"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l45-wd-BKd">
+                                        <state key="normal" title="Social"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TY9-cp-znD">
+                                        <state key="normal" title="Communication"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="McW-6M-Na2" firstAttribute="leading" secondItem="i0q-Cz-r5E" secondAttribute="leading" constant="16" id="Dsd-Yb-ahx"/>
+                            <constraint firstItem="McW-6M-Na2" firstAttribute="top" secondItem="sl2-q2-fiB" secondAttribute="bottom" constant="70" id="pv0-dY-CWb"/>
+                            <constraint firstAttribute="trailing" secondItem="McW-6M-Na2" secondAttribute="trailing" constant="16" id="yAh-Rd-o8N"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="7sa-WQ-aYi"/>
+                    <navigationItem key="navigationItem" id="QPJ-vt-8Rl"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pCJ-1U-yWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOM-PC-YyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7113" y="1899"/>
+            <point key="canvasLocation" x="6694" y="1646"/>
         </scene>
-        <!--Item 1-->
-        <scene sceneID="CUh-8e-U5n">
+        <!--Activity View Controller-->
+        <scene sceneID="KfV-e8-ClY">
             <objects>
-                <viewController id="j0W-MA-ure" sceneMemberID="viewController">
+                <viewController id="ULo-Fh-w5X" customClass="ActivityViewController" customModule="ChildWellnessApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Mec-nF-JVY"/>
-                        <viewControllerLayoutGuide type="bottom" id="Z7d-uy-A64"/>
+                        <viewControllerLayoutGuide type="top" id="miO-WR-pcm"/>
+                        <viewControllerLayoutGuide type="bottom" id="vmb-iE-FK7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HT8-zd-HOP">
+                    <view key="view" contentMode="scaleToFill" id="Mu0-F1-bZS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="68p-dS-6ZF">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jve-RE-Od8">
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5R-Qs-wlZ" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="140" id="TzI-Q6-4qU"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEU-5w-1zP" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="140" id="EfB-cc-KGh"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Los-8c-Gfq" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="140" id="87b-ta-oyq"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKT-F9-IcB" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="140" id="N78-0Y-Kdo"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGH-aI-PAQ" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="140" id="8HG-rB-SDg"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="343" id="xO6-Wo-kq2"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Jve-RE-Od8" secondAttribute="bottom" constant="421" id="20Q-FU-Gcm"/>
+                                    <constraint firstItem="Jve-RE-Od8" firstAttribute="top" secondItem="68p-dS-6ZF" secondAttribute="top" constant="8" id="EsM-ul-x3I"/>
+                                    <constraint firstItem="Jve-RE-Od8" firstAttribute="leading" secondItem="68p-dS-6ZF" secondAttribute="leading" id="noY-GP-nyp"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jve-RE-Od8" secondAttribute="trailing" id="rl3-HX-Ure"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="68p-dS-6ZF" firstAttribute="leading" secondItem="Mu0-F1-bZS" secondAttribute="leadingMargin" id="F4e-K5-Lo0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="68p-dS-6ZF" secondAttribute="trailing" id="SDn-9h-dCh"/>
+                            <constraint firstItem="68p-dS-6ZF" firstAttribute="top" secondItem="miO-WR-pcm" secondAttribute="bottom" constant="50" id="agf-1G-mXN"/>
+                            <constraint firstItem="vmb-iE-FK7" firstAttribute="top" secondItem="68p-dS-6ZF" secondAttribute="bottom" constant="20" id="fKT-sB-JvZ"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="JYP-de-wgR"/>
+                    <connections>
+                        <outlet property="abnormalMovements" destination="oEU-5w-1zP" id="02W-K5-XNB"/>
+                        <outlet property="excessivelyActive" destination="G5R-Qs-wlZ" id="7Rj-XS-k4r"/>
+                        <outlet property="inactive" destination="ZKT-F9-IcB" id="lFU-yG-8vB"/>
+                        <outlet property="scream" destination="sGH-aI-PAQ" id="PzD-ge-UJ5"/>
+                        <outlet property="selfInjury" destination="Los-8c-Gfq" id="6ko-AS-n2L"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yKD-IH-pFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uh3-Ul-nmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7113" y="1165"/>
+            <point key="canvasLocation" x="7684" y="1645.7271364317842"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iuy-Mu-gII">
@@ -604,7 +699,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxU-5w-Y88" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3409" y="881"/>
+            <point key="canvasLocation" x="3409" y="1348"/>
+        </scene>
+        <!--NewRecordNavigation-->
+        <scene sceneID="sVF-Fn-Toc">
+            <objects>
+                <navigationController title="NewRecordNavigation" automaticallyAdjustsScrollViewInsets="NO" id="nTD-vW-i05" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PRu-7H-phA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cRf-lU-HDj" kind="relationship" relationship="rootViewController" id="QqI-9x-b6i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gZm-gu-I4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5529" y="1646"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
