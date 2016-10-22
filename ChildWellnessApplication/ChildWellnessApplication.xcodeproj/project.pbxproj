@@ -27,6 +27,7 @@
 		F61B20471DBB2184001A9FBE /* SocialObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20461DBB2184001A9FBE /* SocialObject.swift */; };
 		F61B20491DBB2741001A9FBE /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20481DBB2741001A9FBE /* EmotionViewController.swift */; };
 		F61B204B1DBB33A5001A9FBE /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B204A1DBB33A5001A9FBE /* SocialViewController.swift */; };
+		F61B204D1DBB3966001A9FBE /* CommunicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B204C1DBB3966001A9FBE /* CommunicationViewController.swift */; };
 		F639F3E01DB6DDAD005741AC /* RecordObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3DF1DB6DDAD005741AC /* RecordObject.swift */; };
 		F639F3E21DB6E05D005741AC /* ActivityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E11DB6E05D005741AC /* ActivityObject.swift */; };
 		F639F3E41DB71B9F005741AC /* SelectActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */; };
@@ -100,6 +101,7 @@
 		F61B20461DBB2184001A9FBE /* SocialObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialObject.swift; sourceTree = "<group>"; };
 		F61B20481DBB2741001A9FBE /* EmotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		F61B204A1DBB33A5001A9FBE /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
+		F61B204C1DBB3966001A9FBE /* CommunicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationViewController.swift; sourceTree = "<group>"; };
 		F639F3DF1DB6DDAD005741AC /* RecordObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordObject.swift; sourceTree = "<group>"; };
 		F639F3E11DB6E05D005741AC /* ActivityObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityObject.swift; sourceTree = "<group>"; };
 		F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectActionViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				F6E9E3EF1DB9B2C200C67026 /* ActivityViewController.swift */,
 				F61B20481DBB2741001A9FBE /* EmotionViewController.swift */,
 				F61B204A1DBB33A5001A9FBE /* SocialViewController.swift */,
+				F61B204C1DBB3966001A9FBE /* CommunicationViewController.swift */,
 			);
 			name = "Record Creation";
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				F639F3E21DB6E05D005741AC /* ActivityObject.swift in Sources */,
 				F61B20431DBB1EC6001A9FBE /* EmotionObject.swift in Sources */,
 				0AA9484B1D9B6B01007E0799 /* SignUpViewController.swift in Sources */,
+				F61B204D1DBB3966001A9FBE /* CommunicationViewController.swift in Sources */,
 				0A388FFC1D98D620007E126A /* ViewController.swift in Sources */,
 				F6E9E3EC1DB99B9A00C67026 /* RecordEntryView.swift in Sources */,
 				0A388FFA1D98D620007E126A /* AppDelegate.swift in Sources */,

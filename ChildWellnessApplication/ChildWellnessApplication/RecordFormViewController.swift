@@ -50,14 +50,18 @@ class RecordFormViewController: UIViewController {
                     destination.existingActivity = self.record.activity
                 }
             }
-            if let destination = segue.destination as? EmotionViewController{
+            else if let destination = segue.destination as? EmotionViewController{
                 if (self.record.emotion != nil){
                     destination.existingEmotion = self.record.emotion
                 }
             }
-            if let destination = segue.destination as? SocialViewController{
+            else if let destination = segue.destination as? SocialViewController{
                 if (self.record.social != nil){
                     destination.existingSocial = self.record.social                }
+            }
+            else if let destination = segue.destination as? CommunicationViewController{
+                if (self.record.communication != nil){
+                    destination.existingCommunication = self.record.communication               }
             }
             
         }
