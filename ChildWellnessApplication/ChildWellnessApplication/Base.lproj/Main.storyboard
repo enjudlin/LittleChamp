@@ -579,7 +579,7 @@
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="ULo-Fh-w5X" kind="show" identifier="activityForm" id="MTO-tF-Qhs"/>
+                                            <segue destination="L4j-n9-jGh" kind="show" id="GNM-yc-Py2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRF-iv-AoX">
@@ -627,85 +627,68 @@
             <point key="canvasLocation" x="6693.6000000000004" y="1645.7271364317842"/>
         </scene>
         <!--Activity View Controller-->
-        <scene sceneID="KfV-e8-ClY">
+        <scene sceneID="3ug-YT-9bO">
             <objects>
-                <viewController id="ULo-Fh-w5X" customClass="ActivityViewController" customModule="ChildWellnessApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="L4j-n9-jGh" customClass="ActivityViewController" customModule="ChildWellnessApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="miO-WR-pcm"/>
-                        <viewControllerLayoutGuide type="bottom" id="vmb-iE-FK7"/>
+                        <viewControllerLayoutGuide type="top" id="31X-3A-QYL"/>
+                        <viewControllerLayoutGuide type="bottom" id="mkH-it-5EJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Mu0-F1-bZS">
+                    <view key="view" contentMode="scaleToFill" id="nWd-bD-cVG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="68p-dS-6ZF">
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jve-RE-Od8">
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5R-Qs-wlZ" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="TzI-Q6-4qU"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEU-5w-1zP" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="EfB-cc-KGh"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Los-8c-Gfq" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="87b-ta-oyq"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKT-F9-IcB" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="N78-0Y-Kdo"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGH-aI-PAQ" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="8HG-rB-SDg"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="343" id="xO6-Wo-kq2"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Jve-RE-Od8" secondAttribute="bottom" constant="421" id="20Q-FU-Gcm"/>
-                                    <constraint firstItem="Jve-RE-Od8" firstAttribute="top" secondItem="68p-dS-6ZF" secondAttribute="top" constant="8" id="EsM-ul-x3I"/>
-                                    <constraint firstItem="Jve-RE-Od8" firstAttribute="leading" secondItem="68p-dS-6ZF" secondAttribute="leading" id="noY-GP-nyp"/>
-                                    <constraint firstAttribute="trailing" secondItem="Jve-RE-Od8" secondAttribute="trailing" id="rl3-HX-Ure"/>
-                                </constraints>
-                            </scrollView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8vi-cq-ZYd" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="68" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alr-xb-2eh" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="176" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fxx-VW-uP3" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="283" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQi-f1-NLZ" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="391" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Clg-0Z-Rk9" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="499" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="68p-dS-6ZF" firstAttribute="leading" secondItem="Mu0-F1-bZS" secondAttribute="leadingMargin" id="F4e-K5-Lo0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="68p-dS-6ZF" secondAttribute="trailing" id="SDn-9h-dCh"/>
-                            <constraint firstItem="68p-dS-6ZF" firstAttribute="top" secondItem="miO-WR-pcm" secondAttribute="bottom" constant="50" id="agf-1G-mXN"/>
-                            <constraint firstItem="vmb-iE-FK7" firstAttribute="top" secondItem="68p-dS-6ZF" secondAttribute="bottom" constant="20" id="fKT-sB-JvZ"/>
-                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="OzT-Gg-vUz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="a0p-je-T1T">
+                            <connections>
+                                <segue destination="AKW-c0-IPl" kind="unwind" unwindAction="unwindToRecordFormWithSender:" id="kdu-EX-XMI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="abnormalMovements" destination="oEU-5w-1zP" id="02W-K5-XNB"/>
-                        <outlet property="excessivelyActive" destination="G5R-Qs-wlZ" id="7Rj-XS-k4r"/>
-                        <outlet property="inactive" destination="ZKT-F9-IcB" id="lFU-yG-8vB"/>
-                        <outlet property="scream" destination="sGH-aI-PAQ" id="PzD-ge-UJ5"/>
-                        <outlet property="scrollView" destination="68p-dS-6ZF" id="0rO-DU-bS2"/>
-                        <outlet property="selfInjury" destination="Los-8c-Gfq" id="6ko-AS-n2L"/>
+                        <outlet property="abnormalRepMov" destination="alr-xb-2eh" id="hzy-wq-evb"/>
+                        <outlet property="doneButton" destination="a0p-je-T1T" id="N8B-I3-muc"/>
+                        <outlet property="excessivelyActive" destination="8vi-cq-ZYd" id="IFy-VL-lF6"/>
+                        <outlet property="scream" destination="Clg-0Z-Rk9" id="A2e-FS-77I"/>
+                        <outlet property="selfInjury" destination="Fxx-VW-uP3" id="cav-jK-BFh"/>
+                        <outlet property="sluggish" destination="RQi-f1-NLZ" id="DGx-Lc-nx3"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uh3-Ul-nmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIH-lL-dZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="AKW-c0-IPl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7684" y="1645.7271364317842"/>
+            <point key="canvasLocation" x="7649" y="1646"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iuy-Mu-gII">

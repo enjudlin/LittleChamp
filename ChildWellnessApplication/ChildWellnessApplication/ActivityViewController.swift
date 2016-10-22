@@ -11,25 +11,26 @@ import UIKit
 class ActivityViewController: UIViewController {
 
     //MARK: Properties
-    
+ 
     @IBOutlet weak var excessivelyActive: RecordEntryView!
-    @IBOutlet weak var abnormalMovements: RecordEntryView!
+    @IBOutlet weak var abnormalRepMov: RecordEntryView!
     @IBOutlet weak var selfInjury: RecordEntryView!
-    @IBOutlet weak var inactive: RecordEntryView!
+    @IBOutlet weak var sluggish: RecordEntryView!
     @IBOutlet weak var scream: RecordEntryView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+
 
     //Helper method to create an activity object from the form values
     func initActivityObject()-> ActivityObject{
         let activity = ActivityObject()
         activity.excessivelyActive = excessivelyActive.getSeverity()
         activity.excessivelyActiveDesc = excessivelyActive.getExplanation()
-        activity.abnormalRepMov = abnormalMovements.getSeverity()
-        activity.abnormalRepMovDesc = abnormalMovements.getExplanation()
+        activity.abnormalRepMov = abnormalRepMov.getSeverity()
+        activity.abnormalRepMovDesc = abnormalRepMov.getExplanation()
         activity.selfInjury = selfInjury.getSeverity()
         activity.selfInjuryDesc = selfInjury.getExplanation()
-        activity.sluggish = inactive.getSeverity()
-        activity.sluggishDesc = inactive.getExplanation()
+        activity.sluggish = sluggish.getSeverity()
+        activity.sluggishDesc = sluggish.getExplanation()
         activity.screams = scream.getSeverity()
         activity.screamsDesc = scream.getExplanation()
         return activity
@@ -37,15 +38,14 @@ class ActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Allow selection in scroll view
 
         // Change the name labels
         excessivelyActive.setItemName(name: "Excessively Active")
-        abnormalMovements.setItemName(name: "Abnormal Repetitive Movements")
+        abnormalRepMov.setItemName(name: "Abnormal Repetitive Movements")
         selfInjury.setItemName(name: "Self-Injury")
-        inactive.setItemName(name: "Sluggish, Inactive")
+        sluggish.setItemName(name: "Sluggish, Inactive")
         scream.setItemName(name: "Screams Inappropriately")
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,10 +57,16 @@ class ActivityViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Set the record's activity data with the data currently in the form
-        if let recordForm = segue.destination as? RecordFormViewController{
-            recordForm.record.activity = initActivityObject()
+        //Set the record's activity data with the data currently in the form if the "Done" button is pressed
+        if let barButton = sender as? UIBarButtonItem{
+            if barButton === doneButton{
+                if let recordForm = segue.destination as? RecordFormViewController{
+                    recordForm.record.activity = initActivityObject()
+                } 
+            }
         }
+        
+        
     }
 
 }

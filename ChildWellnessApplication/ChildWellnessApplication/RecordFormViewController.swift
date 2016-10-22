@@ -40,5 +40,10 @@ class RecordFormViewController: UIViewController {
             }
         }
     }
+    
+    //Landing point for returning to this view from a subrecord form (activity, communication, etc)
+    @IBAction func unwindToRecordForm(sender: UIStoryboardSegue) {
+        
+    }
 
 }
