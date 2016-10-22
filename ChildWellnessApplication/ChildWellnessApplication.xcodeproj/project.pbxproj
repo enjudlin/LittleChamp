@@ -162,28 +162,18 @@
 		0A388FF81D98D620007E126A /* ChildWellnessApplication */ = {
 			isa = PBXGroup;
 			children = (
+				F61B20411DBB1327001A9FBE /* Children */,
+				F61B20401DBB12DE001A9FBE /* Record Creation */,
+				F61B203F1DBB124C001A9FBE /* User Controllers */,
+				F61B203E1DBB11D9001A9FBE /* Realm/ Database Objects */,
 				F6E9E3EA1DB99B4200C67026 /* ViewElements */,
-				F6FABCDC1DA701B200E0ABEB /* ChildFormViewController.swift */,
 				0A388FF91D98D620007E126A /* AppDelegate.swift */,
-				A04212771DAA013700F7F0FB /* RealmObjects.swift */,
 				0A388FFB1D98D620007E126A /* ViewController.swift */,
-				0AA9484A1D9B6B01007E0799 /* SignUpViewController.swift */,
-				F6F103881DAB300200DBB605 /* AppChild.swift */,
 				F686CA301DA35BE50060B57D /* .gitignore */,
-				F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */,
-				F639F3DF1DB6DDAD005741AC /* RecordObject.swift */,
-				F639F3E11DB6E05D005741AC /* ActivityObject.swift */,
-				F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */,
 				F6FABCDE1DA7167700E0ABEB /* Main.storyboard */,
-				F6E9E3F11DB9C9B100C67026 /* RecordFormViewController.swift */,
-				F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */,
-				F6FABCE11DA73F7400E0ABEB /* ChildProfileViewController.swift */,
 				0A3890001D98D620007E126A /* Assets.xcassets */,
 				0A3890021D98D620007E126A /* LaunchScreen.storyboard */,
 				0A3890051D98D620007E126A /* Info.plist */,
-				0A794CB31DA35D6D0038311C /* ChildModel.swift */,
-				0AF3058C1DA07A96008A4625 /* LoginViewController.swift */,
-				F6E9E3EF1DB9B2C200C67026 /* ActivityViewController.swift */,
 			);
 			path = ChildWellnessApplication;
 			sourceTree = "<group>";
@@ -206,11 +196,53 @@
 			path = ChildWellnessApplicationUITests;
 			sourceTree = "<group>";
 		};
+		F61B203E1DBB11D9001A9FBE /* Realm/ Database Objects */ = {
+			isa = PBXGroup;
+			children = (
+				A04212771DAA013700F7F0FB /* RealmObjects.swift */,
+				F6F103881DAB300200DBB605 /* AppChild.swift */,
+				F639F3DF1DB6DDAD005741AC /* RecordObject.swift */,
+				F639F3E11DB6E05D005741AC /* ActivityObject.swift */,
+			);
+			name = "Realm/ Database Objects";
+			sourceTree = "<group>";
+		};
+		F61B203F1DBB124C001A9FBE /* User Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0AA9484A1D9B6B01007E0799 /* SignUpViewController.swift */,
+				0AF3058C1DA07A96008A4625 /* LoginViewController.swift */,
+			);
+			name = "User Controllers";
+			sourceTree = "<group>";
+		};
+		F61B20401DBB12DE001A9FBE /* Record Creation */ = {
+			isa = PBXGroup;
+			children = (
+				F6E9E3F11DB9C9B100C67026 /* RecordFormViewController.swift */,
+				F6E9E3EF1DB9B2C200C67026 /* ActivityViewController.swift */,
+			);
+			name = "Record Creation";
+			sourceTree = "<group>";
+		};
+		F61B20411DBB1327001A9FBE /* Children */ = {
+			isa = PBXGroup;
+			children = (
+				F6FABCDC1DA701B200E0ABEB /* ChildFormViewController.swift */,
+				F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */,
+				F6FABCE11DA73F7400E0ABEB /* ChildProfileViewController.swift */,
+				F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */,
+				0A794CB31DA35D6D0038311C /* ChildModel.swift */,
+			);
+			name = Children;
+			sourceTree = "<group>";
+		};
 		F6E9E3EA1DB99B4200C67026 /* ViewElements */ = {
 			isa = PBXGroup;
 			children = (
 				F6E9E3EB1DB99B9A00C67026 /* RecordEntryView.swift */,
 				F6E9E3ED1DB99BB200C67026 /* RecordEntryView.xib */,
+				F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */,
 			);
 			name = ViewElements;
 			sourceTree = "<group>";
