@@ -584,9 +584,15 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRF-iv-AoX">
                                         <state key="normal" title="Emotion"/>
+                                        <connections>
+                                            <segue destination="qUX-Ap-iob" kind="show" identifier="editEmotion" id="FeI-4O-v0g"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l45-wd-BKd">
                                         <state key="normal" title="Social"/>
+                                        <connections>
+                                            <segue destination="thP-7P-8bQ" kind="show" identifier="editSocial" id="R0H-4y-EEy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TY9-cp-znD">
                                         <state key="normal" title="Communication"/>
@@ -625,6 +631,131 @@
                 <exit id="Gnt-uD-SSL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6693.6000000000004" y="1645.7271364317842"/>
+        </scene>
+        <!--Emotion View Controller-->
+        <scene sceneID="THh-Ha-3Ii">
+            <objects>
+                <viewController id="qUX-Ap-iob" customClass="EmotionViewController" customModule="ChildWellnessApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tGf-fB-6fI"/>
+                        <viewControllerLayoutGuide type="bottom" id="uKD-pv-TIV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xJt-Wj-plp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mfC-wt-54R" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="72" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdq-xh-VSA" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="180" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZg-bQ-cdP" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="288" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AsM-Ez-BaF" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="396" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5jC-1a-55W" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="504" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="XyE-mw-Jb6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="UUJ-jO-CZc">
+                            <connections>
+                                <segue destination="E8Q-Iv-Zfh" kind="unwind" unwindAction="unwindToRecordFormWithSender:" id="drr-4m-cEn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="crying" destination="AsM-Ez-BaF" id="0bY-Eg-PX0"/>
+                        <outlet property="depressed" destination="rdq-xh-VSA" id="2Lc-lE-cOW"/>
+                        <outlet property="doneButton" destination="UUJ-jO-CZc" id="CP4-lv-ioL"/>
+                        <outlet property="emResponse" destination="hZg-bQ-cdP" id="SeE-OU-1WX"/>
+                        <outlet property="moodChanges" destination="5jC-1a-55W" id="8aP-JZ-oaf"/>
+                        <outlet property="tantrum" destination="mfC-wt-54R" id="gjm-if-kfG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WZw-09-6qZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="E8Q-Iv-Zfh" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="8414" y="1387"/>
+        </scene>
+        <!--Social View Controller-->
+        <scene sceneID="vXN-8B-Wi6">
+            <objects>
+                <viewController id="thP-7P-8bQ" customClass="SocialViewController" customModule="ChildWellnessApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PAi-0p-zrI"/>
+                        <viewControllerLayoutGuide type="bottom" id="4QM-si-rlb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OBp-53-dFH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WRC-hF-kUQ" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="72" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ujB-RZ-42G" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="180" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHu-pB-y5K" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="288" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9OY-Wt-W2P" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="396" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibI-6k-fTd" customClass="RecordEntryView" customModule="ChildWellnessApplication" customModuleProvider="target">
+                                <frame key="frameInset" minX="16" minY="504" width="343" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wDg-4d-Th4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="WA6-g2-SsG">
+                            <connections>
+                                <segue destination="Kll-Jp-qCG" kind="unwind" unwindAction="unwindToRecordFormWithSender:" id="9rB-08-t8I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="argue" destination="WRC-hF-kUQ" id="iMM-6P-bhx"/>
+                        <outlet property="defiant" destination="ujB-RZ-42G" id="t1U-Xa-iMX"/>
+                        <outlet property="doneButton" destination="WA6-g2-SsG" id="VSP-xG-mVq"/>
+                        <outlet property="harmOthers" destination="ibI-6k-fTd" id="L6h-h4-jft"/>
+                        <outlet property="resistContact" destination="9OY-Wt-W2P" id="rRw-Ky-K8p"/>
+                        <outlet property="withdrawn" destination="EHu-pB-y5K" id="4di-xP-Tw0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ODN-uA-lbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Kll-Jp-qCG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="8378" y="2158"/>
         </scene>
         <!--Activity View Controller-->
         <scene sceneID="3ug-YT-9bO">
@@ -688,7 +819,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIH-lL-dZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AKW-c0-IPl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7649" y="1646"/>
+            <point key="canvasLocation" x="7658" y="739"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iuy-Mu-gII">

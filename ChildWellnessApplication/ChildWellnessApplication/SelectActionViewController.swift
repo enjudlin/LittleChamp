@@ -43,7 +43,8 @@ class SelectActionViewController: UIViewController {
         else if segue.identifier == "newRecord"{
             if let navController = segue.destination as? UINavigationController{
                 if let recordForm = navController.viewControllers.first as? RecordFormViewController{
-                    recordForm.record.child = child?.appChild
+                    //Set the record's child reference
+                    recordForm.child = child?.appChild
                 }
             }
         }

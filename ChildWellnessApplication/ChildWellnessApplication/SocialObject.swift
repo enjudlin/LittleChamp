@@ -22,6 +22,6 @@ class SocialObject: Object {
     dynamic var argueDesc = ""
     dynamic var defiantDesc = ""
     dynamic var withdrawnDesc = ""
-    dynamic var resisitContactDesc = ""
+    dynamic var resistContactDesc = ""
     dynamic var harmOthersDesc = ""
 }

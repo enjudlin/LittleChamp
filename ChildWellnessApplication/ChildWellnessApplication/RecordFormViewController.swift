@@ -12,6 +12,7 @@ import RealmSwift
 class RecordFormViewController: UIViewController {
     
     //MARK: Properties
+    var child: AppChild?
     var record = RecordObject()
 
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -35,6 +36,9 @@ class RecordFormViewController: UIViewController {
         //Only save the record if the save button was clicked
         if let barButton = sender as? UIBarButtonItem{
             if saveButton === barButton {
+                //Set record's child
+                record.child = self.child
+                
                 //Save record to database
                 record.create()
             }
@@ -46,6 +50,16 @@ class RecordFormViewController: UIViewController {
                     destination.existingActivity = self.record.activity
                 }
             }
+            if let destination = segue.destination as? EmotionViewController{
+                if (self.record.emotion != nil){
+                    destination.existingEmotion = self.record.emotion
+                }
+            }
+            if let destination = segue.destination as? SocialViewController{
+                if (self.record.social != nil){
+                    destination.existingSocial = self.record.social                }
+            }
+            
         }
     }
     
