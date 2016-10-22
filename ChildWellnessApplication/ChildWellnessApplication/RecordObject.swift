@@ -13,6 +13,9 @@ class RecordObject: Object {
     dynamic var child: AppChild?
     dynamic var dateCreated = Date()
     dynamic var activity: ActivityObject?
+    dynamic var emotion: EmotionObject?
+    dynamic var communication: CommunicationObject?
+    dynamic var social: SocialObject?
     
     //Save record in Realm database
     func create(){
@@ -23,6 +26,17 @@ class RecordObject: Object {
             if let act = self.activity{
                 realm.add(act)
             }
+            if let em = self.emotion{
+                realm.add(em)
+            }
+            if let com = self.communication{
+                realm.add(com)
+            }
+            if let soc = self.social{
+                realm.add(soc)
+            }
+            
+            //Set timestamp
             self.dateCreated = Date()
             realm.add(self)
         }

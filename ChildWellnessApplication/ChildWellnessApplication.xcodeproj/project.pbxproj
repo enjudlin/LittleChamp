@@ -22,6 +22,9 @@
 		A04212731DA9F58F00F7F0FB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; };
 		A04212741DA9F58F00F7F0FB /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A04212781DAA013700F7F0FB /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04212771DAA013700F7F0FB /* RealmObjects.swift */; };
+		F61B20431DBB1EC6001A9FBE /* EmotionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20421DBB1EC6001A9FBE /* EmotionObject.swift */; };
+		F61B20451DBB208F001A9FBE /* CommunicationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20441DBB208F001A9FBE /* CommunicationObject.swift */; };
+		F61B20471DBB2184001A9FBE /* SocialObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20461DBB2184001A9FBE /* SocialObject.swift */; };
 		F639F3E01DB6DDAD005741AC /* RecordObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3DF1DB6DDAD005741AC /* RecordObject.swift */; };
 		F639F3E21DB6E05D005741AC /* ActivityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E11DB6E05D005741AC /* ActivityObject.swift */; };
 		F639F3E41DB71B9F005741AC /* SelectActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */; };
@@ -90,6 +93,9 @@
 		A042126D1DA9F56E00F7F0FB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		A042126E1DA9F56E00F7F0FB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		A04212771DAA013700F7F0FB /* RealmObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
+		F61B20421DBB1EC6001A9FBE /* EmotionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionObject.swift; sourceTree = "<group>"; };
+		F61B20441DBB208F001A9FBE /* CommunicationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationObject.swift; sourceTree = "<group>"; };
+		F61B20461DBB2184001A9FBE /* SocialObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialObject.swift; sourceTree = "<group>"; };
 		F639F3DF1DB6DDAD005741AC /* RecordObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordObject.swift; sourceTree = "<group>"; };
 		F639F3E11DB6E05D005741AC /* ActivityObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityObject.swift; sourceTree = "<group>"; };
 		F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectActionViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +209,9 @@
 				F6F103881DAB300200DBB605 /* AppChild.swift */,
 				F639F3DF1DB6DDAD005741AC /* RecordObject.swift */,
 				F639F3E11DB6E05D005741AC /* ActivityObject.swift */,
+				F61B20421DBB1EC6001A9FBE /* EmotionObject.swift */,
+				F61B20441DBB208F001A9FBE /* CommunicationObject.swift */,
+				F61B20461DBB2184001A9FBE /* SocialObject.swift */,
 			);
 			name = "Realm/ Database Objects";
 			sourceTree = "<group>";
@@ -404,6 +413,7 @@
 				F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */,
 				F6F103891DAB300200DBB605 /* AppChild.swift in Sources */,
 				F639F3E01DB6DDAD005741AC /* RecordObject.swift in Sources */,
+				F61B20471DBB2184001A9FBE /* SocialObject.swift in Sources */,
 				F6E9E3F21DB9C9B100C67026 /* RecordFormViewController.swift in Sources */,
 				F6E9E3F01DB9B2C200C67026 /* ActivityViewController.swift in Sources */,
 				F6FABCDD1DA701B200E0ABEB /* ChildFormViewController.swift in Sources */,
@@ -411,8 +421,10 @@
 				F6FABCE21DA73F7400E0ABEB /* ChildProfileViewController.swift in Sources */,
 				F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */,
 				0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */,
+				F61B20451DBB208F001A9FBE /* CommunicationObject.swift in Sources */,
 				F639F3E41DB71B9F005741AC /* SelectActionViewController.swift in Sources */,
 				F639F3E21DB6E05D005741AC /* ActivityObject.swift in Sources */,
+				F61B20431DBB1EC6001A9FBE /* EmotionObject.swift in Sources */,
 				0AA9484B1D9B6B01007E0799 /* SignUpViewController.swift in Sources */,
 				0A388FFC1D98D620007E126A /* ViewController.swift in Sources */,
 				F6E9E3EC1DB99B9A00C67026 /* RecordEntryView.swift in Sources */,
