@@ -12,6 +12,7 @@ class ChildProfileViewController: UIViewController {
     
     //MARK: -Properties
     var child: Child?
+    var user: AppUser?
     
     @IBOutlet weak var birthdate: UITextField!
     @IBOutlet weak var age: UITextField!
@@ -32,14 +33,17 @@ class ChildProfileViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let childFormViewController = segue.destination as? ChildFormViewController{
+            childFormViewController.child = child
+            childFormViewController.user = user
+            childFormViewController.editMode = true
+        }
     }
-    */
+    
 
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ChildFormViewController: UIViewController, UITextFieldDelegate {
     
@@ -19,9 +20,11 @@ class ChildFormViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var birthDateFieldLabel: UILabel!
     @IBOutlet weak var birthDatePicker: UIDatePicker!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var pageTitle: UINavigationItem!
     
     //Pass the parent from the table view
     var user: AppUser?
+    var editMode = false
     
     
     /*
@@ -40,6 +43,20 @@ class ChildFormViewController: UIViewController, UITextFieldDelegate {
         
         // Enable the Save button only if the text field has a valid name.
         checkValidName()
+        
+        //if edit mode, display values of child
+        if editMode {
+            saveButton.isEnabled = true
+            pageTitle.title = "Edit Child"
+            nameTextField.text = child?.name
+            if child?.gender == "male"{
+                genderSelectField.selectedSegmentIndex = 0;
+            }
+            else{
+                genderSelectField.selectedSegmentIndex = 1;
+            }
+            birthDatePicker.date = (child?.birthDate)!
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,16 +101,28 @@ class ChildFormViewController: UIViewController, UITextFieldDelegate {
         
         if let barButton = sender as? UIBarButtonItem{
             if saveButton === barButton {
-                let name = nameTextField.text ?? ""
-                let gender = genderSelectField.titleForSegment(at: genderSelectField.selectedSegmentIndex)?.lowercased()
-                let birthDate = birthDatePicker.date
-                // Set the child to be passed to ChildProfileTableViewController after the unwind segue.
-                child = Child(name: name, gender: gender!, birthDate: birthDate, parent: self.user!)
-                //Save child in Realm database
-                child!.createChild()
+                if  editMode != true{
+                    let name = nameTextField.text ?? ""
+                    let gender = genderSelectField.titleForSegment(at: genderSelectField.selectedSegmentIndex)?.lowercased()
+                    let birthDate = birthDatePicker.date
+                    // Set the child to be passed to ChildProfileTableViewController after the unwind segue.
+                    child = Child(name: name, gender: gender!, birthDate: birthDate, parent: self.user!)
+                    //Save child in Realm database
+                    child!.createChild()
+                }
+                else{
+                    child!.updateChild(child: Child(name: nameTextField.text!, gender: (genderSelectField.titleForSegment(at: genderSelectField.selectedSegmentIndex)?.lowercased())!, birthDate: birthDatePicker.date, parent: self.user!)!, name: (child?.name)!)
+                }
             }
         }
-        
+        if let childProfileTableViewController = segue.destination as? ChildProfileTableViewController{
+            if editMode{
+                childProfileTableViewController.senderWasEditing = true
+            }
+            else{
+                childProfileTableViewController.senderWasEditing = false
+            }
+        }
     }
     
 
