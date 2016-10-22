@@ -42,5 +42,11 @@ class RecordEntryView: UIView {
     func getExplanation()->String{
         return explanation.text!
     }
+    
+    //Helper to set existing values
+    func setExistingValues(severity: Int, text: String){
+        severitySelect.selectedSegmentIndex = severity
+        explanation.text = text
+    }
 
 }

@@ -39,6 +39,14 @@ class RecordFormViewController: UIViewController {
                 record.create()
             }
         }
+        else{
+            //Pass the existing cooresponding object to the view controller if one already exists.
+            if let destination = segue.destination as? ActivityViewController{
+                if (self.record.activity != nil){
+                    destination.existingActivity = self.record.activity
+                }
+            }
+        }
     }
     
     //Landing point for returning to this view from a subrecord form (activity, communication, etc)
