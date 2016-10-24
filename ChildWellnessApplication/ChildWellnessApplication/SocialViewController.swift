@@ -61,9 +61,19 @@ class SocialViewController: UIViewController {
         // Change the name labels
         argue.setItemName(name: "Argue with Others")
         defiant.setItemName(name: "Defiant, Difficult to Control")
-        withdrawn.setItemName(name: "Withdrawn, Refuse Contact with Others")
+        withdrawn.setItemName(name: "Withdrawn, Refuse Social Contact")
         resistContact.setItemName(name: "Resist Physical Contact")
         harmOthers.setItemName(name: "Physically Hurt Others")
+        argue.infoDescription = "Unwilling to accept opposing views, must be right"
+        defiant.infoDescription = "Stubborness, unwilling to listen to instruction"
+        withdrawn.infoDescription = "Fear of, or withdraw from, people or social issues"
+        resistContact.infoDescription = "Retracts from attempts to touch"
+        harmOthers.infoDescription = "Lashes out physically, strikes, bites, scratches others"
+        argue.presenter = self
+        defiant.presenter = self
+        withdrawn.presenter = self
+        resistContact.presenter = self
+        harmOthers.presenter = self
         
         // Fill in the form with existing values if they are available
         fillExistingValues()

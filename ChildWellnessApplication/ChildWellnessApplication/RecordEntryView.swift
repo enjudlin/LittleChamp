@@ -12,8 +12,11 @@ class RecordEntryView: UIView {
     @IBOutlet var recordEntry: UIView!
 
     @IBOutlet weak var itemName: UILabel!
+    @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var explanation: UITextField!
     @IBOutlet weak var severitySelect: UISegmentedControl!
+    var infoDescription: String?
+    var presenter: UIViewController?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -49,4 +52,10 @@ class RecordEntryView: UIView {
         explanation.text = text
     }
 
+    @IBAction func displayInfo(_ sender: AnyObject) {
+            let myAlert = UIAlertController(title: itemName.text, message: infoDescription, preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "ok", style:UIAlertActionStyle.default, handler:nil)
+            myAlert.addAction(okAction)
+            presenter?.present(myAlert, animated: true, completion:nil)
+        }
 }
