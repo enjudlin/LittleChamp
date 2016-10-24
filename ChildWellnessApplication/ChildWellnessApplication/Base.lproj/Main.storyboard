@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E0j-3N-8yl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="E0j-3N-8yl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -137,7 +137,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dRb-u7-MxY" id="ekj-at-bgc">
-                                    <frame key="frameInset" width="375" height="90"/>
+                                    <frame key="frameInset" width="375" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtM-80-UX1">
@@ -258,6 +258,7 @@
                         <outlet property="genderFieldLabel" destination="J9s-MI-EwA" id="3HF-SR-o4a"/>
                         <outlet property="genderSelectField" destination="LcK-bn-itQ" id="T7i-ZK-i7H"/>
                         <outlet property="nameTextField" destination="79e-5a-M93" id="2Wo-wV-bqz"/>
+                        <outlet property="pageTitle" destination="vQw-8v-FLk" id="nQ8-0V-0Ks"/>
                         <outlet property="saveButton" destination="VUt-XP-aEE" id="nXZ-c4-Qmv"/>
                     </connections>
                 </viewController>
@@ -542,6 +543,11 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="i2P-WE-FyN">
                             <connections>
                                 <segue destination="DL4-gM-QMN" kind="unwind" unwindAction="unwindToActionListWithSender:" id="ENW-cm-v88"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="snN-B4-sVT">
+                            <connections>
+                                <segue destination="uYj-mI-G50" kind="show" id="y1x-bC-K0U"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -925,5 +931,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="j6P-Vq-CHD"/>
+        <segue reference="y1x-bC-K0U"/>
     </inferredMetricsTieBreakers>
 </document>

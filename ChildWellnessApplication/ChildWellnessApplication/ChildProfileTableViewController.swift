@@ -15,11 +15,12 @@ class ChildProfileTableViewController: UITableViewController {
     
     var user: AppUser?
     var children = [Child]()
+    var senderWasEditing = false;
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         children.append(contentsOf: self.user!.children())
+        
         
         //Load sample data
         //loadSampleChildren()
@@ -125,6 +126,7 @@ class ChildProfileTableViewController: UITableViewController {
                         let indexPath = tableView.indexPath(for: selectedChildCell)!
                         let selectedChild = children[indexPath.row]
                         selectActionController.child = selectedChild
+                        selectActionController.user = user
                 
                     }
                 }
@@ -148,10 +150,17 @@ class ChildProfileTableViewController: UITableViewController {
         if let sourceViewController = sender.source as? ChildFormViewController, let child = sourceViewController.child {
             
             
-            // Add a new child.
-            let newIndexPath = IndexPath(row: children.count, section: 0)
-            children.append(child)
-            tableView.insertRows(at: [newIndexPath], with: .bottom)
+            // Add a new child if new child was added.
+            if senderWasEditing != true{
+                let newIndexPath = IndexPath(row: children.count, section: 0)
+                children.append(child)
+                tableView.insertRows(at: [newIndexPath], with: .bottom)
+            }
+            //update child list with edited child
+            else{
+                children = (user?.children())!
+                self.tableView.reloadData()
+            }
 
         }
         

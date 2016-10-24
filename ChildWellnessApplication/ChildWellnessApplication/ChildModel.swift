@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class Child {
+class Child{
     // MARK: Properties
     var name: String
     var gender: String
@@ -90,6 +90,20 @@ class Child {
         appChild.parent = self.parent
         try! realm.write{
             realm.add(appChild)
+        }
+    }
+    
+    //Function that will update a child in the realm database
+    //child is a child object with the properties of the updated child
+    //name is a string representing the name of the child currently in the database
+    func updateChild(child: Child, name: String){
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "name = %@", name)
+        let childToUpdate = realm.objects(AppChild.self).filter(predicate).first
+        try! realm.write {
+            childToUpdate!.name = child.name
+            childToUpdate!.gender = child.gender
+            childToUpdate!.birthdate = child.birthDate
         }
     }
     

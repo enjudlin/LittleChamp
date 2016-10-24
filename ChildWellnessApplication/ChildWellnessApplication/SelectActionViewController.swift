@@ -12,6 +12,7 @@ class SelectActionViewController: UIViewController {
     
     //MARK: Properties
     var child: Child?
+    var user: AppUser?
     
     @IBOutlet weak var viewInfoButton: UIButton!
 
@@ -38,6 +39,7 @@ class SelectActionViewController: UIViewController {
         if segue.identifier == "viewInfo"{
             if let childProfileViewController = segue.destination as? ChildProfileViewController{
                 childProfileViewController.child = child
+                childProfileViewController.user = user
             }
         }
         else if segue.identifier == "newRecord"{
