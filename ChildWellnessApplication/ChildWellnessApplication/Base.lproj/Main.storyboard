@@ -131,24 +131,28 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zea-Jd-WJ5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChildProfileTableViewCell" rowHeight="90" id="dRb-u7-MxY" customClass="ChildProfileTableViewCell" customModule="ChildWellnessApplication" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dRb-u7-MxY" id="ekj-at-bgc">
-                                    <frame key="frameInset" width="375" height="89"/>
+                                    <frame key="frameInset" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtM-80-UX1">
                                             <frame key="frameInset" minX="8" minY="34" width="359" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="nameLabel" destination="gtM-80-UX1" id="fMA-qx-MP6"/>
                                     <segue destination="uJs-K8-cn8" kind="show" identifier="ShowChild" id="EtE-1C-4C9"/>
@@ -232,7 +236,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YEv-eR-dlh" firstAttribute="top" secondItem="Bos-Ei-y7q" secondAttribute="bottom" constant="60" id="IIf-av-nTe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YEv-eR-dlh" secondAttribute="trailing" id="pFH-AN-9QQ"/>
@@ -461,7 +465,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ojk-Zt-BsJ" firstAttribute="leading" secondItem="Xc6-9j-dbl" secondAttribute="leadingMargin" constant="16" id="63j-25-Tf5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ojk-Zt-BsJ" secondAttribute="trailing" constant="16" id="X48-TU-SSQ"/>
@@ -531,7 +535,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Y2J-cN-KJ7" firstAttribute="top" secondItem="yes-df-jj8" secondAttribute="bottom" constant="68" id="2IF-08-UM1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y2J-cN-KJ7" secondAttribute="trailing" id="hQh-6X-ClO"/>
@@ -578,12 +582,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="McW-6M-Na2">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8x-7H-tN7">
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Activity">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Activity"/>
                                         <connections>
                                             <segue destination="L4j-n9-jGh" kind="show" id="GNM-yc-Py2"/>
                                         </connections>
@@ -613,7 +613,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="McW-6M-Na2" firstAttribute="leading" secondItem="i0q-Cz-r5E" secondAttribute="leading" constant="16" id="Dsd-Yb-ahx"/>
                             <constraint firstItem="McW-6M-Na2" firstAttribute="top" secondItem="sl2-q2-fiB" secondAttribute="bottom" constant="70" id="pv0-dY-CWb"/>
@@ -679,7 +679,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="XyE-mw-Jb6">
@@ -742,7 +742,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="AHZ-yA-y1o">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Fkx-Ll-k8T">
@@ -804,7 +804,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="wDg-4d-Th4">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="WA6-g2-SsG">
@@ -866,7 +866,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="OzT-Gg-vUz">
