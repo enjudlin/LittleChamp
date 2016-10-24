@@ -44,7 +44,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
-            <color key="backgroundColor" red="0.52835418889999997" green="0.66418855139999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.96470588239999999" green="0.93725490199999995" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
