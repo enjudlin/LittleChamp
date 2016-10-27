@@ -21,7 +21,6 @@ class ChildProfileTableViewController: UITableViewController {
         super.viewDidLoad()
         children.append(contentsOf: self.user!.children())
         
-        
         //Load sample data
         //loadSampleChildren()
 
