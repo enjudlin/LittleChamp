@@ -62,7 +62,16 @@ class ActivityViewController: UIViewController {
         selfInjury.setItemName(name: "Self-Injury")
         sluggish.setItemName(name: "Sluggish, Inactive")
         scream.setItemName(name: "Screams Inappropriately")
-        
+        excessivelyActive.infoDescription = "Excessively active for long period of time,restless, unable to sit still"
+        abnormalRepMov.infoDescription = "Stereotyped behavior, meaningless recurring body movements"
+        selfInjury.infoDescription = "Deliberately engage in activity that lead to physical injury to self"
+        sluggish.infoDescription = "Few movements, sits or stands in one position for a long period of time"
+        scream.infoDescription = "Yells or screams at inappropriate times, over minor annoyance or no apparent provocation, or screams for an extended period of time"
+        excessivelyActive.presenter = self
+        abnormalRepMov.presenter = self
+        selfInjury.presenter = self
+        sluggish.presenter = self
+        scream.presenter = self
         // Fill in the form with existing values if they are available
         fillExistingValues()
 

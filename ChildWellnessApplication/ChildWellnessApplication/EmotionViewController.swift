@@ -61,8 +61,18 @@ class EmotionViewController: UIViewController {
         tantrum.setItemName(name: "Temper Tantrums/ Outbursts")
         depressed.setItemName(name: "Depressed Mood")
         emResponse.setItemName(name: "Lacks Emotional Responsiveness")
-        crying.setItemName(name: "Excessive Crying Over Minor Annoyance")
+        crying.setItemName(name: "Excessive Crying Over Minor Irritant")
         moodChanges.setItemName(name: "Mood Changes Quickly")
+        tantrum.infoDescription = "Emotional outburst, stubborness, defiance, anger, resistance to attempts to pacify"
+        depressed.infoDescription = "Sad, anxious, irritable, restless"
+        emResponse.infoDescription = "Failure to express verbal or non verbal emotion in response to emotional events"
+        crying.infoDescription = "Crying about small things that normally wouldn't cause an emotional response"
+        moodChanges.infoDescription = "Mood swings from being happy to sad frequently"
+        tantrum.presenter = self
+        depressed.presenter = self
+        emResponse.presenter = self
+        crying.presenter = self
+        moodChanges.presenter = self
         
         // Fill in the form with existing values if they are available
         fillExistingValues()

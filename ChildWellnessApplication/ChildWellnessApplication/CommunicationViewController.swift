@@ -64,6 +64,17 @@ class CommunicationViewController: UIViewController {
         noCommunication.setItemName(name: "Does Not Try to Communicate")
         talkToSelf.setItemName(name: "Talks to Self Loudly")
         difficultyExpressing.setItemName(name: "Difficulty Expressing Self")
+        unresponsive.infoDescription = "Does not respond to verbal stimuli"
+        excessiveTalk.infoDescription = "Constant talking, does not stop speaking when asked"
+        noCommunication.infoDescription = "Withdrawn, does not seek interaction with others"
+        talkToSelf.infoDescription = "Conversates with self, sometimes loudly"
+        difficultyExpressing.infoDescription = "Unable to express feelings, verbally or non verbally"
+        unresponsive.presenter = self
+        excessiveTalk.presenter = self
+        noCommunication.presenter = self
+        talkToSelf.presenter = self
+        difficultyExpressing.presenter = self
+        
         
         // Fill in the form with existing values if they are available
         fillExistingValues()
