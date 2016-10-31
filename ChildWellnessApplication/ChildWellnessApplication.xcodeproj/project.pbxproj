@@ -22,6 +22,8 @@
 		A04212731DA9F58F00F7F0FB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; };
 		A04212741DA9F58F00F7F0FB /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A04212781DAA013700F7F0FB /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04212771DAA013700F7F0FB /* RealmObjects.swift */; };
+		AC69FE441DC79CFC006DD3D8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC69FE3F1DC79CF1006DD3D8 /* Charts.framework */; };
+		AC69FE451DC79CFC006DD3D8 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC69FE3F1DC79CF1006DD3D8 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F61B20431DBB1EC6001A9FBE /* EmotionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20421DBB1EC6001A9FBE /* EmotionObject.swift */; };
 		F61B20451DBB208F001A9FBE /* CommunicationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20441DBB208F001A9FBE /* CommunicationObject.swift */; };
 		F61B20471DBB2184001A9FBE /* SocialObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20461DBB2184001A9FBE /* SocialObject.swift */; };
@@ -60,6 +62,34 @@
 			remoteGlobalIDString = 0A388FF51D98D620007E126A;
 			remoteInfo = ChildWellnessApplication;
 		};
+		AC69FE3E1DC79CF1006DD3D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		AC69FE401DC79CF1006DD3D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		AC69FE421DC79CF1006DD3D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		AC69FE461DC79CFC006DD3D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +99,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				AC69FE451DC79CFC006DD3D8 /* Charts.framework in Embed Frameworks */,
 				A04212741DA9F58F00F7F0FB /* Realm.framework in Embed Frameworks */,
 				A04212721DA9F58F00F7F0FB /* RealmSwift.framework in Embed Frameworks */,
 			);
@@ -96,6 +127,7 @@
 		A042126D1DA9F56E00F7F0FB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		A042126E1DA9F56E00F7F0FB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		A04212771DAA013700F7F0FB /* RealmObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
+		AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		F61B20421DBB1EC6001A9FBE /* EmotionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionObject.swift; sourceTree = "<group>"; };
 		F61B20441DBB208F001A9FBE /* CommunicationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationObject.swift; sourceTree = "<group>"; };
 		F61B20461DBB2184001A9FBE /* SocialObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialObject.swift; sourceTree = "<group>"; };
@@ -126,6 +158,7 @@
 			files = (
 				A04212731DA9F58F00F7F0FB /* Realm.framework in Frameworks */,
 				A04212701DA9F56E00F7F0FB /* Realm.framework in Frameworks */,
+				AC69FE441DC79CFC006DD3D8 /* Charts.framework in Frameworks */,
 				A042126F1DA9F56E00F7F0FB /* RealmSwift.framework in Frameworks */,
 				A04212711DA9F58F00F7F0FB /* RealmSwift.framework in Frameworks */,
 			);
@@ -152,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				F686CA2E1DA2F6880060B57D /* ChildModel.swift */,
+				AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */,
 				0A388FF81D98D620007E126A /* ChildWellnessApplication */,
 				0A38900D1D98D620007E126A /* ChildWellnessApplicationTests */,
 				0A3890181D98D621007E126A /* ChildWellnessApplicationUITests */,
@@ -206,6 +240,16 @@
 				0A38901B1D98D621007E126A /* Info.plist */,
 			);
 			path = ChildWellnessApplicationUITests;
+			sourceTree = "<group>";
+		};
+		AC69FE391DC79CF1006DD3D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC69FE3F1DC79CF1006DD3D8 /* Charts.framework */,
+				AC69FE411DC79CF1006DD3D8 /* ChartsRealm.framework */,
+				AC69FE431DC79CF1006DD3D8 /* ChartsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		F61B203E1DBB11D9001A9FBE /* Realm/ Database Objects */ = {
@@ -281,6 +325,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				AC69FE471DC79CFC006DD3D8 /* PBXTargetDependency */,
 			);
 			name = ChildWellnessApplication;
 			productName = ChildWellnessApplication;
@@ -360,6 +405,12 @@
 			mainGroup = 0A388FED1D98D620007E126A;
 			productRefGroup = 0A388FF71D98D620007E126A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AC69FE391DC79CF1006DD3D8 /* Products */;
+					ProjectRef = AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0A388FF51D98D620007E126A /* ChildWellnessApplication */,
@@ -368,6 +419,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AC69FE3F1DC79CF1006DD3D8 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = AC69FE3E1DC79CF1006DD3D8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AC69FE411DC79CF1006DD3D8 /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = AC69FE401DC79CF1006DD3D8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AC69FE431DC79CF1006DD3D8 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = AC69FE421DC79CF1006DD3D8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0A388FF41D98D620007E126A /* Resources */ = {
@@ -473,6 +548,11 @@
 			isa = PBXTargetDependency;
 			target = 0A388FF51D98D620007E126A /* ChildWellnessApplication */;
 			targetProxy = 0A3890161D98D621007E126A /* PBXContainerItemProxy */;
+		};
+		AC69FE471DC79CFC006DD3D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = AC69FE461DC79CFC006DD3D8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -590,6 +670,7 @@
 		0A38901F1D98D621007E126A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,6 +687,7 @@
 		0A3890201D98D621007E126A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
