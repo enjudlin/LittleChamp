@@ -140,17 +140,30 @@ class AnalysisChartController: UIViewController {
         
         
         var dataSets = [LineChartDataSet]()
-        dataSets.append(set0)
-        dataSets.append(set1)
-        dataSets.append(set2)
-        dataSets.append(set3)
-        dataSets.append(set4)
+        if switch0.isOn{
+            dataSets.append(set0)
+        }
+        if switch1.isOn{
+            dataSets.append(set1)
+        }
+        if switch2.isOn{
+            dataSets.append(set2)
+        }
+        if switch3.isOn{
+            dataSets.append(set3)
+        }
+        if switch4.isOn{
+            dataSets.append(set4)
+        }
         
         
         let data = LineChartData(dataSets: dataSets)
         lineChartView.data = data
         
         
+    }
+    @IBAction func toggleChart0(_ sender: AnyObject) {
+                setChart(labels: days, data0: occur0, data1: occur1, data2: occur2, data3: occur3, data4: occur4)
     }
     
 }
