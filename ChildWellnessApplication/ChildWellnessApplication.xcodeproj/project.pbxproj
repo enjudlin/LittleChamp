@@ -22,8 +22,10 @@
 		A04212731DA9F58F00F7F0FB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; };
 		A04212741DA9F58F00F7F0FB /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A04212781DAA013700F7F0FB /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04212771DAA013700F7F0FB /* RealmObjects.swift */; };
-		AC69FE441DC79CFC006DD3D8 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC69FE3F1DC79CF1006DD3D8 /* Charts.framework */; };
-		AC69FE451DC79CFC006DD3D8 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC69FE3F1DC79CF1006DD3D8 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AC02840A1DCABEDA00FB33F3 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0284051DCABEBA00FB33F3 /* Charts.framework */; };
+		AC02840B1DCABEDA00FB33F3 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC0284051DCABEBA00FB33F3 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AC0284101DCAC19D00FB33F3 /* AnalysisDashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */; };
+		AC0284121DCAC4C900FB33F3 /* AnalysisChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0284111DCAC4C900FB33F3 /* AnalysisChartController.swift */; };
 		F61B20431DBB1EC6001A9FBE /* EmotionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20421DBB1EC6001A9FBE /* EmotionObject.swift */; };
 		F61B20451DBB208F001A9FBE /* CommunicationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20441DBB208F001A9FBE /* CommunicationObject.swift */; };
 		F61B20471DBB2184001A9FBE /* SocialObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20461DBB2184001A9FBE /* SocialObject.swift */; };
@@ -62,30 +64,30 @@
 			remoteGlobalIDString = 0A388FF51D98D620007E126A;
 			remoteInfo = ChildWellnessApplication;
 		};
-		AC69FE3E1DC79CF1006DD3D8 /* PBXContainerItemProxy */ = {
+		AC0284041DCABEBA00FB33F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */;
+			containerPortal = AC0283FE1DCABEB900FB33F3 /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 06165F241D8110E600722320;
 			remoteInfo = Charts;
 		};
-		AC69FE401DC79CF1006DD3D8 /* PBXContainerItemProxy */ = {
+		AC0284061DCABEBA00FB33F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */;
+			containerPortal = AC0283FE1DCABEB900FB33F3 /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 06B120D51D811E6200D14B02;
 			remoteInfo = ChartsRealm;
 		};
-		AC69FE421DC79CF1006DD3D8 /* PBXContainerItemProxy */ = {
+		AC0284081DCABEBA00FB33F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */;
+			containerPortal = AC0283FE1DCABEB900FB33F3 /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 06165F2E1D8110E600722320;
 			remoteInfo = ChartsTests;
 		};
-		AC69FE461DC79CFC006DD3D8 /* PBXContainerItemProxy */ = {
+		AC02840C1DCABEDA00FB33F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */;
+			containerPortal = AC0283FE1DCABEB900FB33F3 /* Charts.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 06165F231D8110E600722320;
 			remoteInfo = Charts;
@@ -99,7 +101,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AC69FE451DC79CFC006DD3D8 /* Charts.framework in Embed Frameworks */,
+				AC02840B1DCABEDA00FB33F3 /* Charts.framework in Embed Frameworks */,
 				A04212741DA9F58F00F7F0FB /* Realm.framework in Embed Frameworks */,
 				A04212721DA9F58F00F7F0FB /* RealmSwift.framework in Embed Frameworks */,
 			);
@@ -127,7 +129,9 @@
 		A042126D1DA9F56E00F7F0FB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		A042126E1DA9F56E00F7F0FB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		A04212771DAA013700F7F0FB /* RealmObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
-		AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		AC0283FE1DCABEB900FB33F3 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisDashboardController.swift; sourceTree = "<group>"; };
+		AC0284111DCAC4C900FB33F3 /* AnalysisChartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisChartController.swift; sourceTree = "<group>"; };
 		F61B20421DBB1EC6001A9FBE /* EmotionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionObject.swift; sourceTree = "<group>"; };
 		F61B20441DBB208F001A9FBE /* CommunicationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationObject.swift; sourceTree = "<group>"; };
 		F61B20461DBB2184001A9FBE /* SocialObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialObject.swift; sourceTree = "<group>"; };
@@ -158,7 +162,7 @@
 			files = (
 				A04212731DA9F58F00F7F0FB /* Realm.framework in Frameworks */,
 				A04212701DA9F56E00F7F0FB /* Realm.framework in Frameworks */,
-				AC69FE441DC79CFC006DD3D8 /* Charts.framework in Frameworks */,
+				AC02840A1DCABEDA00FB33F3 /* Charts.framework in Frameworks */,
 				A042126F1DA9F56E00F7F0FB /* RealmSwift.framework in Frameworks */,
 				A04212711DA9F58F00F7F0FB /* RealmSwift.framework in Frameworks */,
 			);
@@ -185,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				F686CA2E1DA2F6880060B57D /* ChildModel.swift */,
-				AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */,
+				AC0283FE1DCABEB900FB33F3 /* Charts.xcodeproj */,
 				0A388FF81D98D620007E126A /* ChildWellnessApplication */,
 				0A38900D1D98D620007E126A /* ChildWellnessApplicationTests */,
 				0A3890181D98D621007E126A /* ChildWellnessApplicationUITests */,
@@ -208,6 +212,7 @@
 		0A388FF81D98D620007E126A /* ChildWellnessApplication */ = {
 			isa = PBXGroup;
 			children = (
+				AC02840E1DCAC18300FB33F3 /* Analysis */,
 				F61B20411DBB1327001A9FBE /* Children */,
 				F61B20401DBB12DE001A9FBE /* Record Creation */,
 				F61B203F1DBB124C001A9FBE /* Sign Up and Login Controllers */,
@@ -242,14 +247,23 @@
 			path = ChildWellnessApplicationUITests;
 			sourceTree = "<group>";
 		};
-		AC69FE391DC79CF1006DD3D8 /* Products */ = {
+		AC0283FF1DCABEB900FB33F3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC69FE3F1DC79CF1006DD3D8 /* Charts.framework */,
-				AC69FE411DC79CF1006DD3D8 /* ChartsRealm.framework */,
-				AC69FE431DC79CF1006DD3D8 /* ChartsTests.xctest */,
+				AC0284051DCABEBA00FB33F3 /* Charts.framework */,
+				AC0284071DCABEBA00FB33F3 /* ChartsRealm.framework */,
+				AC0284091DCABEBA00FB33F3 /* ChartsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AC02840E1DCAC18300FB33F3 /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */,
+				AC0284111DCAC4C900FB33F3 /* AnalysisChartController.swift */,
+			);
+			name = Analysis;
 			sourceTree = "<group>";
 		};
 		F61B203E1DBB11D9001A9FBE /* Realm/ Database Objects */ = {
@@ -325,7 +339,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				AC69FE471DC79CFC006DD3D8 /* PBXTargetDependency */,
+				AC02840D1DCABEDA00FB33F3 /* PBXTargetDependency */,
 			);
 			name = ChildWellnessApplication;
 			productName = ChildWellnessApplication;
@@ -407,8 +421,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = AC69FE391DC79CF1006DD3D8 /* Products */;
-					ProjectRef = AC69FE381DC79CF1006DD3D8 /* Charts.xcodeproj */;
+					ProductGroup = AC0283FF1DCABEB900FB33F3 /* Products */;
+					ProjectRef = AC0283FE1DCABEB900FB33F3 /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -421,25 +435,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		AC69FE3F1DC79CF1006DD3D8 /* Charts.framework */ = {
+		AC0284051DCABEBA00FB33F3 /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = AC69FE3E1DC79CF1006DD3D8 /* PBXContainerItemProxy */;
+			remoteRef = AC0284041DCABEBA00FB33F3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AC69FE411DC79CF1006DD3D8 /* ChartsRealm.framework */ = {
+		AC0284071DCABEBA00FB33F3 /* ChartsRealm.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ChartsRealm.framework;
-			remoteRef = AC69FE401DC79CF1006DD3D8 /* PBXContainerItemProxy */;
+			remoteRef = AC0284061DCABEBA00FB33F3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AC69FE431DC79CF1006DD3D8 /* ChartsTests.xctest */ = {
+		AC0284091DCABEBA00FB33F3 /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = AC69FE421DC79CF1006DD3D8 /* PBXContainerItemProxy */;
+			remoteRef = AC0284081DCABEBA00FB33F3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -498,12 +512,14 @@
 				F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */,
 				F6F103891DAB300200DBB605 /* AppChild.swift in Sources */,
 				F639F3E01DB6DDAD005741AC /* RecordObject.swift in Sources */,
+				AC0284101DCAC19D00FB33F3 /* AnalysisDashboardController.swift in Sources */,
 				F61B20471DBB2184001A9FBE /* SocialObject.swift in Sources */,
 				F6E9E3F21DB9C9B100C67026 /* RecordFormViewController.swift in Sources */,
 				F6E9E3F01DB9B2C200C67026 /* ActivityViewController.swift in Sources */,
 				F6FABCDD1DA701B200E0ABEB /* ChildFormViewController.swift in Sources */,
 				A04212781DAA013700F7F0FB /* RealmObjects.swift in Sources */,
 				F6FABCE21DA73F7400E0ABEB /* ChildProfileViewController.swift in Sources */,
+				AC0284121DCAC4C900FB33F3 /* AnalysisChartController.swift in Sources */,
 				F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */,
 				0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */,
 				F61B20451DBB208F001A9FBE /* CommunicationObject.swift in Sources */,
@@ -549,10 +565,10 @@
 			target = 0A388FF51D98D620007E126A /* ChildWellnessApplication */;
 			targetProxy = 0A3890161D98D621007E126A /* PBXContainerItemProxy */;
 		};
-		AC69FE471DC79CFC006DD3D8 /* PBXTargetDependency */ = {
+		AC02840D1DCABEDA00FB33F3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Charts;
-			targetProxy = AC69FE461DC79CFC006DD3D8 /* PBXContainerItemProxy */;
+			targetProxy = AC02840C1DCABEDA00FB33F3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
