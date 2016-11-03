@@ -19,9 +19,9 @@ class AnalysisChartController: UIViewController {
     
     
     //Dummy Data
-    var months = ["Jan", "Feb", "Mar", "Apr", "May"]
-    var days = ["Mon", "Tues", "Weds", "Thur", "Fri"]
-    var weeks = ["10/21","10/28","11/4","11/11","11/18"]
+    var days = ["12am", "6am", "12pm", "6pm", "12am"]
+    var weeks = ["Mon", "Tues", "Weds", "Thur", "Fri"]
+    var months = ["10/21","10/28","11/4","11/11","11/18"]
     
     
     var monthOccur0 = [1.0,4.0,2.0,6.0,2.0]
