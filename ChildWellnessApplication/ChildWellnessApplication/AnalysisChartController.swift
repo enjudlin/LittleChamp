@@ -22,11 +22,25 @@ class AnalysisChartController: UIViewController {
     var months = ["Jan", "Feb", "Mar", "Apr", "May"]
     var days = ["Mon", "Tues", "Weds", "Thur", "Fri"]
     var weeks = ["10/21","10/28","11/4","11/11","11/18"]
-    var occur0 = [1.0,4.0,2.0,6.0,2.0]
-    var occur1 = [2.0,8.0,1.0,3.0,3.0]
-    var occur2 = [9.0,4.0,2.0,1.0,6.0]
-    var occur3 = [2.0,3.0,7.0,1.0,4.0]
-    var occur4 = [6.0,4.0,3.0,5.0,1.0]
+    
+    
+    var monthOccur0 = [1.0,4.0,2.0,6.0,2.0]
+    var monthOccur1 = [2.0,8.0,1.0,3.0,3.0]
+    var monthOccur2 = [9.0,4.0,2.0,1.0,6.0]
+    var monthOccur3 = [2.0,3.0,7.0,1.0,4.0]
+    var monthOccur4 = [6.0,4.0,3.0,5.0,1.0]
+    
+    var dayOccur0 = [4.0,2.0,1.0,8.0,4.0]
+    var dayOccur1 = [3.0,1.0,1.0,6.0,2.0]
+    var dayOccur2 = [7.0,4.0,3.0,1.0,8.0]
+    var dayOccur3 = [3.0,9.0,4.0,1.0,7.0]
+    var dayOccur4 = [2.0,1.0,5.0,9.0,0.0]
+    
+    var weekOccur0 = [2.0,1.0,2.0,0.0,4.0]
+    var weekOccur1 = [6.0,3.0,1.0,1.0,1.0]
+    var weekOccur2 = [0.0,0.0,2.0,1.0,2.0]
+    var weekOccur3 = [1.0,5.0,2.0,8.0,2.0]
+    var weekOccur4 = [7.0,0.0,0.0,5.0,3.0]
     
     //MARK: Outlets
     @IBOutlet weak var timePeriodPicker: UISegmentedControl!
@@ -47,7 +61,7 @@ class AnalysisChartController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setLabels()
-        setChart(labels: days, data0: occur0, data1: occur1, data2: occur2, data3: occur3, data4: occur4)
+        setChart()
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,7 +106,41 @@ class AnalysisChartController: UIViewController {
         }
     }
     
-    func setChart(labels: [String], data0: [Double], data1: [Double], data2: [Double], data3: [Double], data4: [Double]){
+    func setChart(){
+        var labels = [String]()
+        var data0 = [Double]()
+        var data1 = [Double]()
+        var data2 = [Double]()
+        var data3 = [Double]()
+        var data4 = [Double]()
+        
+        
+        if timePeriodPicker.selectedSegmentIndex == 0{
+            labels = days
+            data0 = dayOccur0
+            data1 = dayOccur1
+            data2 = dayOccur2
+            data3 = dayOccur3
+            data4 = dayOccur4
+        }
+        else if timePeriodPicker.selectedSegmentIndex == 1{
+            labels = weeks
+            data0 = weekOccur0
+            data1 = weekOccur1
+            data2 = weekOccur2
+            data3 = weekOccur3
+            data4 = weekOccur4
+        }
+        else{
+            labels = months
+            data0 = monthOccur0
+            data1 = monthOccur1
+            data2 = monthOccur2
+            data3 = monthOccur3
+            data4 = monthOccur4
+            
+        }
+        
         
         
         
@@ -138,6 +186,18 @@ class AnalysisChartController: UIViewController {
         set3.setColor(UIColor.green)
         set4.setColor(UIColor.blue)
         
+        set0.drawValuesEnabled = false
+        set1.drawValuesEnabled = false
+        set2.drawValuesEnabled = false
+        set3.drawValuesEnabled = false
+        set4.drawValuesEnabled = false
+        
+        set0.circleRadius = 2
+        set1.circleRadius = 2
+        set2.circleRadius = 2
+        set3.circleRadius = 2
+        set4.circleRadius = 2
+        
         
         var dataSets = [LineChartDataSet]()
         if switch0.isOn{
@@ -159,20 +219,23 @@ class AnalysisChartController: UIViewController {
         
         let data = LineChartData(dataSets: dataSets)
         lineChartView.data = data
-        if timePeriodPicker.isEnabledForSegment(at: 0){
+        if timePeriodPicker.selectedSegmentIndex == 0{
             lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: days)
         }
-        else if timePeriodPicker.isEnabledForSegment(at: 1){
+        else if timePeriodPicker.selectedSegmentIndex == 1{
             lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: weeks)
         }
         else{
             lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: months)
         }
         lineChartView.xAxis.granularity = 1.0
+        lineChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
         
     }
+    
+    
     @IBAction func toggleChart0(_ sender: AnyObject) {
-                setChart(labels: days, data0: occur0, data1: occur1, data2: occur2, data3: occur3, data4: occur4)
+                setChart()
     }
     
 }

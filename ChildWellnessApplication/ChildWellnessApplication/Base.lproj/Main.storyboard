@@ -996,6 +996,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.93725490199999995" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="startDate" destination="Nrc-oo-63V" id="yk4-QZ-oX4"/>
                     </connections>
@@ -1025,14 +1026,14 @@
                                     <segment title="month"/>
                                 </segments>
                                 <connections>
-                                    <action selector="toggleChart0:" destination="WDo-Aj-YQl" eventType="valueChanged" id="6Dx-Tf-JqD"/>
+                                    <action selector="toggleChart0:" destination="WDo-Aj-YQl" eventType="valueChanged" id="lA4-LA-SRc"/>
                                 </connections>
                             </segmentedControl>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="v2N-kD-t68">
                                 <frame key="frameInset" minX="16" minY="615" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v2N-kD-t68" id="0V8-Bg-5OK">
-                                    <frame key="frameInset" width="343" height="43"/>
+                                    <frame key="frameInset" width="343" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10U-MB-gzR">
@@ -1057,7 +1058,7 @@
                                 <frame key="frameInset" minX="16" minY="511" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tli-tk-GMz" id="gCU-YS-pVL">
-                                    <frame key="frameInset" width="343" height="43"/>
+                                    <frame key="frameInset" width="343" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiV-e7-okn">
@@ -1082,7 +1083,7 @@
                                 <frame key="frameInset" minX="16" minY="459" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fxw-lX-HKL" id="6lY-xk-SSH">
-                                    <frame key="frameInset" width="343" height="43"/>
+                                    <frame key="frameInset" width="343" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0g-pj-FED">
@@ -1107,7 +1108,7 @@
                                 <frame key="frameInset" minX="16" minY="407" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R8a-Am-I4C" id="Khl-TZ-QlS">
-                                    <frame key="frameInset" width="343" height="43"/>
+                                    <frame key="frameInset" width="343" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7hV-Wf-mp0">
@@ -1137,7 +1138,7 @@
                                 <frame key="frameInset" minX="16" minY="563" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JBr-Vu-ZGT" id="uY9-eK-OXk">
-                                    <frame key="frameInset" width="343" height="43"/>
+                                    <frame key="frameInset" width="343" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ca-u8-JSK">
