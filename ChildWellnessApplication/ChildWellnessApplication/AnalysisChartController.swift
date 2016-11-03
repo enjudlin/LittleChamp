@@ -159,7 +159,16 @@ class AnalysisChartController: UIViewController {
         
         let data = LineChartData(dataSets: dataSets)
         lineChartView.data = data
-        
+        if timePeriodPicker.isEnabledForSegment(at: 0){
+            lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: days)
+        }
+        else if timePeriodPicker.isEnabledForSegment(at: 1){
+            lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: weeks)
+        }
+        else{
+            lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: months)
+        }
+        lineChartView.xAxis.granularity = 1.0
         
     }
     @IBAction func toggleChart0(_ sender: AnyObject) {

@@ -1024,6 +1024,9 @@
                                     <segment title="week"/>
                                     <segment title="month"/>
                                 </segments>
+                                <connections>
+                                    <action selector="toggleChart0:" destination="WDo-Aj-YQl" eventType="valueChanged" id="6Dx-Tf-JqD"/>
+                                </connections>
                             </segmentedControl>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="v2N-kD-t68">
                                 <frame key="frameInset" minX="16" minY="615" width="343" height="44"/>
