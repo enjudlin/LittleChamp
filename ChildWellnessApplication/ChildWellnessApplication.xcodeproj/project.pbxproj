@@ -86,13 +86,6 @@
 			remoteGlobalIDString = 06165F2E1D8110E600722320;
 			remoteInfo = ChartsTests;
 		};
-		AC02840C1DCABEDA00FB33F3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC0283FE1DCABEB900FB33F3 /* Charts.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 06165F231D8110E600722320;
-			remoteInfo = Charts;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -342,7 +335,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				AC02840D1DCABEDA00FB33F3 /* PBXTargetDependency */,
 			);
 			name = ChildWellnessApplication;
 			productName = ChildWellnessApplication;
@@ -568,11 +560,6 @@
 			isa = PBXTargetDependency;
 			target = 0A388FF51D98D620007E126A /* ChildWellnessApplication */;
 			targetProxy = 0A3890161D98D621007E126A /* PBXContainerItemProxy */;
-		};
-		AC02840D1DCABEDA00FB33F3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Charts;
-			targetProxy = AC02840C1DCABEDA00FB33F3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
