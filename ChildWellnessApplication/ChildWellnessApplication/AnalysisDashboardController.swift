@@ -24,11 +24,13 @@ class AnalysisDashboardController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
     }
-    func prepare(for segue: UIStoryboardSegue, sender: UIButton?) {
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? AnalysisChartController{
-            destination.startDate = startDate.date
-            destination.subElement = sender?.currentTitle
-            destination.child = child
+            if let sendingButton = sender as? UIButton{
+                destination.startDate = startDate.date
+                destination.subElement = sendingButton.currentTitle
+                destination.child = child
+            }
         }
     }
 }

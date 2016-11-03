@@ -33,6 +33,7 @@ class AnalysisChartController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        setLabels()
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,7 +41,41 @@ class AnalysisChartController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
+    }
+    
+    func setLabels(){
+        if subElement == "Activity"{
+            label0.text = "Excessively Active"
+            label1.text = "Abnormal Repetitive"
+            label2.text = "Self-injury"
+            label3.text = "Sluggish, inactive"
+            label4.text = "Screams inappropriately"
+        }
+        else if subElement == "Emotion"{
+            label0.text = "Temper tantrums"
+            label1.text = "Depressed mood"
+            label2.text = "Lacks emotional response"
+            label3.text = "Excessive crying"
+            label4.text = "Mood changes quickly"
+
+        }
+        else if subElement == "Social"{
+            label0.text = "Argue with others"
+            label1.text = "Defiant"
+            label2.text = "Withdrawn"
+            label3.text = "Resist physical contact"
+            label4.text = "Physically hurt others"
+            
+        }
+        else{
+            label0.text = "Unresponsive when spoken to"
+            label1.text = "Talk excessively"
+            label2.text = "Does not try to communicate"
+            label3.text = "Talks to self loudly"
+            label4.text = "Difficulty expressing self"
+        }
     }
     
 }
