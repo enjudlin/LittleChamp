@@ -26,6 +26,7 @@
 		AC02840B1DCABEDA00FB33F3 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC0284051DCABEBA00FB33F3 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC0284101DCAC19D00FB33F3 /* AnalysisDashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */; };
 		AC0284121DCAC4C900FB33F3 /* AnalysisChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0284111DCAC4C900FB33F3 /* AnalysisChartController.swift */; };
+		AC0284141DCAD66700FB33F3 /* MyXAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0284131DCAD66700FB33F3 /* MyXAxisValueFormatter.swift */; };
 		F61B20431DBB1EC6001A9FBE /* EmotionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20421DBB1EC6001A9FBE /* EmotionObject.swift */; };
 		F61B20451DBB208F001A9FBE /* CommunicationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20441DBB208F001A9FBE /* CommunicationObject.swift */; };
 		F61B20471DBB2184001A9FBE /* SocialObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20461DBB2184001A9FBE /* SocialObject.swift */; };
@@ -132,6 +133,7 @@
 		AC0283FE1DCABEB900FB33F3 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisDashboardController.swift; sourceTree = "<group>"; };
 		AC0284111DCAC4C900FB33F3 /* AnalysisChartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisChartController.swift; sourceTree = "<group>"; };
+		AC0284131DCAD66700FB33F3 /* MyXAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyXAxisValueFormatter.swift; sourceTree = "<group>"; };
 		F61B20421DBB1EC6001A9FBE /* EmotionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionObject.swift; sourceTree = "<group>"; };
 		F61B20441DBB208F001A9FBE /* CommunicationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationObject.swift; sourceTree = "<group>"; };
 		F61B20461DBB2184001A9FBE /* SocialObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialObject.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			children = (
 				AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */,
 				AC0284111DCAC4C900FB33F3 /* AnalysisChartController.swift */,
+				AC0284131DCAD66700FB33F3 /* MyXAxisValueFormatter.swift */,
 			);
 			name = Analysis;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				F639F3E01DB6DDAD005741AC /* RecordObject.swift in Sources */,
 				AC0284101DCAC19D00FB33F3 /* AnalysisDashboardController.swift in Sources */,
 				F61B20471DBB2184001A9FBE /* SocialObject.swift in Sources */,
+				AC0284141DCAD66700FB33F3 /* MyXAxisValueFormatter.swift in Sources */,
 				F6E9E3F21DB9C9B100C67026 /* RecordFormViewController.swift in Sources */,
 				F6E9E3F01DB9B2C200C67026 /* ActivityViewController.swift in Sources */,
 				F6FABCDD1DA701B200E0ABEB /* ChildFormViewController.swift in Sources */,
