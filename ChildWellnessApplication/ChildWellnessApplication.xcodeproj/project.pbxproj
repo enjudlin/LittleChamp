@@ -16,8 +16,6 @@
 		0AA9484B1D9B6B01007E0799 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA9484A1D9B6B01007E0799 /* SignUpViewController.swift */; };
 		0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3058C1DA07A96008A4625 /* LoginViewController.swift */; };
 		A042126F1DA9F56E00F7F0FB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A042126D1DA9F56E00F7F0FB /* RealmSwift.framework */; };
-		A04212701DA9F56E00F7F0FB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; };
-		A04212711DA9F58F00F7F0FB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A042126D1DA9F56E00F7F0FB /* RealmSwift.framework */; };
 		A04212721DA9F58F00F7F0FB /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A042126D1DA9F56E00F7F0FB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A04212731DA9F58F00F7F0FB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; };
 		A04212741DA9F58F00F7F0FB /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -156,10 +154,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A04212731DA9F58F00F7F0FB /* Realm.framework in Frameworks */,
-				A04212701DA9F56E00F7F0FB /* Realm.framework in Frameworks */,
 				AC02840A1DCABEDA00FB33F3 /* Charts.framework in Frameworks */,
 				A042126F1DA9F56E00F7F0FB /* RealmSwift.framework in Frameworks */,
-				A04212711DA9F58F00F7F0FB /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +380,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = group6;
 				TargetAttributes = {
 					0A388FF51D98D620007E126A = {
@@ -601,6 +597,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -650,6 +647,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
