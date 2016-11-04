@@ -107,14 +107,58 @@ class Child{
         }
     }
     
-    class func getChildren() -> [Child]{
-        let realm = try! Realm()
-        var children = [Child]()
-        let childObjects = realm.objects(AppChild.self)
-        for childObject in childObjects{
-            children.append(childObject.toChild())
+    //MARK: Analysis Queries
+    
+    //Helper: Generate the proper topic predicate from a string
+    func topicPredicate(topic: String)-> NSPredicate{
+        return NSPredicate(format: topic.lowercased() + "!= nil")
+    }
+    
+    func monthData(startDate: Date, topic: String){
+        
+    }
+    
+    func weekData(startDate: Date, topic: String){
+        
+    }
+    
+    /*Helper: function to determine if the date object's time is within a time interval on the same day.
+     This assumes that the time interval starts and ends exactly on the hour.
+     startHour and endHour should be expressed using a 24 hour clock.
+     The startHour is inclusive and the endHour is exclusive, so that records are not double counted*/
+    func isInTimeInterval(date: Date, startHour: Int, endHour: Int)->Bool{
+        let startDate = date.dateAt(hours: startHour, minutes: 0)
+        let endDate = date.dateAt(hours: endHour, minutes: 0)
+        return date >= startDate && date < endDate
+    }
+
+    /*Helper: Create a predicate for the interval between the two hours*/
+    func intervalPredicate(startHour: Int, endHour: Int)->NSPredicate{
+        return NSPredicate { (record, bindings)->Bool in
+            let recordObject = record as! RecordObject
+            return self.isInTimeInterval(date: recordObject.dateCreated, startHour: startHour, endHour: endHour)
         }
-        return children
+    }
+    
+    /*Helper: Get the count of records in the interval as a double*/
+    func timeIntervalCount(startHour: Int, endHour: Int, records: Results<RecordObject>)->Double{
+        let intervalPredicate = self.intervalPredicate(startHour: 0, endHour: 6)
+        let intervalRecords = records.filter(intervalPredicate)
+        return Double((intervalRecords.count))
+    }
+    
+    /*Get the count of records on the given day with the given topic for each of the time intervals [midnight-6), [6-noon), [noon-6), [6- midnight)*/
+    func dayData(startDate: Date, topic: String)->[Double]{
+        let calendar = NSCalendar.current
+        //This uses Swift's closure to leverage the NSCalendar class
+        let dayPredicate = NSPredicate { (record, bindings)->Bool in
+            let recordObject = record as! RecordObject
+            return calendar.isDate(recordObject.dateCreated, inSameDayAs: startDate)
+        }
+        //Get records from the given day with the topic/sub element present
+        let dayRecords = self.appChild?.records.filter(dayPredicate).filter(topicPredicate(topic: topic))
+
+        return [timeIntervalCount(startHour: 0, endHour: 6, records: dayRecords!), timeIntervalCount(startHour: 6, endHour: 12, records: dayRecords!), timeIntervalCount(startHour: 12, endHour: 18, records: dayRecords!), timeIntervalCount(startHour: 18, endHour: 0, records: dayRecords!)]
     }
     
 }

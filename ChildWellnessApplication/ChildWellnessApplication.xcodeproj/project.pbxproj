@@ -36,6 +36,7 @@
 		F639F3E01DB6DDAD005741AC /* RecordObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3DF1DB6DDAD005741AC /* RecordObject.swift */; };
 		F639F3E21DB6E05D005741AC /* ActivityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E11DB6E05D005741AC /* ActivityObject.swift */; };
 		F639F3E41DB71B9F005741AC /* SelectActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */; };
+		F67AA23A1DCC3C6F003EB1AA /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AA2391DCC3C6F003EB1AA /* DateExtensions.swift */; };
 		F686CA2B1DA2DF940060B57D /* ChildProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */; };
 		F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */; };
 		F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2E1DA2F6880060B57D /* ChildModel.swift */; };
@@ -136,6 +137,7 @@
 		F639F3DF1DB6DDAD005741AC /* RecordObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordObject.swift; sourceTree = "<group>"; };
 		F639F3E11DB6E05D005741AC /* ActivityObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityObject.swift; sourceTree = "<group>"; };
 		F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectActionViewController.swift; sourceTree = "<group>"; };
+		F67AA2391DCC3C6F003EB1AA /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewCell.swift; sourceTree = "<group>"; };
 		F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewController.swift; sourceTree = "<group>"; };
 		F686CA2E1DA2F6880060B57D /* ChildModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildModel.swift; path = ChildWellnessApplication/ChildModel.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				0A3890001D98D620007E126A /* Assets.xcassets */,
 				0A3890021D98D620007E126A /* LaunchScreen.storyboard */,
 				0A3890051D98D620007E126A /* Info.plist */,
+				F67AA2391DCC3C6F003EB1AA /* DateExtensions.swift */,
 			);
 			path = ChildWellnessApplication;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				F6FABCE21DA73F7400E0ABEB /* ChildProfileViewController.swift in Sources */,
 				AC0284121DCAC4C900FB33F3 /* AnalysisChartController.swift in Sources */,
 				F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */,
+				F67AA23A1DCC3C6F003EB1AA /* DateExtensions.swift in Sources */,
 				0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */,
 				F61B20451DBB208F001A9FBE /* CommunicationObject.swift in Sources */,
 				F639F3E41DB71B9F005741AC /* SelectActionViewController.swift in Sources */,
