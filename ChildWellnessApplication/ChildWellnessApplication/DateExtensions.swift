@@ -38,4 +38,13 @@ extension Date
         let newDate = calendar.date(from: dateComponents)
         return newDate!
     }
+    
+    /*Generate the following date*/
+    func nextDayAt(hours: Int, minutes: Int)->Date{
+        let calendar = NSCalendar.current
+        var dateComponents = DateComponents()
+        dateComponents.day = 1
+        let nextDay = calendar.date(byAdding: dateComponents, to: self)
+        return (nextDay?.dateAt(hours: hours, minutes: minutes))!
+    }
 }

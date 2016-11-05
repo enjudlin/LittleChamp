@@ -17,7 +17,7 @@ class DataAnalysisQuery{
     var startDate: Date?
     var element: String?
     var subElementStrings: [String]?
-    var calendar = NSCalendar.init(identifier: NSCalendar.Identifier.gregorian)
+    let calendar = NSCalendar.init(identifier: NSCalendar.Identifier.gregorian)
     
     //MARK: Constructor
     init(appChild: AppChild, startDate: Date, element: String) {
@@ -81,10 +81,17 @@ class DataAnalysisQuery{
     /*Function to determine if the date object's time is within a time interval on the same day.
      This assumes that the time interval starts and ends exactly on the hour.
      startHour and endHour should be expressed using a 24 hour clock.
-     The startHour is inclusive and the endHour is exclusive, so that records are not double counted*/
+     The startHour is inclusive and the endHour is exclusive, so that records are not double counted
+     
+     Special case: Use 24 for the end hour to indicate the beginning of the following day*/
     func isInTimeInterval(date: Date, startHour: Int, endHour: Int)->Bool{
         let startDate = date.dateAt(hours: startHour, minutes: 0)
-        let endDate = date.dateAt(hours: endHour, minutes: 0)
+        var endDate = date
+        if (endHour == 24){
+            endDate = date.nextDayAt(hours: 0, minutes: 0)
+        }else{
+            endDate = date.dateAt(hours: endHour, minutes: 0)
+        }
         return date >= startDate && date < endDate
     }
     

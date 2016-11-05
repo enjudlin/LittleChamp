@@ -25,7 +25,7 @@ class DayAnalysisQuery: DataAnalysisQuery{
             //Further filter the day's records for only those with the element present
             let subElementRecords = dayRecords.filter( subElementPresentPredicate(subElement: subElement))
             //Generate an array of all of the appropriate time intervals
-            let subElementArray = [timeIntervalCount(startHour: 0, endHour: 6, records: subElementRecords), timeIntervalCount(startHour: 6, endHour: 12, records: subElementRecords), timeIntervalCount(startHour: 12, endHour: 18, records: subElementRecords), timeIntervalCount(startHour: 18, endHour: 0, records: subElementRecords)]
+            let subElementArray = [timeIntervalCount(startHour: 0, endHour: 6, records: subElementRecords), timeIntervalCount(startHour: 6, endHour: 12, records: subElementRecords), timeIntervalCount(startHour: 12, endHour: 18, records: subElementRecords), timeIntervalCount(startHour: 18, endHour: 24, records: subElementRecords)]
             //Append to the container array
             containerArray.append(subElementArray)
         }
