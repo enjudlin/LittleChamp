@@ -29,6 +29,8 @@ class DataAnalysisQuery{
     
     //MARK: Helper Methods
     
+    /*Helpful predicates*/
+    
     //Generate the proper element predicate from a string
     func elementPredicate(element: String)-> NSPredicate{
         return NSPredicate(format: element.lowercased() + "!= nil")
@@ -38,6 +40,25 @@ class DataAnalysisQuery{
     func subElementPresentPredicate(subElement: String)->NSPredicate{
         return NSPredicate(format: subElement + "!= 3")
     }
+    
+    /*Create a predicate for the interval between the two hours*/
+    func intervalPredicate(startHour: Int, endHour: Int)->NSPredicate{
+        return NSPredicate { (record, bindings)->Bool in
+            let recordObject = record as! RecordObject
+            return self.isInTimeInterval(date: recordObject.dateCreated, startHour: startHour, endHour: endHour)
+        }
+    }
+    
+    /*The predicate for something being in the same day as the given date*/
+    func dayPredicate(date: Date)->NSPredicate{
+        //This uses Swift closures to leverage the NSCalendar's isDate(inSameDayAs: ) method
+        return NSPredicate { (record, bindings)->Bool in
+            let recordObject = record as! RecordObject
+            return self.calendar!.isDate(recordObject.dateCreated, inSameDayAs: date)
+        }
+    }
+    
+    /*Other helpers*/
     
     /*Get the subElementString array from the given element. Returns an array of a single empty string if the element is not found*/
     func subElementStringArray(element: String)->[String]{
@@ -67,19 +88,41 @@ class DataAnalysisQuery{
         return date >= startDate && date < endDate
     }
     
-    /*Create a predicate for the interval between the two hours*/
-    func intervalPredicate(startHour: Int, endHour: Int)->NSPredicate{
-        return NSPredicate { (record, bindings)->Bool in
-            let recordObject = record as! RecordObject
-            return self.isInTimeInterval(date: recordObject.dateCreated, startHour: startHour, endHour: endHour)
-        }
-    }
+    
     
     /*Get the count of records in the interval as a double*/
     func timeIntervalCount(startHour: Int, endHour: Int, records: Results<RecordObject>)->Double{
         let intervalPredicate = self.intervalPredicate(startHour: 0, endHour: 6)
         let intervalRecords = records.filter(intervalPredicate)
         return Double((intervalRecords.count))
+    }
+    
+    /*Find the weekday of a Date object as a string in the format Mon, Tues, Wed, etc*/
+    func weekdayString(date: Date)->String{
+        let index = self.calendar!.component(NSCalendar.Unit.weekday, from: date)
+        var str: String
+        switch index {
+        case 1:
+            str = "Sun"
+        case 2:
+            str = "Mon"
+        case 3:
+            str = "Tues"
+        case 4:
+            str = "Wed"
+        case 5:
+            str = "Thurs"
+        case 6:
+            str = "Fri"
+        default:
+            str = "Sat"
+        }
+        return str
+    }
+    
+    /*Get all of the records for that child on a given day, filtered by the selected element*/
+    func recordsFromDay(date: Date)->Results<RecordObject>{
+        return (self.appChild?.records.filter(dayPredicate(date: date)).filter(elementPredicate(element: self.element!)))!
     }
     
     

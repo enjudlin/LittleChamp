@@ -41,6 +41,7 @@
 		F67AA2471DCD6E99003EB1AA /* AnalysisLogicFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AA2461DCD6E99003EB1AA /* AnalysisLogicFactory.swift */; };
 		F67AA24A1DCD711E003EB1AA /* DataAnalysisQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AA2491DCD711E003EB1AA /* DataAnalysisQuery.swift */; };
 		F67AA24C1DCD7306003EB1AA /* DayAnalysisQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AA24B1DCD7306003EB1AA /* DayAnalysisQuery.swift */; };
+		F67AA24E1DCD7D7A003EB1AA /* WeekAnalysisQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AA24D1DCD7D7A003EB1AA /* WeekAnalysisQuery.swift */; };
 		F686CA2B1DA2DF940060B57D /* ChildProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */; };
 		F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */; };
 		F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2E1DA2F6880060B57D /* ChildModel.swift */; };
@@ -146,6 +147,7 @@
 		F67AA2461DCD6E99003EB1AA /* AnalysisLogicFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisLogicFactory.swift; sourceTree = "<group>"; };
 		F67AA2491DCD711E003EB1AA /* DataAnalysisQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAnalysisQuery.swift; sourceTree = "<group>"; };
 		F67AA24B1DCD7306003EB1AA /* DayAnalysisQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAnalysisQuery.swift; sourceTree = "<group>"; };
+		F67AA24D1DCD7D7A003EB1AA /* WeekAnalysisQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekAnalysisQuery.swift; sourceTree = "<group>"; };
 		F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewCell.swift; sourceTree = "<group>"; };
 		F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewController.swift; sourceTree = "<group>"; };
 		F686CA2E1DA2F6880060B57D /* ChildModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildModel.swift; path = ChildWellnessApplication/ChildModel.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				F67AA2461DCD6E99003EB1AA /* AnalysisLogicFactory.swift */,
 				F67AA2491DCD711E003EB1AA /* DataAnalysisQuery.swift */,
 				F67AA24B1DCD7306003EB1AA /* DayAnalysisQuery.swift */,
+				F67AA24D1DCD7D7A003EB1AA /* WeekAnalysisQuery.swift */,
 			);
 			name = AnalysisQueries;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				F67AA24C1DCD7306003EB1AA /* DayAnalysisQuery.swift in Sources */,
 				F639F3E21DB6E05D005741AC /* ActivityObject.swift in Sources */,
 				F61B20431DBB1EC6001A9FBE /* EmotionObject.swift in Sources */,
+				F67AA24E1DCD7D7A003EB1AA /* WeekAnalysisQuery.swift in Sources */,
 				0AA9484B1D9B6B01007E0799 /* SignUpViewController.swift in Sources */,
 				F61B204D1DBB3966001A9FBE /* CommunicationViewController.swift in Sources */,
 				0A388FFC1D98D620007E126A /* ViewController.swift in Sources */,

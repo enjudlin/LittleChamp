@@ -20,7 +20,15 @@ class AnalysisLogicFactory{
     
     //MARK: Analysis methods
     
+    /*Get the data for the "Day" frequency chart. This data is returned as an array of arrays in the format:
+     [[subElement 1 counts for each interval], [sub element 2 counts for each interval]....]
+     */
     func dayData(startDate: Date, element: String)->[[Double]]{
         return DayAnalysisQuery(appChild: self.appChild!, startDate: startDate, element: element).dayData()
+    }
+    
+    /*Generate the expected query data. This will consist of 7 DayData objects of days in chronological order*/
+    func weekDate(startDate: Date, element: String)->[DayData]{
+        return WeekAnalysisQuery(appChild: self.appChild!, startDate: startDate, element: element).weekData()
     }
 }
