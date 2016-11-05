@@ -7,12 +7,18 @@
 //
 
 import XCTest
+import RealmSwift
 @testable import ChildWellnessApplication
 
 class DataAnalysisQueryTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        // Use an in-memory Realm identified by the name of the current test.
+        // This ensures that each test can't accidentally access or modify the data
+        // from other tests or the application itself, and because they're in-memory,
+        // there's nothing that needs to be cleaned up.
+        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
     }
     
     override func tearDown() {
@@ -20,6 +26,7 @@ class DataAnalysisQueryTest: XCTestCase {
         super.tearDown()
     }
     
+    //MARK: Set up helpers
     func setUpObject()->DataAnalysisQuery{
         let appChild = AppChild()
         return DataAnalysisQuery(appChild: appChild, startDate: Date(), element: "Activity")
@@ -38,5 +45,37 @@ class DataAnalysisQueryTest: XCTestCase {
         date = Date().dateAt(hours: 0, minutes: 0)
         //Special case: date is right at the start of the day
         XCTAssertTrue(obj.isInTimeInterval(date: date, startHour: 0, endHour: 6))
+    }
+    
+    func testRecordsFromDay(){
+        let obj = setUpObject()
+        //Place 3 records in today.
+        for _ in 1...3{
+            let record = RecordObject()
+            record.child = obj.appChild
+            //setUpObj sets the element to "Activity", so they will not be found unless an ActivityObject is found
+            record.activity = ActivityObject()
+            //The create method automatically sets the timestamp to now
+            record.create()
+        }
+         XCTAssertEqual(obj.recordsFromDay(date: Date()).count, 3, "Did not find the correct number of records for today")
+        
+        //Place some records tomorrow, so that we can confirm that its not picking up extraneous data
+        for i in 1...4{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.create(timestamp: obj.startDate.nextDayAt(hours: i, minutes: i))
+        }
+        XCTAssertEqual(obj.recordsFromDay(date: Date()).count, 3, "Found records for a different day")
+        
+        //Place some records without the activity sub element
+        for _ in 1...2{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.social = SocialObject()
+            record.create()
+        }
+        XCTAssertEqual(obj.recordsFromDay(date: Date()).count, 3, "Found records without the activity element")
     }
 }

@@ -15,13 +15,13 @@ class DayAnalysisQuery: DataAnalysisQuery{
     /*Get the count of records on the given day with the given element for each of the time intervals [midnight-6), [6-noon), [noon-6), [6- midnight). This returns an array of arrays of doubles, where the first array is the first subElement's counts in each time interval, the second is the second subelement, etc */
     func dayData()->[[Double]]{
         //Get records from the given day with the element present
-        let dayRecords = recordsFromDay(date: self.startDate!)
+        let dayRecords = recordsFromDay(date: self.startDate)
         
         //Create the containing array that the data arrays will be added to
         var containerArray = [[Double]]()
         
         //Generate the sub array for each sub element. This uses special syntax for an enumerated for loop so that the elements of the array must be accessed in order
-        for (_, subElement) in self.subElementStrings!.enumerated() {
+        for (_, subElement) in (self.subElementStrings?.enumerated())! {
             //Further filter the day's records for only those with the element present
             let subElementRecords = dayRecords.filter( subElementPresentPredicate(subElement: subElement))
             //Generate an array of all of the appropriate time intervals

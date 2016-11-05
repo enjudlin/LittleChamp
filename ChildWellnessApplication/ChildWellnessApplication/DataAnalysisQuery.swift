@@ -13,9 +13,10 @@ import RealmSwift
 class DataAnalysisQuery{
     //MARK: Properties
     //Make the data that is going to be needed for all classes member variables
-    var appChild: AppChild?
-    var startDate: Date?
-    var element: String?
+    var appChild: AppChild
+    var startDate: Date
+    var element: String
+    //This is not actually optional, but must be initialized this way so that it can be set in the constructor
     var subElementStrings: [String]?
     let calendar = NSCalendar.init(identifier: NSCalendar.Identifier.gregorian)
     
@@ -41,21 +42,17 @@ class DataAnalysisQuery{
         return NSPredicate(format: subElement + "!= 3")
     }
     
-    /*Create a predicate for the interval between the two hours*/
+    /*Create a predicate for the interval between the two hours on the start date. End hour given as 24 is interpretted as the beginning of the following day*/
     func intervalPredicate(startHour: Int, endHour: Int)->NSPredicate{
-        return NSPredicate { (record, bindings)->Bool in
-            let recordObject = record as! RecordObject
-            return self.isInTimeInterval(date: recordObject.dateCreated, startHour: startHour, endHour: endHour)
-        }
+        //This is a rather obtuse way of doing it because Realm doesn't support block predicates
+        let endDate = (endHour == 24) ? self.startDate.nextDayAt(hours: 0, minutes: 0) :  self.startDate.dateAt(hours: endHour, minutes: 0)
+        return NSPredicate(format: "dateCreated BETWEEN {%@,%@}", argumentArray: [self.startDate.dateAt(hours: startHour, minutes: 0), endDate])
     }
     
     /*The predicate for something being in the same day as the given date*/
     func dayPredicate(date: Date)->NSPredicate{
-        //This uses Swift closures to leverage the NSCalendar's isDate(inSameDayAs: ) method
-        return NSPredicate { (record, bindings)->Bool in
-            let recordObject = record as! RecordObject
-            return self.calendar!.isDate(recordObject.dateCreated, inSameDayAs: date)
-        }
+        //This would be more succinctly done with a closure (or using a block Predicate) but that is not supported by Realm at the moment
+        return NSPredicate(format: "dateCreated BETWEEN {%@, %@}", argumentArray: [date.dateAt(hours: 0, minutes: 0), date.nextDayAt(hours: 0, minutes: 0)])
     }
     
     /*Other helpers*/
@@ -121,15 +118,17 @@ class DataAnalysisQuery{
             str = "Thurs"
         case 6:
             str = "Fri"
-        default:
+        case 7:
             str = "Sat"
+        default:
+            str = ""
         }
         return str
     }
     
     /*Get all of the records for that child on a given day, filtered by the selected element*/
     func recordsFromDay(date: Date)->Results<RecordObject>{
-        return (self.appChild?.records.filter(dayPredicate(date: date)).filter(elementPredicate(element: self.element!)))!
+        return (self.appChild.records.filter(dayPredicate(date: date)).filter(elementPredicate(element: self.element)))
     }
     
     

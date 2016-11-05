@@ -17,11 +17,11 @@ class WeekAnalysisQuery: DataAnalysisQuery{
         for i in 6...1{
             var dateComponents = DateComponents()
             dateComponents.day = -i
-            let previousDate = self.calendar!.date(byAdding: dateComponents, to: self.startDate!)
+            let previousDate = self.calendar!.date(byAdding: dateComponents, to: self.startDate)
             array.append(DayData(weekday: self.weekdayString(date: previousDate!), subElementCounts: subElementCounts(date: previousDate!)))
         }
         //Generate day data for the start date
-        array.append(DayData(weekday: self.weekdayString(date: self.startDate!), subElementCounts: self.subElementCounts(date: self.startDate!)))
+        array.append(DayData(weekday: self.weekdayString(date: self.startDate), subElementCounts: self.subElementCounts(date: self.startDate)))
         return array
     }
     
