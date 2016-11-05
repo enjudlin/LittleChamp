@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class EmotionObject: Object {
+class EmotionObject: Object, RecordElement {
     /* -1 is the default and indicates that the field was not selected at all. This should never happen because the UI automatically selects 3 (N/A) until the user chooses one of the other options. 0, 1, and 2 refer to mile, moderate, and severe selections.*/
     dynamic var tantrum = -1
     dynamic var depressed = -1
@@ -23,4 +23,6 @@ class EmotionObject: Object {
     dynamic var emResponseDesc = ""
     dynamic var cryingDesc = ""
     dynamic var moodChangesDesc = ""
+    
+    static var subElementStrings = ["tantrum", "depressed", "emResponse", "crying", "moodChanges"]
 }

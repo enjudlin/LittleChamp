@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class ActivityObject: Object {
+class ActivityObject: Object, RecordElement{
     /* -1 is the default and indicates that the field was not selected at all. This should never happen because the UI automatically selects 3 (N/A) until the user chooses one of the other options. 0, 1, and 2 refer to mile, moderate, and severe selections.*/
     dynamic var excessivelyActive = -1
     dynamic var abnormalRepMov = -1
@@ -23,4 +23,6 @@ class ActivityObject: Object {
     dynamic var selfInjuryDesc = ""
     dynamic var sluggishDesc = ""
     dynamic var screamsDesc = ""
+    
+    static var subElementStrings = ["excessivelyActive", "abnormalRepMovement", "selfInjury", "sluggish", "screams"]
 }

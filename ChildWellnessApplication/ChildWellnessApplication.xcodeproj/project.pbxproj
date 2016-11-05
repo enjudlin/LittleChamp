@@ -37,6 +37,7 @@
 		F639F3E21DB6E05D005741AC /* ActivityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E11DB6E05D005741AC /* ActivityObject.swift */; };
 		F639F3E41DB71B9F005741AC /* SelectActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */; };
 		F67AA23A1DCC3C6F003EB1AA /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AA2391DCC3C6F003EB1AA /* DateExtensions.swift */; };
+		F67AA2411DCD54A5003EB1AA /* RecordElementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AA2401DCD54A5003EB1AA /* RecordElementProtocol.swift */; };
 		F686CA2B1DA2DF940060B57D /* ChildProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */; };
 		F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */; };
 		F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2E1DA2F6880060B57D /* ChildModel.swift */; };
@@ -138,6 +139,7 @@
 		F639F3E11DB6E05D005741AC /* ActivityObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityObject.swift; sourceTree = "<group>"; };
 		F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectActionViewController.swift; sourceTree = "<group>"; };
 		F67AA2391DCC3C6F003EB1AA /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		F67AA2401DCD54A5003EB1AA /* RecordElementProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordElementProtocol.swift; sourceTree = "<group>"; };
 		F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewCell.swift; sourceTree = "<group>"; };
 		F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewController.swift; sourceTree = "<group>"; };
 		F686CA2E1DA2F6880060B57D /* ChildModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildModel.swift; path = ChildWellnessApplication/ChildModel.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				F61B20421DBB1EC6001A9FBE /* EmotionObject.swift */,
 				F61B20441DBB208F001A9FBE /* CommunicationObject.swift */,
 				F61B20461DBB2184001A9FBE /* SocialObject.swift */,
+				F67AA2401DCD54A5003EB1AA /* RecordElementProtocol.swift */,
 			);
 			name = "Realm/ Database Objects";
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				F6F103891DAB300200DBB605 /* AppChild.swift in Sources */,
 				F639F3E01DB6DDAD005741AC /* RecordObject.swift in Sources */,
 				AC0284101DCAC19D00FB33F3 /* AnalysisDashboardController.swift in Sources */,
+				F67AA2411DCD54A5003EB1AA /* RecordElementProtocol.swift in Sources */,
 				F61B20471DBB2184001A9FBE /* SocialObject.swift in Sources */,
 				AC0284141DCAD66700FB33F3 /* MyXAxisValueFormatter.swift in Sources */,
 				F6E9E3F21DB9C9B100C67026 /* RecordFormViewController.swift in Sources */,

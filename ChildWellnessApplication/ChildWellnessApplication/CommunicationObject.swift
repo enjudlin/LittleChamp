@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class CommunicationObject: Object {
+class CommunicationObject: Object, RecordElement {
     
     /* -1 is the default and indicates that the field was not selected at all. This should never happen because the UI automatically selects 3 (N/A) until the user chooses one of the other options. 0, 1, and 2 refer to mile, moderate, and severe selections.*/
     dynamic var unresponsive = -1
@@ -24,5 +24,6 @@ class CommunicationObject: Object {
     dynamic var noCommunicationDesc = ""
     dynamic var talkToSelfDesc = ""
     dynamic var difficultyExpressingDesc = ""
-
+    
+    static var subElementStrings = ["unresponsive", "excessiveTalk", "noCommunication", "talkToSelf", "difficultyExpressing"]
 }
