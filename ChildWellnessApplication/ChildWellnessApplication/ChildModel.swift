@@ -20,6 +20,9 @@ class Child{
     var parent: AppUser
     var appChild: AppChild?
     
+    /*Access the analysis factory to get the analysis information*/
+    var analysisFactory: AnalysisLogicFactory?
+    
     // Mark: Initialization
     
     //Initialization method for a Child Object
@@ -49,6 +52,7 @@ class Child{
         dateFormatter.dateFormat = "MM/dd/yyyy"
         self.birthDateString = dateFormatter.string(from: birthDate)
         calcAge()
+        self.analysisFactory = AnalysisLogicFactory(appChild: self.appChild!)
     }
     
     //Alternate implementation for when the child is already saved in the database
@@ -63,6 +67,7 @@ class Child{
         dateFormatter.dateFormat = "MM/dd/yyyy"
         self.birthDateString = dateFormatter.string(from: birthDate)
         calcAge()
+        self.analysisFactory = AnalysisLogicFactory(appChild: self.appChild!)
     }
     
     func calcAge(){
@@ -105,100 +110,6 @@ class Child{
             childToUpdate!.gender = child.gender
             childToUpdate!.birthdate = child.birthDate
         }
-    }
-    
-    //MARK: Analysis Queries
-    
-    //Helper: Generate the proper element predicate from a string
-    func elementPredicate(element: String)-> NSPredicate{
-        return NSPredicate(format: element.lowercased() + "!= nil")
-    }
-    
-    //Helper: Generate the predicate for a subelement being "present" (not marked as N/A)
-    func subElementPresentPredicate(subElement: String)->NSPredicate{
-        return NSPredicate(format: subElement + "!= 3")
-    }
-    
-    /*Helper: Get the subElementString array from the given element. Returns an array of a single empty string if the element is not found*/
-    func subElementStringArray(element: String)->[String]{
-        var subElements: [String]
-        switch element {
-        case "Activity":
-            subElements = ActivityObject.subElementStrings
-        case "Social":
-            subElements = SocialObject.subElementStrings
-        case "Communication":
-            subElements = CommunicationObject.subElementStrings
-        case "Emotion":
-            subElements = EmotionObject.subElementStrings
-        default:
-            subElements = [""]
-        }
-        return subElements
-    }
-    
-    func monthData(startDate: Date, element: String){
-        
-    }
-    
-    /*Get an array of the */
-    func weekData(startDate: Date, element: String){
-        
-    }
-    
-    /*Helper: function to determine if the date object's time is within a time interval on the same day.
-     This assumes that the time interval starts and ends exactly on the hour.
-     startHour and endHour should be expressed using a 24 hour clock.
-     The startHour is inclusive and the endHour is exclusive, so that records are not double counted*/
-    func isInTimeInterval(date: Date, startHour: Int, endHour: Int)->Bool{
-        let startDate = date.dateAt(hours: startHour, minutes: 0)
-        let endDate = date.dateAt(hours: endHour, minutes: 0)
-        return date >= startDate && date < endDate
-    }
-
-    /*Helper: Create a predicate for the interval between the two hours*/
-    func intervalPredicate(startHour: Int, endHour: Int)->NSPredicate{
-        return NSPredicate { (record, bindings)->Bool in
-            let recordObject = record as! RecordObject
-            return self.isInTimeInterval(date: recordObject.dateCreated, startHour: startHour, endHour: endHour)
-        }
-    }
-    
-    /*Helper: Get the count of records in the interval as a double*/
-    func timeIntervalCount(startHour: Int, endHour: Int, records: Results<RecordObject>)->Double{
-        let intervalPredicate = self.intervalPredicate(startHour: 0, endHour: 6)
-        let intervalRecords = records.filter(intervalPredicate)
-        return Double((intervalRecords.count))
-    }
-    
-    /*Get the count of records on the given day with the given element for each of the time intervals [midnight-6), [6-noon), [noon-6), [6- midnight). This returns an array of arrays of doubles, where the first array is the first subElement's counts in each time interval, the second is the second subelement, etc */
-    func dayData(startDate: Date, element: String)->[[Double]]{
-        let calendar = NSCalendar.current
-        //This uses Swift's closure to leverage the NSCalendar class
-        let dayPredicate = NSPredicate { (record, bindings)->Bool in
-            let recordObject = record as! RecordObject
-            return calendar.isDate(recordObject.dateCreated, inSameDayAs: startDate)
-        }
-        //Get records from the given day with the element present
-        let dayRecords = self.appChild?.records.filter(dayPredicate).filter(elementPredicate(element: element))
-        
-        //Create the containing array that the data arrays will be added to
-        var containerArray = [[Double]]()
-        
-        //Get the sub elements for the element
-        let subElements = subElementStringArray(element: element)
-        
-        //Generate the sub array for each sub element. This uses special syntax for an enumerated for loop so that the elements of the array must be accessed in order
-        for (_, subElement) in subElements.enumerated() {
-            //Further filter the day's records for only those with the element present
-            let subElementRecords = dayRecords?.filter( subElementPresentPredicate(subElement: subElement))
-            //Generate an array of all of the appropriate time intervals
-            let subElementArray = [timeIntervalCount(startHour: 0, endHour: 6, records: subElementRecords!), timeIntervalCount(startHour: 6, endHour: 12, records: subElementRecords!), timeIntervalCount(startHour: 12, endHour: 18, records: subElementRecords!), timeIntervalCount(startHour: 18, endHour: 0, records: subElementRecords!)]
-            //Append to the container array
-            containerArray.append(subElementArray)
-        }
-
-        return containerArray 
     }
     
 }

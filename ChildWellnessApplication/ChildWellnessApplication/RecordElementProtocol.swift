@@ -8,7 +8,7 @@
 
 import Foundation
 
-/*A protocol in Swift is similar to an interface in Java. This protocol is to ensure that all Realm objects that are a subelement of Record have the properties expected by queries in the Child Model*/
+/*A protocol in Swift is similar to an interface in Java. This protocol is to ensure that all Realm objects that are a subelement of Record have the properties expected by queries in the DataAnalysisQuery classes*/
 protocol RecordElement {
     static var subElementStrings: [String] {get}
 }

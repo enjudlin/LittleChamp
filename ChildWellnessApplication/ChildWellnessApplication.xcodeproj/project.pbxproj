@@ -38,6 +38,9 @@
 		F639F3E41DB71B9F005741AC /* SelectActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */; };
 		F67AA23A1DCC3C6F003EB1AA /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AA2391DCC3C6F003EB1AA /* DateExtensions.swift */; };
 		F67AA2411DCD54A5003EB1AA /* RecordElementProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AA2401DCD54A5003EB1AA /* RecordElementProtocol.swift */; };
+		F67AA2471DCD6E99003EB1AA /* AnalysisLogicFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AA2461DCD6E99003EB1AA /* AnalysisLogicFactory.swift */; };
+		F67AA24A1DCD711E003EB1AA /* DataAnalysisQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AA2491DCD711E003EB1AA /* DataAnalysisQuery.swift */; };
+		F67AA24C1DCD7306003EB1AA /* DayAnalysisQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AA24B1DCD7306003EB1AA /* DayAnalysisQuery.swift */; };
 		F686CA2B1DA2DF940060B57D /* ChildProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */; };
 		F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */; };
 		F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F686CA2E1DA2F6880060B57D /* ChildModel.swift */; };
@@ -140,6 +143,9 @@
 		F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectActionViewController.swift; sourceTree = "<group>"; };
 		F67AA2391DCC3C6F003EB1AA /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		F67AA2401DCD54A5003EB1AA /* RecordElementProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordElementProtocol.swift; sourceTree = "<group>"; };
+		F67AA2461DCD6E99003EB1AA /* AnalysisLogicFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisLogicFactory.swift; sourceTree = "<group>"; };
+		F67AA2491DCD711E003EB1AA /* DataAnalysisQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAnalysisQuery.swift; sourceTree = "<group>"; };
+		F67AA24B1DCD7306003EB1AA /* DayAnalysisQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayAnalysisQuery.swift; sourceTree = "<group>"; };
 		F686CA2A1DA2DF940060B57D /* ChildProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewCell.swift; sourceTree = "<group>"; };
 		F686CA2C1DA2F4B20060B57D /* ChildProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildProfileTableViewController.swift; sourceTree = "<group>"; };
 		F686CA2E1DA2F6880060B57D /* ChildModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildModel.swift; path = ChildWellnessApplication/ChildModel.swift; sourceTree = "<group>"; };
@@ -260,6 +266,7 @@
 		AC02840E1DCAC18300FB33F3 /* Analysis */ = {
 			isa = PBXGroup;
 			children = (
+				F67AA2481DCD70AE003EB1AA /* AnalysisQueries */,
 				AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */,
 				AC0284111DCAC4C900FB33F3 /* AnalysisChartController.swift */,
 				AC0284131DCAD66700FB33F3 /* MyXAxisValueFormatter.swift */,
@@ -313,6 +320,16 @@
 				0A794CB31DA35D6D0038311C /* ChildModel.swift */,
 			);
 			name = Children;
+			sourceTree = "<group>";
+		};
+		F67AA2481DCD70AE003EB1AA /* AnalysisQueries */ = {
+			isa = PBXGroup;
+			children = (
+				F67AA2461DCD6E99003EB1AA /* AnalysisLogicFactory.swift */,
+				F67AA2491DCD711E003EB1AA /* DataAnalysisQuery.swift */,
+				F67AA24B1DCD7306003EB1AA /* DayAnalysisQuery.swift */,
+			);
+			name = AnalysisQueries;
 			sourceTree = "<group>";
 		};
 		F6E9E3EA1DB99B4200C67026 /* ViewElements */ = {
@@ -511,6 +528,7 @@
 			files = (
 				F61B20491DBB2741001A9FBE /* EmotionViewController.swift in Sources */,
 				F686CA2F1DA2F6880060B57D /* ChildModel.swift in Sources */,
+				F67AA24A1DCD711E003EB1AA /* DataAnalysisQuery.swift in Sources */,
 				F6F103891DAB300200DBB605 /* AppChild.swift in Sources */,
 				F639F3E01DB6DDAD005741AC /* RecordObject.swift in Sources */,
 				AC0284101DCAC19D00FB33F3 /* AnalysisDashboardController.swift in Sources */,
@@ -525,9 +543,11 @@
 				AC0284121DCAC4C900FB33F3 /* AnalysisChartController.swift in Sources */,
 				F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */,
 				F67AA23A1DCC3C6F003EB1AA /* DateExtensions.swift in Sources */,
+				F67AA2471DCD6E99003EB1AA /* AnalysisLogicFactory.swift in Sources */,
 				0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */,
 				F61B20451DBB208F001A9FBE /* CommunicationObject.swift in Sources */,
 				F639F3E41DB71B9F005741AC /* SelectActionViewController.swift in Sources */,
+				F67AA24C1DCD7306003EB1AA /* DayAnalysisQuery.swift in Sources */,
 				F639F3E21DB6E05D005741AC /* ActivityObject.swift in Sources */,
 				F61B20431DBB1EC6001A9FBE /* EmotionObject.swift in Sources */,
 				0AA9484B1D9B6B01007E0799 /* SignUpViewController.swift in Sources */,
