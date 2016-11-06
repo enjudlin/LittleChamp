@@ -16,6 +16,8 @@ class AppChild: Object {
     dynamic var birthdate = Date()
     dynamic var parent: AppUser?
     
+    let records = LinkingObjects(fromType: RecordObject.self, property: "child")
+    
 // Specify properties to ignore (Realm won't persist these)
     
 //  override static func ignoredProperties() -> [String] {

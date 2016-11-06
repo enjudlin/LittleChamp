@@ -20,6 +20,9 @@ class Child{
     var parent: AppUser
     var appChild: AppChild?
     
+    /*Access the analysis factory to get the analysis information*/
+    var analysisFactory: AnalysisLogicFactory?
+    
     // Mark: Initialization
     
     //Initialization method for a Child Object
@@ -49,6 +52,7 @@ class Child{
         dateFormatter.dateFormat = "MM/dd/yyyy"
         self.birthDateString = dateFormatter.string(from: birthDate)
         calcAge()
+        self.analysisFactory = AnalysisLogicFactory(appChild: self.appChild!)
     }
     
     //Alternate implementation for when the child is already saved in the database
@@ -63,6 +67,7 @@ class Child{
         dateFormatter.dateFormat = "MM/dd/yyyy"
         self.birthDateString = dateFormatter.string(from: birthDate)
         calcAge()
+        self.analysisFactory = AnalysisLogicFactory(appChild: self.appChild!)
     }
     
     func calcAge(){
@@ -105,16 +110,6 @@ class Child{
             childToUpdate!.gender = child.gender
             childToUpdate!.birthdate = child.birthDate
         }
-    }
-    
-    class func getChildren() -> [Child]{
-        let realm = try! Realm()
-        var children = [Child]()
-        let childObjects = realm.objects(AppChild.self)
-        for childObject in childObjects{
-            children.append(childObject.toChild())
-        }
-        return children
     }
     
 }

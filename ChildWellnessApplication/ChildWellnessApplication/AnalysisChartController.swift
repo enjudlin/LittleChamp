@@ -19,27 +19,46 @@ class AnalysisChartController: UIViewController {
     
     
     //Dummy Data
+    //X axis values
     var days = ["12am", "6am", "12pm", "6pm", "12am"]
     var weeks = ["Mon", "Tues", "Weds", "Thur", "Fri"]
     var months = ["10/21","10/28","11/4","11/11","11/18"]
     
-    
+    //variable number indicates which subsection of the topic (subElement variable), position in array is week number as it should be displayed (first is farthest back in time) number is number of occurances
+    //Y Axis Values
+    //Excessively Active || Temper Tantrums || Argue With Others || Unresponsive when spoken to
     var monthOccur0 = [1.0,4.0,2.0,6.0,2.0]
+    //Abnormal Repetitive || Depressed Mood || Defiant || Talk Excessively
     var monthOccur1 = [2.0,8.0,1.0,3.0,3.0]
+    //Self Injury || Lacks Emotional Response || Withdrawn || Does not try to communicate
     var monthOccur2 = [9.0,4.0,2.0,1.0,6.0]
+    //Sluggish, inactive || Excessive crying || Resist Physical Contact || Talks to self loudly
     var monthOccur3 = [2.0,3.0,7.0,1.0,4.0]
+    //Screams Inappropriatly || Mood Changes Quickly || Physically Hurts Others || Difficulty Expressing self
     var monthOccur4 = [6.0,4.0,3.0,5.0,1.0]
     
+    //Time buckets
+    //Excessively Active || Temper Tantrums || Argue With Others || Unresponsive when spoken to
     var dayOccur0 = [4.0,2.0,1.0,8.0,4.0]
+    //Abnormal Repetitive || Depressed Mood || Defiant || Talk Excessively
     var dayOccur1 = [3.0,1.0,1.0,6.0,2.0]
+    //Self Injury || Lacks Emotional Response || Withdrawn || Does not try to communicate
     var dayOccur2 = [7.0,4.0,3.0,1.0,8.0]
+    //Sluggish, inactive || Excessive crying || Resist Physical Contact || Talks to self loudly
     var dayOccur3 = [3.0,9.0,4.0,1.0,7.0]
+    //Screams Inappropriatly || Mood Changes Quickly || Physically Hurts Others || Difficulty Expressing self
     var dayOccur4 = [2.0,1.0,5.0,9.0,0.0]
     
+    //There should be 7
+    //Excessively Active || Temper Tantrums || Argue With Others || Unresponsive when spoken to
     var weekOccur0 = [2.0,1.0,2.0,0.0,4.0]
+    //Abnormal Repetitive || Depressed Mood || Defiant || Talk Excessively
     var weekOccur1 = [6.0,3.0,1.0,1.0,1.0]
+    //Self Injury || Lacks Emotional Response || Withdrawn || Does not try to communicate
     var weekOccur2 = [0.0,0.0,2.0,1.0,2.0]
+    //Sluggish, inactive || Excessive crying || Resist Physical Contact || Talks to self loudly
     var weekOccur3 = [1.0,5.0,2.0,8.0,2.0]
+    //Screams Inappropriatly || Mood Changes Quickly || Physically Hurts Others || Difficulty Expressing self
     var weekOccur4 = [7.0,0.0,0.0,5.0,3.0]
     
     //MARK: Outlets
