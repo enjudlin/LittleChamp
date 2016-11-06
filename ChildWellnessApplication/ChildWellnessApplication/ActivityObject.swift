@@ -24,5 +24,5 @@ class ActivityObject: Object, RecordElement{
     dynamic var sluggishDesc = ""
     dynamic var screamsDesc = ""
     
-    static var subElementStrings = ["excessivelyActive", "abnormalRepMovement", "selfInjury", "sluggish", "screams"]
+    static var subElementStrings = ["excessivelyActive", "abnormalRepMov", "selfInjury", "sluggish", "screams"]
 }

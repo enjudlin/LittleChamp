@@ -39,7 +39,7 @@ class DataAnalysisQuery{
     
     //Generate the predicate for a subelement being "present" (not marked as N/A)
     func subElementPresentPredicate(subElement: String)->NSPredicate{
-        return NSPredicate(format: subElement + "!= 3")
+        return NSPredicate(format: self.element.lowercased() + "." + subElement + "!= 3")
     }
     
     /*Create a predicate for the interval between the two hours on the start date. End hour given as 24 is interpretted as the beginning of the following day*/
@@ -52,7 +52,7 @@ class DataAnalysisQuery{
     /*The predicate for something being in the same day as the given date*/
     func dayPredicate(date: Date)->NSPredicate{
         //This would be more succinctly done with a closure (or using a block Predicate) but that is not supported by Realm at the moment
-        return NSPredicate(format: "dateCreated BETWEEN {%@,%@}", argumentArray: [date.dateAt(hours: 0, minutes: 0), date.nextDayAt(hours: 0, minutes: 0)])
+        return intervalPredicate(startHour: 0, endHour: 24)
     }
     
     /*Other helpers*/

@@ -32,6 +32,8 @@ class DataAnalysisQueryTest: XCTestCase {
         return DataAnalysisQuery(appChild: appChild, startDate: Date(), element: "Activity")
     }
     
+    
+    //MARK: Tests
     func testIsInTimeInterval(){
         let obj = setUpObject()
         var date = Date().dateAt(hours: 3, minutes: 15)
@@ -108,4 +110,53 @@ class DataAnalysisQueryTest: XCTestCase {
         XCTAssertEqual(obj.timeIntervalCount(startHour: 3, endHour: 4, records: obj.recordsFromDay(date: obj.startDate)), 6.0, "Counted records outside of the interval")
 
     }
+    
+    func testDayData(){
+        let obj = DayAnalysisQuery(appChild: AppChild(), startDate: Date(), element: "Activity")
+        
+        //Seed database
+        for i in 1...5{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.activity?.excessivelyActive = 1
+            record.activity?.abnormalRepMov = 2
+            record.activity?.selfInjury = 1
+            record.activity?.sluggish = 0
+            record.activity?.screams = 2
+            record.create(timestamp: obj.startDate.dateAt(hours: i, minutes: i))
+        }
+        
+        //Test that there are 5 across board in the first time interval
+        XCTAssertEqual(obj.dayData() as NSArray, [[5.0, 0.0, 0.0, 0.0], [5.0, 0.0, 0.0, 0.0], [5.0, 0.0, 0.0, 0.0], [5.0, 0.0, 0.0, 0.0], [5.0, 0.0, 0.0, 0.0]] as NSArray, "Incorrect counts found")
+        
+        for i in 6...10{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.activity?.excessivelyActive = 0
+            record.create(timestamp: obj.startDate.dateAt(hours: i, minutes: i))
+        }
+        
+        for i in 12...17{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.activity?.abnormalRepMov = 0
+            record.create(timestamp: obj.startDate.dateAt(hours: i, minutes: i))
+        }
+        
+        for i in 18...20{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.activity?.selfInjury = 0
+            record.create(timestamp: obj.startDate.dateAt(hours: i, minutes: i))
+        }
+        
+        //Test that they still have 5 in the first time interval, but now the first also has 4 in the second time interval, the second has 6 in the third interval, and the third also has 2 in the fourth interval
+        XCTAssertEqual(obj.dayData() as NSArray, [[5.0, 5.0, 0.0, 0.0], [5.0, 0.0, 6.0, 0.0], [5.0, 0.0, 0.0, 3.0], [5.0, 0.0, 0.0, 0.0], [5.0, 0.0, 0.0, 0.0]] as NSArray, "Incorrect counts found")
+        
+    }
+
 }
