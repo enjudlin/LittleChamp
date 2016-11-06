@@ -20,46 +20,46 @@ class AnalysisChartController: UIViewController {
     
     //Dummy Data
     //X axis values
-    var days = ["12am", "6am", "12pm", "6pm", "12am"]
-    var weeks = ["Mon", "Tues", "Weds", "Thur", "Fri"]
-    var months = ["10/21","10/28","11/4","11/11","11/18"]
+    var days = ["12am", "6am", "12pm", "6pm"]
+    var weeks = ["Mon", "Tues", "Weds", "Thur", "Fri", "Sat", "Sun"]
+    var months = ["10/21","10/28","11/4","11/11"]
     
     //variable number indicates which subsection of the topic (subElement variable), position in array is week number as it should be displayed (first is farthest back in time) number is number of occurances
     //Y Axis Values
     //Excessively Active || Temper Tantrums || Argue With Others || Unresponsive when spoken to
-    var monthOccur0 = [1.0,4.0,2.0,6.0,2.0]
+    var monthOccur0: [Double]?
     //Abnormal Repetitive || Depressed Mood || Defiant || Talk Excessively
-    var monthOccur1 = [2.0,8.0,1.0,3.0,3.0]
+    var monthOccur1: [Double]?
     //Self Injury || Lacks Emotional Response || Withdrawn || Does not try to communicate
-    var monthOccur2 = [9.0,4.0,2.0,1.0,6.0]
+    var monthOccur2: [Double]?
     //Sluggish, inactive || Excessive crying || Resist Physical Contact || Talks to self loudly
-    var monthOccur3 = [2.0,3.0,7.0,1.0,4.0]
+    var monthOccur3: [Double]?
     //Screams Inappropriatly || Mood Changes Quickly || Physically Hurts Others || Difficulty Expressing self
-    var monthOccur4 = [6.0,4.0,3.0,5.0,1.0]
+    var monthOccur4: [Double]?
     
     //Time buckets
     //Excessively Active || Temper Tantrums || Argue With Others || Unresponsive when spoken to
-    var dayOccur0 = [4.0,2.0,1.0,8.0,4.0]
+    var dayOccur0: [Double]?
     //Abnormal Repetitive || Depressed Mood || Defiant || Talk Excessively
-    var dayOccur1 = [3.0,1.0,1.0,6.0,2.0]
+    var dayOccur1: [Double]?
     //Self Injury || Lacks Emotional Response || Withdrawn || Does not try to communicate
-    var dayOccur2 = [7.0,4.0,3.0,1.0,8.0]
+    var dayOccur2: [Double]?
     //Sluggish, inactive || Excessive crying || Resist Physical Contact || Talks to self loudly
-    var dayOccur3 = [3.0,9.0,4.0,1.0,7.0]
+    var dayOccur3: [Double]?
     //Screams Inappropriatly || Mood Changes Quickly || Physically Hurts Others || Difficulty Expressing self
-    var dayOccur4 = [2.0,1.0,5.0,9.0,0.0]
+    var dayOccur4: [Double]?
     
     //There should be 7
     //Excessively Active || Temper Tantrums || Argue With Others || Unresponsive when spoken to
-    var weekOccur0 = [2.0,1.0,2.0,0.0,4.0]
+    var weekOccur0: [Double]?
     //Abnormal Repetitive || Depressed Mood || Defiant || Talk Excessively
-    var weekOccur1 = [6.0,3.0,1.0,1.0,1.0]
+    var weekOccur1: [Double]?
     //Self Injury || Lacks Emotional Response || Withdrawn || Does not try to communicate
-    var weekOccur2 = [0.0,0.0,2.0,1.0,2.0]
+    var weekOccur2: [Double]?
     //Sluggish, inactive || Excessive crying || Resist Physical Contact || Talks to self loudly
-    var weekOccur3 = [1.0,5.0,2.0,8.0,2.0]
+    var weekOccur3: [Double]?
     //Screams Inappropriatly || Mood Changes Quickly || Physically Hurts Others || Difficulty Expressing self
-    var weekOccur4 = [7.0,0.0,0.0,5.0,3.0]
+    var weekOccur4: [Double]?
     
     //MARK: Outlets
     @IBOutlet weak var timePeriodPicker: UISegmentedControl!
@@ -136,27 +136,27 @@ class AnalysisChartController: UIViewController {
         
         if timePeriodPicker.selectedSegmentIndex == 0{
             labels = days
-            data0 = dayOccur0
-            data1 = dayOccur1
-            data2 = dayOccur2
-            data3 = dayOccur3
-            data4 = dayOccur4
+            data0 = dayOccur0!
+            data1 = dayOccur1!
+            data2 = dayOccur2!
+            data3 = dayOccur3!
+            data4 = dayOccur4!
         }
         else if timePeriodPicker.selectedSegmentIndex == 1{
             labels = weeks
-            data0 = weekOccur0
-            data1 = weekOccur1
-            data2 = weekOccur2
-            data3 = weekOccur3
-            data4 = weekOccur4
+            data0 = weekOccur0!
+            data1 = weekOccur1!
+            data2 = weekOccur2!
+            data3 = weekOccur3!
+            data4 = weekOccur4!
         }
         else{
             labels = months
-            data0 = monthOccur0
-            data1 = monthOccur1
-            data2 = monthOccur2
-            data3 = monthOccur3
-            data4 = monthOccur4
+            data0 = monthOccur0!
+            data1 = monthOccur1!
+            data2 = monthOccur2!
+            data3 = monthOccur3!
+            data4 = monthOccur4!
             
         }
         

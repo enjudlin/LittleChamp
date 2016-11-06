@@ -30,7 +30,14 @@ class AnalysisDashboardController: UIViewController {
                 destination.startDate = startDate.date
                 destination.subElement = sendingButton.currentTitle
                 destination.child = child
-                var dayMatrix = child?.analysisFactory?.dayData(startDate: startDate.date, element: sendingButton.currentTitle!)
+                var dayMatrix = child?.analysisLogic().dayData(startDate: startDate.date, element: sendingButton.currentTitle!)
+                destination.dayOccur0 = (dayMatrix?[0])!
+                destination.dayOccur1 = (dayMatrix?[1])!
+                destination.dayOccur2 = (dayMatrix?[2])!
+                destination.dayOccur3 = (dayMatrix?[3])!
+                destination.dayOccur4 = (dayMatrix?[4])!
+            
+            
             }
         }
     }
