@@ -21,7 +21,7 @@ class Child{
     var appChild: AppChild?
     
     /*Access the analysis factory to get the analysis information*/
-    var analysisFactory: AnalysisLogicFactory?
+    private var analysisFactory: AnalysisLogicFactory?
     
     // Mark: Initialization
     
@@ -52,7 +52,6 @@ class Child{
         dateFormatter.dateFormat = "MM/dd/yyyy"
         self.birthDateString = dateFormatter.string(from: birthDate)
         calcAge()
-        self.analysisFactory = AnalysisLogicFactory(appChild: self.appChild!)
     }
     
     //Alternate implementation for when the child is already saved in the database
@@ -67,7 +66,14 @@ class Child{
         dateFormatter.dateFormat = "MM/dd/yyyy"
         self.birthDateString = dateFormatter.string(from: birthDate)
         calcAge()
-        self.analysisFactory = AnalysisLogicFactory(appChild: self.appChild!)
+    }
+    
+    //Use the singleton pattern to get the analysis factory
+    func analysisLogic()->AnalysisLogicFactory{
+        if (self.analysisFactory != nil){
+            self.analysisFactory = AnalysisLogicFactory(appChild: self.appChild!)
+        }
+        return self.analysisFactory!
     }
     
     func calcAge(){
