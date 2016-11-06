@@ -131,4 +131,19 @@ class DataAnalysisQuery{
     }
     
     
+    /*Get an array of the sub element counts that day*/
+    func subElementCounts(date: Date)->[Double]{
+        //Get the records for the given day, pre filtered by the element
+        let dayRecords = self.recordsFromDay(date: date)
+        var array = [Double]()
+        //Use the special syntax for the for in loop to guarantee that array elements are accessed in order
+        for (_, subElement) in self.subElementStrings!.enumerated(){
+            //Further filter the day's records for only those with the element present
+            let subElementRecords = dayRecords.filter( subElementPresentPredicate(subElement: subElement))
+            //Add the count to the array
+            array.append(Double(subElementRecords.count))
+        }
+        return array
+    }
+    
 }

@@ -33,6 +33,7 @@
 		F61B20491DBB2741001A9FBE /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B20481DBB2741001A9FBE /* EmotionViewController.swift */; };
 		F61B204B1DBB33A5001A9FBE /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B204A1DBB33A5001A9FBE /* SocialViewController.swift */; };
 		F61B204D1DBB3966001A9FBE /* CommunicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B204C1DBB3966001A9FBE /* CommunicationViewController.swift */; };
+		F6200D221DCFE9E4006FDA79 /* MonthAnalysisQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6200D211DCFE9E4006FDA79 /* MonthAnalysisQuery.swift */; };
 		F639F3E01DB6DDAD005741AC /* RecordObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3DF1DB6DDAD005741AC /* RecordObject.swift */; };
 		F639F3E21DB6E05D005741AC /* ActivityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E11DB6E05D005741AC /* ActivityObject.swift */; };
 		F639F3E41DB71B9F005741AC /* SelectActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */; };
@@ -140,6 +141,7 @@
 		F61B20481DBB2741001A9FBE /* EmotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		F61B204A1DBB33A5001A9FBE /* SocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialViewController.swift; sourceTree = "<group>"; };
 		F61B204C1DBB3966001A9FBE /* CommunicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationViewController.swift; sourceTree = "<group>"; };
+		F6200D211DCFE9E4006FDA79 /* MonthAnalysisQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthAnalysisQuery.swift; sourceTree = "<group>"; };
 		F639F3DF1DB6DDAD005741AC /* RecordObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordObject.swift; sourceTree = "<group>"; };
 		F639F3E11DB6E05D005741AC /* ActivityObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityObject.swift; sourceTree = "<group>"; };
 		F639F3E31DB71B9F005741AC /* SelectActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectActionViewController.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				F67AA2491DCD711E003EB1AA /* DataAnalysisQuery.swift */,
 				F67AA24B1DCD7306003EB1AA /* DayAnalysisQuery.swift */,
 				F67AA24D1DCD7D7A003EB1AA /* WeekAnalysisQuery.swift */,
+				F6200D211DCFE9E4006FDA79 /* MonthAnalysisQuery.swift */,
 			);
 			name = AnalysisQueries;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				F686CA2D1DA2F4B20060B57D /* ChildProfileTableViewController.swift in Sources */,
 				F67AA23A1DCC3C6F003EB1AA /* DateExtensions.swift in Sources */,
 				F67AA2471DCD6E99003EB1AA /* AnalysisLogicFactory.swift in Sources */,
+				F6200D221DCFE9E4006FDA79 /* MonthAnalysisQuery.swift in Sources */,
 				0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */,
 				F61B20451DBB208F001A9FBE /* CommunicationObject.swift in Sources */,
 				F639F3E41DB71B9F005741AC /* SelectActionViewController.swift in Sources */,

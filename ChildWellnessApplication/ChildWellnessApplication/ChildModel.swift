@@ -70,7 +70,7 @@ class Child{
     
     //Use the singleton pattern to get the analysis factory
     func analysisLogic()->AnalysisLogicFactory{
-        if (self.analysisFactory != nil){
+        if (self.analysisFactory == nil){
             self.analysisFactory = AnalysisLogicFactory(appChild: self.appChild!)
         }
         return self.analysisFactory!
