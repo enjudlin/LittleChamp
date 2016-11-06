@@ -13,7 +13,7 @@ import Charts
 class AnalysisChartController: UIViewController {
     
     //Smarty Data
-    var child: AppChild?
+    var child: Child?
     var startDate: Date?
     var subElement: String?
     

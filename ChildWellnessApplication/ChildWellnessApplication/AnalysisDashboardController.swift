@@ -10,7 +10,7 @@ import UIKit
 
 class AnalysisDashboardController: UIViewController {
     @IBOutlet weak var startDate: UIDatePicker!
-    var child: AppChild?
+    var child: Child?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,7 @@ class AnalysisDashboardController: UIViewController {
                 destination.startDate = startDate.date
                 destination.subElement = sendingButton.currentTitle
                 destination.child = child
+                var dayMatrix = child?.analysisFactory?.dayData(startDate: startDate.date, element: sendingButton.currentTitle!)
             }
         }
     }

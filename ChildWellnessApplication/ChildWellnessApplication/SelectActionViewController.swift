@@ -50,6 +50,9 @@ class SelectActionViewController: UIViewController {
                 }
             }
         }
+        else if let dc = segue.destination as? AnalysisDashboardController{
+            dc.child = child
+        }
     }
     
     //Landing point for returning to this view from a record
