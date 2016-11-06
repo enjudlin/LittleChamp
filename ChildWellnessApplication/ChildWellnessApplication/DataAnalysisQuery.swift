@@ -46,13 +46,13 @@ class DataAnalysisQuery{
     func intervalPredicate(startHour: Int, endHour: Int)->NSPredicate{
         //This is a rather obtuse way of doing it because Realm doesn't support block predicates
         let endDate = (endHour == 24) ? self.startDate.nextDayAt(hours: 0, minutes: 0) :  self.startDate.dateAt(hours: endHour, minutes: 0)
-        return NSPredicate(format: "dateCreated BETWEEN {%@,%@}", argumentArray: [self.startDate.dateAt(hours: startHour, minutes: 0), endDate])
+        return NSPredicate(format: "dateCreated >= %@ AND dateCreated < %@", argumentArray: [self.startDate.dateAt(hours: startHour, minutes: 0), endDate])
     }
     
     /*The predicate for something being in the same day as the given date*/
     func dayPredicate(date: Date)->NSPredicate{
         //This would be more succinctly done with a closure (or using a block Predicate) but that is not supported by Realm at the moment
-        return NSPredicate(format: "dateCreated BETWEEN {%@, %@}", argumentArray: [date.dateAt(hours: 0, minutes: 0), date.nextDayAt(hours: 0, minutes: 0)])
+        return NSPredicate(format: "dateCreated BETWEEN {%@,%@}", argumentArray: [date.dateAt(hours: 0, minutes: 0), date.nextDayAt(hours: 0, minutes: 0)])
     }
     
     /*Other helpers*/
@@ -96,7 +96,7 @@ class DataAnalysisQuery{
     
     /*Get the count of records in the interval as a double*/
     func timeIntervalCount(startHour: Int, endHour: Int, records: Results<RecordObject>)->Double{
-        let intervalPredicate = self.intervalPredicate(startHour: 0, endHour: 6)
+        let intervalPredicate = self.intervalPredicate(startHour: startHour, endHour: endHour)
         let intervalRecords = records.filter(intervalPredicate)
         return Double((intervalRecords.count))
     }

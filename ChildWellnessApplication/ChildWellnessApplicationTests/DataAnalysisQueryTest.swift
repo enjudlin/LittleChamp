@@ -78,4 +78,34 @@ class DataAnalysisQueryTest: XCTestCase {
         }
         XCTAssertEqual(obj.recordsFromDay(date: Date()).count, 3, "Found records without the activity element")
     }
+    
+    func testTimeIntervalCount(){
+        let obj = setUpObject()
+        
+        //Make records between 3 and 4
+        for i in 0...5{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.create(timestamp: obj.startDate.dateAt(hours: 3, minutes: i))
+        }
+        XCTAssertEqual(obj.timeIntervalCount(startHour: 3, endHour: 4, records: obj.recordsFromDay(date: obj.startDate)), 6.0, "Did not find correct number of records in the time interval")
+        //Special case of a record right at the end of the interval (which should be ignored)
+        let record = RecordObject()
+        record.child = obj.appChild
+        record.activity = ActivityObject()
+        record.create(timestamp: obj.startDate.dateAt(hours: 4, minutes: 0))
+        XCTAssertEqual(obj.timeIntervalCount(startHour: 3, endHour: 4, records: obj.recordsFromDay(date: obj.startDate)), 6.0, "Counted a record at the end of the interval")
+        
+        //Check for records outside the interval
+        for i in 1...3{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.create(timestamp: obj.startDate.dateAt(hours: 6, minutes: i))
+        }
+        
+        XCTAssertEqual(obj.timeIntervalCount(startHour: 3, endHour: 4, records: obj.recordsFromDay(date: obj.startDate)), 6.0, "Counted records outside of the interval")
+
+    }
 }
