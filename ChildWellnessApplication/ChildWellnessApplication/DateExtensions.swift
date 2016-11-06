@@ -47,4 +47,12 @@ extension Date
         let nextDay = calendar.date(byAdding: dateComponents, to: self)
         return (nextDay?.dateAt(hours: hours, minutes: minutes))!
     }
+    
+    /*Genarate a previous day*/
+    func previousDate(numberOfDays: Int)->Date{
+        let calendar = NSCalendar.current
+        var dateComponents = DateComponents()
+        dateComponents.day = -numberOfDays
+        return calendar.date(byAdding: dateComponents, to: self)!
+    }
 }
