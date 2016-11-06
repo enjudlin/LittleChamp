@@ -28,7 +28,7 @@ class AnalysisLogicFactory{
     }
     
     /*Generate the expected query data. This will consist of 7 DayData objects of days in chronological order*/
-    func weekDate(startDate: Date, element: String)->[DayData]{
+    func weekDate(startDate: Date, element: String)->[DayDataObject]{
         return WeekAnalysisQuery(appChild: self.appChild!, startDate: startDate, element: element).weekData()
     }
 }

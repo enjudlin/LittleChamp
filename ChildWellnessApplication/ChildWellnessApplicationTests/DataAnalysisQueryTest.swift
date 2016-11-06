@@ -154,9 +154,87 @@ class DataAnalysisQueryTest: XCTestCase {
             record.create(timestamp: obj.startDate.dateAt(hours: i, minutes: i))
         }
         
-        //Test that they still have 5 in the first time interval, but now the first also has 4 in the second time interval, the second has 6 in the third interval, and the third also has 2 in the fourth interval
+        //Test that they still have 5 in the first time interval, but now the first also has 5 in the second time interval, the second has 6 in the third interval, and the third also has 3 in the fourth interval
         XCTAssertEqual(obj.dayData() as NSArray, [[5.0, 5.0, 0.0, 0.0], [5.0, 0.0, 6.0, 0.0], [5.0, 0.0, 0.0, 3.0], [5.0, 0.0, 0.0, 0.0], [5.0, 0.0, 0.0, 0.0]] as NSArray, "Incorrect counts found")
         
+    }
+    
+    //Verify the helper method for the week data calculation separately, so that it can be taken for granted in the following test
+    func testSubElementCounts(){
+        let obj = WeekAnalysisQuery(appChild: AppChild(), startDate: Date(), element: "Activity")
+        
+        //Seed 5 records on that day with all 5 subelements
+        for i in 1...5{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.activity?.excessivelyActive = 1
+            record.activity?.abnormalRepMov = 2
+            record.activity?.selfInjury = 1
+            record.activity?.sluggish = 0
+            record.activity?.screams = 2
+            record.create(timestamp: obj.startDate.dateAt(hours: i, minutes: i))
+        }
+        
+        XCTAssertEqual(obj.subElementCounts(date: obj.startDate), Array(repeatElement(5.0, count: 5)), "Did not find the correct counts for each subElement")
+        
+    }
+    
+    func testWeekData(){
+        //November 6, 2016 is a Sunday, use this date so that there is a known correct sequence of days
+        var dateComponents = DateComponents()
+        dateComponents.month = 11
+        dateComponents.day = 6
+        dateComponents.year = 2016
+        let novSixth = NSCalendar.init(calendarIdentifier: NSCalendar.Identifier.gregorian)?.date(from: dateComponents)
+        
+        let obj = WeekAnalysisQuery(appChild: AppChild(), startDate: novSixth!, element: "Activity")
+        //Seed database for week with each day having one record for each sub element
+        for i in 0...6{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.activity?.excessivelyActive = 1
+            record.activity?.abnormalRepMov = 2
+            record.activity?.selfInjury = 1
+            record.activity?.sluggish = 0
+            record.activity?.screams = 2
+            record.create(timestamp: obj.startDate.previousDate(numberOfDays: i))
+        }
+        //Seed past two days with additional data
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.activity?.excessivelyActive = 1
+            record.activity?.abnormalRepMov = 2
+            record.activity?.selfInjury = 1
+            record.activity?.sluggish = 0
+            record.activity?.screams = 2
+            record.create(timestamp: obj.startDate)
+        
+        //Generate the correct output manually
+        var answer = [DayDataObject]()
+        answer.append(DayDataObject(weekday: "Mon", subElementCounts: Array(repeating: 1.0, count: 5)))
+        answer.append(DayDataObject(weekday: "Tues", subElementCounts: Array(repeating: 1.0, count: 5)))
+        answer.append(DayDataObject(weekday: "Wed", subElementCounts: Array(repeating: 1.0, count: 5)))
+        answer.append(DayDataObject(weekday: "Thurs", subElementCounts: Array(repeating: 1.0, count: 5)))
+        answer.append(DayDataObject(weekday: "Fri", subElementCounts: Array(repeating: 1.0, count: 5)))
+        answer.append(DayDataObject(weekday: "Sat", subElementCounts: Array(repeating: 1.0, count: 5)))
+        answer.append(DayDataObject(weekday: "Sun", subElementCounts: Array(repeating: 2.0, count: 5)))
+        
+        let output = obj.weekData()
+        
+        XCTAssertEqual(output.count, answer.count, "Did not return 7 days of data")
+        
+        for (i, dayData) in answer.enumerated(){
+            let check = output[i].equal(data: dayData)
+            XCTAssertTrue(output[i].equal(data: dayData), "Day \(i+1) incorrect")
+            //Additional detail on failure
+            if (!check){
+                XCTAssertEqual(output[i].weekday, dayData.weekday, "Day \(i+1) incorrect weekday")
+                XCTAssertEqual(output[i].subElementCounts, dayData.subElementCounts, "Day \(i+1) incorrect subElementCounts")
+            }
+        }
     }
 
 }

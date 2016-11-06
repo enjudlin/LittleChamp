@@ -52,8 +52,7 @@ class DataAnalysisQuery{
     /*The predicate for something being in the same day as the given date*/
     func dayPredicate(date: Date)->NSPredicate{
         //This would be more succinctly done with a closure (or using a block Predicate) but that is not supported by Realm at the moment
-        return intervalPredicate(startHour: 0, endHour: 24)
-    }
+        return NSPredicate(format: "dateCreated >= %@ AND dateCreated < %@", argumentArray: [date.dateAt(hours: 0, minutes: 0), date.nextDayAt(hours: 0, minutes: 0)])    }
     
     /*Other helpers*/
     
