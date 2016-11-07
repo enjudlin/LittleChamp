@@ -20,9 +20,9 @@ class AnalysisChartController: UIViewController {
     
     //Dummy Data
     //X axis values
-    var days = ["12am", "6am", "12pm", "6pm"]
-    var weeks = ["Mon", "Tues", "Weds", "Thur", "Fri", "Sat", "Sun"]
-    var months = ["10/21","10/28","11/4","11/11"]
+    var days: [String]?
+    var weeks: [String]?
+    var months: [String]?
     
     //variable number indicates which subsection of the topic (subElement variable), position in array is week number as it should be displayed (first is farthest back in time) number is number of occurances
     //Y Axis Values
@@ -135,7 +135,7 @@ class AnalysisChartController: UIViewController {
         
         
         if timePeriodPicker.selectedSegmentIndex == 0{
-            labels = days
+            labels = days!
             data0 = dayOccur0!
             data1 = dayOccur1!
             data2 = dayOccur2!
@@ -143,7 +143,7 @@ class AnalysisChartController: UIViewController {
             data4 = dayOccur4!
         }
         else if timePeriodPicker.selectedSegmentIndex == 1{
-            labels = weeks
+            labels = weeks!
             data0 = weekOccur0!
             data1 = weekOccur1!
             data2 = weekOccur2!
@@ -151,7 +151,7 @@ class AnalysisChartController: UIViewController {
             data4 = weekOccur4!
         }
         else{
-            labels = months
+            labels = months!
             data0 = monthOccur0!
             data1 = monthOccur1!
             data2 = monthOccur2!
@@ -239,13 +239,13 @@ class AnalysisChartController: UIViewController {
         let data = LineChartData(dataSets: dataSets)
         lineChartView.data = data
         if timePeriodPicker.selectedSegmentIndex == 0{
-            lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: days)
+            lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: days!)
         }
         else if timePeriodPicker.selectedSegmentIndex == 1{
-            lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: weeks)
+            lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: weeks!)
         }
         else{
-            lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: months)
+            lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: months!)
         }
         lineChartView.xAxis.granularity = 1.0
         lineChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
