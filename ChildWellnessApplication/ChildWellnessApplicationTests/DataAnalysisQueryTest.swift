@@ -236,5 +236,72 @@ class DataAnalysisQueryTest: XCTestCase {
             }
         }
     }
+    
+    func testMonthData(){
+        //Testing based on November 6, 2016
+        var dateComponents = DateComponents()
+        dateComponents.month = 11
+        dateComponents.day = 6
+        dateComponents.year = 2016
+        let novSixth = NSCalendar.init(calendarIdentifier: NSCalendar.Identifier.gregorian)?.date(from: dateComponents)
+        
+        let obj = MonthAnalysisQuery(appChild: AppChild(), startDate: novSixth!, element: "Activity")
+        
+        //Seed Data for previous 28 days
+        for i in 0...28{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.activity?.excessivelyActive = 1
+            record.activity?.abnormalRepMov = 2
+            record.activity?.selfInjury = 1
+            record.activity?.sluggish = 0
+            record.activity?.screams = 2
+            record.create(timestamp: obj.startDate.previousDate(numberOfDays: i))
+        }
+        
+        for i in 0...13{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.activity?.excessivelyActive = 1
+            record.activity?.abnormalRepMov = 2
+            record.activity?.selfInjury = 1
+            record.activity?.sluggish = 0
+            record.activity?.screams = 2
+            record.create(timestamp: obj.startDate.previousDate(numberOfDays: i))
+        }
+        
+        for i in 0...6{
+            let record = RecordObject()
+            record.child = obj.appChild
+            record.activity = ActivityObject()
+            record.activity?.excessivelyActive = 1
+            record.activity?.abnormalRepMov = 2
+            record.activity?.selfInjury = 1
+            record.activity?.sluggish = 0
+            record.activity?.screams = 2
+            record.create(timestamp: obj.startDate.previousDate(numberOfDays: i))
+        }
+        
+        //Generate answer
+        let ansLabels = ["10/10", "10/17", "10/24", "10/31"]
+        var ansValues = [[Double]]()
+        ansValues.append(Array(repeating: 7.0, count: 5))
+        ansValues.append(Array(repeating: 7.0, count: 5))
+        ansValues.append(Array(repeating: 14.0, count: 5))
+        ansValues.append(Array(repeating: 21.0, count: 5))
+        
+        let output = obj.monthData()
+        let (labels, values) = WeekDataObject.combineArrays(weekData: output)
+        
+        XCTAssertEqual(ansLabels, labels, "Incorrect labels")
+        
+        for (i, val) in ansValues.enumerated(){
+            XCTAssertEqual(values[i], val, "Incorrect values for week \(i)")
+        }
+        
+        
+    }
 
 }
