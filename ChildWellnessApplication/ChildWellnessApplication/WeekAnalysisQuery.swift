@@ -43,6 +43,10 @@ class DayDataObject{
         return self.weekday == data.weekday && self.subElementCounts == data.subElementCounts
     }
     
+    /*Helper to convert and array of this object into two arrays, one of the labels and another of the arrays of counts.
+     Since this is a multiple return, it should be called in the format:
+     let (labelArray, valueArray) = DayDataObject.combineArrays(...
+     */
     class func combineArrays(weekData: [DayDataObject])->([String], [[Double]]){
         var labels = [String]()
         var values = [[Double]]()
