@@ -54,4 +54,16 @@ class WeekDataObject{
         self.startDateString = startDate
         self.subElementCounts = subElementCounts
     }
+    
+    class func combineArrays(weekData: [WeekDataObject])->([String], [[Double]]){
+        var labels = [String]()
+        var values = [[Double]]()
+        for ( _ , obj) in weekData.enumerated(){
+            labels.append(obj.startDateString)
+            values.append(obj.subElementCounts)
+        }
+        
+        return (labels, values)
+    }
+
 }

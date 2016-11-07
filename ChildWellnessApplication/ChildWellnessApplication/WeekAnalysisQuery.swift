@@ -42,4 +42,15 @@ class DayDataObject{
     func equal(data: DayDataObject)->Bool{
         return self.weekday == data.weekday && self.subElementCounts == data.subElementCounts
     }
+    
+    class func combineArrays(weekData: [DayDataObject])->([String], [[Double]]){
+        var labels = [String]()
+        var values = [[Double]]()
+        for ( _ , obj) in weekData.enumerated(){
+            labels.append(obj.weekday)
+            values.append(obj.subElementCounts)
+        }
+        
+        return (labels, values)
+    }
 }
