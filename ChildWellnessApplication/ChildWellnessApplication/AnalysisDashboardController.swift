@@ -55,18 +55,19 @@ class AnalysisDashboardController: UIViewController {
                 destination.weekOccur2 = (weekMatrix[2])
                 destination.weekOccur3 = (weekMatrix[3])
                 destination.weekOccur4 = (weekMatrix[4])
+                destination.weekOccur5 = (weekMatrix[5])
+                destination.weekOccur6 = (weekMatrix[6])
                 
                 
                 
                 let monthObject = child?.analysisLogic().monthData(startDate: startDate.date, element: sendingButton.currentTitle!)
                 let monthArrays = WeekDataObject.combineArrays(weekData: monthObject!)
                 destination.months = monthArrays.0
-                var monthMatrix = weekArrays.1
+                var monthMatrix = monthArrays.1
                 destination.monthOccur0 = (monthMatrix[0])
                 destination.monthOccur1 = (monthMatrix[1])
                 destination.monthOccur2 = (monthMatrix[2])
                 destination.monthOccur3 = (monthMatrix[3])
-                destination.monthOccur4 = (monthMatrix[4])
                 
             }
         }

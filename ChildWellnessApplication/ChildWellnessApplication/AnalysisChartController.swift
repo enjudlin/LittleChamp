@@ -34,8 +34,6 @@ class AnalysisChartController: UIViewController {
     var monthOccur2: [Double]?
     //Sluggish, inactive || Excessive crying || Resist Physical Contact || Talks to self loudly
     var monthOccur3: [Double]?
-    //Screams Inappropriatly || Mood Changes Quickly || Physically Hurts Others || Difficulty Expressing self
-    var monthOccur4: [Double]?
     
     //Time buckets
     //Excessively Active || Temper Tantrums || Argue With Others || Unresponsive when spoken to
@@ -46,7 +44,6 @@ class AnalysisChartController: UIViewController {
     var dayOccur2: [Double]?
     //Sluggish, inactive || Excessive crying || Resist Physical Contact || Talks to self loudly
     var dayOccur3: [Double]?
-    //Screams Inappropriatly || Mood Changes Quickly || Physically Hurts Others || Difficulty Expressing self
     var dayOccur4: [Double]?
     
     //There should be 7
@@ -60,6 +57,8 @@ class AnalysisChartController: UIViewController {
     var weekOccur3: [Double]?
     //Screams Inappropriatly || Mood Changes Quickly || Physically Hurts Others || Difficulty Expressing self
     var weekOccur4: [Double]?
+    var weekOccur5: [Double]?
+    var weekOccur6: [Double]?
     
     //MARK: Outlets
     @IBOutlet weak var timePeriodPicker: UISegmentedControl!
@@ -126,39 +125,75 @@ class AnalysisChartController: UIViewController {
     }
     
     func setChart(){
-        var labels = [String]()
         var data0 = [Double]()
         var data1 = [Double]()
         var data2 = [Double]()
         var data3 = [Double]()
         var data4 = [Double]()
+        var data5 = [Double]()
+        var data6 = [Double]()
+        var numBuckets = 0
         
+        var dataHolder =  [[Double]]()
         
         if timePeriodPicker.selectedSegmentIndex == 0{
-            labels = days!
             data0 = dayOccur0!
             data1 = dayOccur1!
             data2 = dayOccur2!
             data3 = dayOccur3!
             data4 = dayOccur4!
+            numBuckets = 4
+            dataHolder.append(data0)
+            dataHolder.append(data1)
+            dataHolder.append(data2)
+            dataHolder.append(data3)
+            dataHolder.append(data4)
+            var data0T = [Double]()
+            var data1T = [Double]()
+            var data2T = [Double]()
+            var data3T = [Double]()
+            for i in 0..<5{
+                data0T.append(dataHolder[i][0])
+                data1T.append(dataHolder[i][1])
+                data2T.append(dataHolder[i][2])
+                data3T.append(dataHolder[i][3])
+            }
+            dataHolder.removeAll()
+            dataHolder.append(data0T)
+            dataHolder.append(data1T)
+            dataHolder.append(data2T)
+            dataHolder.append(data3T)
+            
         }
         else if timePeriodPicker.selectedSegmentIndex == 1{
-            labels = weeks!
             data0 = weekOccur0!
             data1 = weekOccur1!
             data2 = weekOccur2!
             data3 = weekOccur3!
             data4 = weekOccur4!
+            data5 = weekOccur5!
+            data6 = weekOccur6!
+            numBuckets = 7
+            dataHolder.append(data0)
+            dataHolder.append(data1)
+            dataHolder.append(data2)
+            dataHolder.append(data3)
+            dataHolder.append(data4)
+            dataHolder.append(data5)
+            dataHolder.append(data6)
         }
         else{
-            labels = months!
             data0 = monthOccur0!
             data1 = monthOccur1!
             data2 = monthOccur2!
             data3 = monthOccur3!
-            data4 = monthOccur4!
-            
+            numBuckets = 4
+            dataHolder.append(data0)
+            dataHolder.append(data1)
+            dataHolder.append(data2)
+            dataHolder.append(data3)
         }
+        
         
         
         
@@ -170,24 +205,24 @@ class AnalysisChartController: UIViewController {
         var dataEntries4: [ChartDataEntry] = []
         
         
-        for i in 0..<labels.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: data0[i])
+        for i in 0..<numBuckets {
+            let dataEntry = ChartDataEntry(x: Double(i), y: dataHolder[i][0])
             dataEntries0.append(dataEntry)
         }
-        for i in 0..<labels.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: data1[i])
+        for i in 0..<numBuckets {
+            let dataEntry = ChartDataEntry(x: Double(i), y: dataHolder[i][1])
             dataEntries1.append(dataEntry)
         }
-        for i in 0..<labels.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: data2[i])
+        for i in 0..<numBuckets {
+            let dataEntry = ChartDataEntry(x: Double(i), y: dataHolder[i][2])
             dataEntries2.append(dataEntry)
         }
-        for i in 0..<labels.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: data3[i])
+        for i in 0..<numBuckets {
+            let dataEntry = ChartDataEntry(x: Double(i), y: dataHolder[i][3])
             dataEntries3.append(dataEntry)
         }
-        for i in 0..<labels.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: data4[i])
+        for i in 0..<numBuckets {
+            let dataEntry = ChartDataEntry(x: Double(i), y: dataHolder[i][4])
             dataEntries4.append(dataEntry)
         }
         
@@ -235,9 +270,6 @@ class AnalysisChartController: UIViewController {
             dataSets.append(set4)
         }
         
-        
-        let data = LineChartData(dataSets: dataSets)
-        lineChartView.data = data
         if timePeriodPicker.selectedSegmentIndex == 0{
             lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: days!)
         }
@@ -247,6 +279,10 @@ class AnalysisChartController: UIViewController {
         else{
             lineChartView.xAxis.valueFormatter = MyXAxisFormatter(label: months!)
         }
+        
+        let data = LineChartData(dataSets: dataSets)
+        lineChartView.data = data
+
         lineChartView.xAxis.granularity = 1.0
         lineChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
         
