@@ -102,6 +102,7 @@ class Child{
         try! realm.write{
             realm.add(appChild)
         }
+        self.appChild = appChild
     }
     
     //Function that will update a child in the realm database
