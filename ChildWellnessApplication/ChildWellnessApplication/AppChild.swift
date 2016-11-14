@@ -18,12 +18,8 @@ class AppChild: Object {
     
     let records = LinkingObjects(fromType: RecordObject.self, property: "child")
     
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
-    
+    //Convert an AppChild object to a Child object.
+    //Child is a wrapper for app child, and contains code to create and edit children as well as calculate age and convert time stamps to a string for the UI.
     func toChild()-> Child{
         return Child(appChild: self)
     }

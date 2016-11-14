@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+//ActivityObject is a sub element of the RecordObject class to record information about the child's activity.
 class ActivityObject: Object, RecordElement{
     /* 3 is the default and indicates that the field was not selected at all (set to N/A in the UI). 0, 1, and 2 refer to mild, moderate, and severe selections.*/
     dynamic var excessivelyActive = 3
