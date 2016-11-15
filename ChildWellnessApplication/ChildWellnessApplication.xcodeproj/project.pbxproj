@@ -20,6 +20,7 @@
 		A04212731DA9F58F00F7F0FB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; };
 		A04212741DA9F58F00F7F0FB /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A04212781DAA013700F7F0FB /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04212771DAA013700F7F0FB /* RealmObjects.swift */; };
+		A09128681DDBB8EB00FC8940 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09128671DDBB8EB00FC8940 /* UserProfileViewController.swift */; };
 		AC02840A1DCABEDA00FB33F3 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0284051DCABEBA00FB33F3 /* Charts.framework */; };
 		AC02840B1DCABEDA00FB33F3 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC0284051DCABEBA00FB33F3 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC0284101DCAC19D00FB33F3 /* AnalysisDashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */; };
@@ -129,6 +130,7 @@
 		A042126D1DA9F56E00F7F0FB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		A042126E1DA9F56E00F7F0FB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		A04212771DAA013700F7F0FB /* RealmObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
+		A09128671DDBB8EB00FC8940 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		AC0283FE1DCABEB900FB33F3 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisDashboardController.swift; sourceTree = "<group>"; };
 		AC0284111DCAC4C900FB33F3 /* AnalysisChartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisChartController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 		0A388FF81D98D620007E126A /* ChildWellnessApplication */ = {
 			isa = PBXGroup;
 			children = (
+				A09128631DDBB80A00FC8940 /* User Profile */,
 				AC02840E1DCAC18300FB33F3 /* Analysis */,
 				F61B20411DBB1327001A9FBE /* Children */,
 				F61B20401DBB12DE001A9FBE /* Record Creation */,
@@ -254,6 +257,14 @@
 				0A38901B1D98D621007E126A /* Info.plist */,
 			);
 			path = ChildWellnessApplicationUITests;
+			sourceTree = "<group>";
+		};
+		A09128631DDBB80A00FC8940 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A09128671DDBB8EB00FC8940 /* UserProfileViewController.swift */,
+			);
+			name = "User Profile";
 			sourceTree = "<group>";
 		};
 		AC0283FF1DCABEB900FB33F3 /* Products */ = {
@@ -536,6 +547,7 @@
 				F67AA24A1DCD711E003EB1AA /* DataAnalysisQuery.swift in Sources */,
 				F6F103891DAB300200DBB605 /* AppChild.swift in Sources */,
 				F639F3E01DB6DDAD005741AC /* RecordObject.swift in Sources */,
+				A09128681DDBB8EB00FC8940 /* UserProfileViewController.swift in Sources */,
 				AC0284101DCAC19D00FB33F3 /* AnalysisDashboardController.swift in Sources */,
 				F67AA2411DCD54A5003EB1AA /* RecordElementProtocol.swift in Sources */,
 				F61B20471DBB2184001A9FBE /* SocialObject.swift in Sources */,

@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var forgetPwdButton: UIButton!
     
     //This represents the user profile information to be sent onto other views
     var user: AppUser?
@@ -111,6 +112,9 @@ class LoginViewController: UIViewController {
         return emailTest.evaluate(with: testStr)
     }
     
+    @IBAction func forgetPwdButtonTapped(_ sender: AnyObject) {
+        
+    }
     
     // MARK: - Navigation
 

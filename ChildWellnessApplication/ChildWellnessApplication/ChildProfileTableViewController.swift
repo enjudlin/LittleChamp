@@ -137,6 +137,12 @@ class ChildProfileTableViewController: UITableViewController {
             let form = navController?.viewControllers.first as? ChildFormViewController
             form?.user = self.user
         }
+        else if segue.identifier == "toUserProfile" {
+                let profile = segue.destination as! UserProfileViewController
+                profile.user = self.user
+        }
+
+
         
     }
  
