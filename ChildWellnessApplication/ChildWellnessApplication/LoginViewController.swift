@@ -19,6 +19,25 @@ class LoginViewController: UIViewController {
     //This represents the user profile information to be sent onto other views
     var user: AppUser?
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // check if remained logged in
+        let realm = try! Realm()
+        let loggedInUser = realm.objects(LoggedInUser.self)
+        if loggedInUser.isEmpty {
+            // do nothing
+        } else {
+            // check remained user data
+            let temp = loggedInUser.first
+            let email: String = (temp?.email)!
+            let predicate = NSPredicate(format: "email = %@", email)
+            self.user = realm.objects(AppUser.self).filter(predicate).first
+            self.performSegue(withIdentifier: "FromLoginToChildren", sender: self)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -88,7 +107,32 @@ class LoginViewController: UIViewController {
             // login successful;
             self.user = target
         }
+        
+        // ask user if they want to remain logged in
+        let remain = UIAlertController(title:"Little Champ", message:"Do you want to remain logged in?", preferredStyle:UIAlertControllerStyle.alert)
+        
+        let yesAction = UIAlertAction(title:"Yes", style:UIAlertActionStyle.default,handler:{
+            (action: UIAlertAction!) in
+            
+            let remain = LoggedInUser()
+            remain.email = userEmail
+            try! realm.write {
+                realm.add(remain)
+            }
+            
+            self.performSegue(withIdentifier: "FromLoginToChildren", sender: self)
+        })
+        remain.addAction(yesAction)
+        
+        let noAction = UIAlertAction(title:"No", style:UIAlertActionStyle.default, handler:{
+            (action: UIAlertAction!) in
+            self.performSegue(withIdentifier: "FromLoginToChildren", sender: self)
+        })
+        remain.addAction(noAction)
+        
+        self.present(remain, animated: true, completion: nil)
     }
+    
 
     /** 
      * display alert message with confirmation

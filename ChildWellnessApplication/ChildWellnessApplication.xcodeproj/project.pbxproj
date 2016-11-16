@@ -22,6 +22,7 @@
 		A04212781DAA013700F7F0FB /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04212771DAA013700F7F0FB /* RealmObjects.swift */; };
 		A09128681DDBB8EB00FC8940 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09128671DDBB8EB00FC8940 /* UserProfileViewController.swift */; };
 		A091286B1DDBBEB200FC8940 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A091286A1DDBBEB200FC8940 /* ChangePasswordViewController.swift */; };
+		A09128711DDC0E7B00FC8940 /* EditUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09128701DDC0E7B00FC8940 /* EditUserProfileViewController.swift */; };
 		AC02840A1DCABEDA00FB33F3 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0284051DCABEBA00FB33F3 /* Charts.framework */; };
 		AC02840B1DCABEDA00FB33F3 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC0284051DCABEBA00FB33F3 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC0284101DCAC19D00FB33F3 /* AnalysisDashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */; };
@@ -133,6 +134,7 @@
 		A04212771DAA013700F7F0FB /* RealmObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
 		A09128671DDBB8EB00FC8940 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		A091286A1DDBBEB200FC8940 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		A09128701DDC0E7B00FC8940 /* EditUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserProfileViewController.swift; sourceTree = "<group>"; };
 		AC0283FE1DCABEB900FB33F3 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisDashboardController.swift; sourceTree = "<group>"; };
 		AC0284111DCAC4C900FB33F3 /* AnalysisChartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisChartController.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			children = (
 				A09128671DDBB8EB00FC8940 /* UserProfileViewController.swift */,
 				A091286A1DDBBEB200FC8940 /* ChangePasswordViewController.swift */,
+				A09128701DDC0E7B00FC8940 /* EditUserProfileViewController.swift */,
 			);
 			name = "User Profile";
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				F6200D221DCFE9E4006FDA79 /* MonthAnalysisQuery.swift in Sources */,
 				0AF3058D1DA07A96008A4625 /* LoginViewController.swift in Sources */,
 				F61B20451DBB208F001A9FBE /* CommunicationObject.swift in Sources */,
+				A09128711DDC0E7B00FC8940 /* EditUserProfileViewController.swift in Sources */,
 				F639F3E41DB71B9F005741AC /* SelectActionViewController.swift in Sources */,
 				F67AA24C1DCD7306003EB1AA /* DayAnalysisQuery.swift in Sources */,
 				F639F3E21DB6E05D005741AC /* ActivityObject.swift in Sources */,
