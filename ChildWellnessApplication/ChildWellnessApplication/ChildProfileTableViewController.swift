@@ -142,8 +142,6 @@ class ChildProfileTableViewController: UITableViewController {
                 profile.user = self.user
         }
 
-
-        
     }
  
 

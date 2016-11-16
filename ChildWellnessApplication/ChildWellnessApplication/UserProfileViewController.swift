@@ -10,6 +10,7 @@ import UIKit
 
 class UserProfileViewController: UIViewController {
 
+    @IBOutlet weak var changePwdButton: UIButton!
     var user: AppUser?
     
     override func viewDidLoad() {
@@ -24,14 +25,17 @@ class UserProfileViewController: UIViewController {
     }
     
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toChangePassword" {
+            let change = segue.destination as! ChangePasswordViewController
+            change.user = self.user
+        }
+        
     }
-    */
+
 
 }

@@ -21,6 +21,7 @@
 		A04212741DA9F58F00F7F0FB /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A042126E1DA9F56E00F7F0FB /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A04212781DAA013700F7F0FB /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04212771DAA013700F7F0FB /* RealmObjects.swift */; };
 		A09128681DDBB8EB00FC8940 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09128671DDBB8EB00FC8940 /* UserProfileViewController.swift */; };
+		A091286B1DDBBEB200FC8940 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A091286A1DDBBEB200FC8940 /* ChangePasswordViewController.swift */; };
 		AC02840A1DCABEDA00FB33F3 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0284051DCABEBA00FB33F3 /* Charts.framework */; };
 		AC02840B1DCABEDA00FB33F3 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC0284051DCABEBA00FB33F3 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC0284101DCAC19D00FB33F3 /* AnalysisDashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */; };
@@ -131,6 +132,7 @@
 		A042126E1DA9F56E00F7F0FB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		A04212771DAA013700F7F0FB /* RealmObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
 		A09128671DDBB8EB00FC8940 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		A091286A1DDBBEB200FC8940 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		AC0283FE1DCABEB900FB33F3 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		AC02840F1DCAC19D00FB33F3 /* AnalysisDashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisDashboardController.swift; sourceTree = "<group>"; };
 		AC0284111DCAC4C900FB33F3 /* AnalysisChartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisChartController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				A09128671DDBB8EB00FC8940 /* UserProfileViewController.swift */,
+				A091286A1DDBBEB200FC8940 /* ChangePasswordViewController.swift */,
 			);
 			name = "User Profile";
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				F6E9E3F21DB9C9B100C67026 /* RecordFormViewController.swift in Sources */,
 				F6E9E3F01DB9B2C200C67026 /* ActivityViewController.swift in Sources */,
 				F6FABCDD1DA701B200E0ABEB /* ChildFormViewController.swift in Sources */,
+				A091286B1DDBBEB200FC8940 /* ChangePasswordViewController.swift in Sources */,
 				A04212781DAA013700F7F0FB /* RealmObjects.swift in Sources */,
 				F6FABCE21DA73F7400E0ABEB /* ChildProfileViewController.swift in Sources */,
 				AC0284121DCAC4C900FB33F3 /* AnalysisChartController.swift in Sources */,

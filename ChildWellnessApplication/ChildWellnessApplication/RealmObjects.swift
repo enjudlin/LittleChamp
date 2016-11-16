@@ -30,3 +30,7 @@ class AppUser: Object {
     }
 }
 
+// for remain logged in
+class LoggedInUser: Object {
+    dynamic var email: String? = nil
+}
