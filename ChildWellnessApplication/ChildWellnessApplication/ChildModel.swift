@@ -51,7 +51,7 @@ class Child{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         self.birthDateString = dateFormatter.string(from: birthDate)
-        calcAge()
+        calcAge(today: Date())
     }
     
     //Alternate implementation for when the child is already saved in the database
@@ -65,7 +65,7 @@ class Child{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         self.birthDateString = dateFormatter.string(from: birthDate)
-        calcAge()
+        calcAge(today: Date())
     }
     
     //Use the singleton pattern to get the analysis factory
@@ -76,22 +76,14 @@ class Child{
         return self.analysisFactory!
     }
     
-    func calcAge(){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateComponentsFormatter = DateComponentsFormatter()
-        dateComponentsFormatter.unitsStyle = DateComponentsFormatter.UnitsStyle.full
-        let interval = NSDate().timeIntervalSince(self.birthDate)
-        let ageString = dateComponentsFormatter.string(from: interval)
-        let delimiter = " "
-        var token = ageString!.components(separatedBy: delimiter)
-        let ageScale = token[1]
-        self.age = Int(token[0])!
-        if(ageScale != "years,"){
-            self.age = 0
-        }
+    //Calculate the child's age based on the birthdate of the child
+    //By passing in today, this function is unit testable because one can set fixed dates when testing
+    func calcAge(today: Date){        
+        let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+        self.age = (calendar?.components(NSCalendar.Unit.year, from: self.birthDate, to: today).year)!
     }
     
+    //Create the child and save it in the Realm database
     func createChild(){
         let realm = try! Realm()
         let appChild = AppChild()

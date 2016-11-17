@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 
+//This is a sub element of the RecordObject class
 class CommunicationObject: Object, RecordElement {
     
     /* 3 is the default and indicates that the field was not selected at all. 0, 1, and 2 refer to mile, moderate, and severe selections.*/
