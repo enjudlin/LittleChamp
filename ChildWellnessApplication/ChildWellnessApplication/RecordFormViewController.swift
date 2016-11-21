@@ -29,21 +29,33 @@ class RecordFormViewController: UIViewController {
     }
     
 
+    //MARK: Actions
+    
+    @IBAction func _saveRecord(_ sender: UIBarButtonItem) {
+        if saveButton === sender {
+            //Set record's child
+            record.child = self.child
+            
+            //Save record to database
+            record.create()
+            
+            //Display confirmation
+            let confirmation = UIAlertController(title:"Success", message:"Behavior Record Saved", preferredStyle:UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "ok", style:UIAlertActionStyle.default, handler:{
+                (action: UIAlertAction!) in
+                self.performSegue(withIdentifier: "returnToActionList", sender: self)
+            })
+            confirmation.addAction(okAction)
+            self.present(confirmation, animated: true, completion: nil)
+        }
+    }
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Only save the record if the save button was clicked
-        if let barButton = sender as? UIBarButtonItem{
-            if saveButton === barButton {
-                //Set record's child
-                record.child = self.child
-                
-                //Save record to database
-                record.create()
-            }
-        }
-        else{
+       
             //Pass the existing cooresponding object to the view controller if one already exists.
             if let destination = segue.destination as? ActivityViewController{
                 if (self.record.activity != nil){
@@ -63,8 +75,7 @@ class RecordFormViewController: UIViewController {
                 if (self.record.communication != nil){
                     destination.existingCommunication = self.record.communication               }
             }
-            
-        }
+        
     }
     
     //Landing point for returning to this view from a subrecord form (activity, communication, etc)

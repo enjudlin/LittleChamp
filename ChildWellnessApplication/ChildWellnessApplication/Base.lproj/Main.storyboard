@@ -394,7 +394,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E0j-3N-8yl" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ISB-CJ-Gdz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ISB-CJ-Gdz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -412,7 +412,7 @@
             <objects>
                 <navigationController title="ChildrenSelection" automaticallyAdjustsScrollViewInsets="NO" id="fCE-H4-Brs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MY4-Rz-YQN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="MY4-Rz-YQN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -597,7 +597,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iCt-V0-8ht" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wge-Rz-xDF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Wge-Rz-xDF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -827,17 +827,19 @@
                     <navigationItem key="navigationItem" id="QPJ-vt-8Rl">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cgF-pe-qYW">
                             <connections>
-                                <segue destination="Gnt-uD-SSL" kind="unwind" unwindAction="unwindToActionListWithSender:" id="D2L-c1-NLI"/>
+                                <segue destination="Gnt-uD-SSL" kind="unwind" identifier="returnToActionList" unwindAction="unwindToActionListWithSender:" id="D2L-c1-NLI"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="gAh-5C-C6p">
                             <connections>
-                                <segue destination="Gnt-uD-SSL" kind="unwind" unwindAction="unwindToActionListWithSender:" id="JFj-Gq-eAR"/>
+                                <action selector="_saveRecord:" destination="cRf-lU-HDj" id="Jdm-wy-buP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="saveButton" destination="gAh-5C-C6p" id="Jqb-Ju-X2d"/>
+                        <segue destination="Gnt-uD-SSL" kind="unwind" unwindAction="unwindToActionListWithSender:" id="QeT-jZ-szS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOM-PC-YyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1101,7 +1103,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uJs-K8-cn8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HXV-tX-rSj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HXV-tX-rSj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1455,7 +1457,7 @@
             <objects>
                 <navigationController title="NewRecordNavigation" automaticallyAdjustsScrollViewInsets="NO" id="nTD-vW-i05" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PRu-7H-phA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="PRu-7H-phA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1471,7 +1473,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="j6P-Vq-CHD"/>
-        <segue reference="y1x-bC-K0U"/>
+        <segue reference="2pb-NK-sJN"/>
         <segue reference="wcp-3B-nSn"/>
     </inferredMetricsTieBreakers>
 </document>
